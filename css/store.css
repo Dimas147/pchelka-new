@@ -52,7 +52,7 @@
   height: auto;
   line-height: 2.3em;
   padding: 0 1em;
-  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-family: Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
   display: inline-block;
   vertical-align: middle;
   color: #FFF;
@@ -102,7 +102,7 @@
   display: block;
   margin: 0 0 0.25em;
   font-size: 1.25em;
-  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
 }
 .product-item .product-price {
   font-weight: bold;
@@ -115,7 +115,7 @@
   height: auto;
   line-height: 2.3em;
   padding: 0 1em;
-  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-family: Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
   display: inline-block;
   vertical-align: middle;
   color: #FFF;
@@ -1012,7 +1012,7 @@
   height: auto;
   line-height: 2.3em;
   padding: 0 1em;
-  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-family: Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
   display: inline-block;
   vertical-align: middle;
   color: #FFF;

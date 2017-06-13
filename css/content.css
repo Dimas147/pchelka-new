@@ -2388,7 +2388,7 @@ h6,
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   color: #222222;
-  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
 }
 h1:first-child:not(.logo),
 h2:first-child:not(.logo),
@@ -2895,7 +2895,7 @@ button,
   height: auto;
   line-height: 2.3em;
   padding: 0 1em;
-  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-family: Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
   display: inline-block;
   vertical-align: middle;
   color: #FFF;
@@ -3381,10 +3381,10 @@ a.inherit-color:hover {
   padding-right: 1%;
 }
 .ff-text {
-  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-family: Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
 }
 .ff-header {
-  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
 }
 .h-auto {
   height: auto !important;

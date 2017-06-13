@@ -1,8 +1,14 @@
 //	PAGE Style
 //==================================================
+html {
+	height : 100%;
+}
 body {
 	// custom scroll-bar
 	//.scroll-bar();
+	&.index-page {
+		height : 100%;
+	}
 }
 main {
 }
@@ -17,6 +23,8 @@ header {
 	// -- LOGO Style
 	.logo {
 		text-decoration : none;
+		margin-top      : 0;
+		margin-bottom   : 0;
 
 		a {
 			display : inline-block;
@@ -24,6 +32,14 @@ header {
 
 		img {
 		}
+	}
+	&.fixed {
+		position : fixed;
+		left     : 0;
+		top      : 0;
+		width    : 100%;
+		z-index  : 11;
+		.rgba(#000; 50%);
 	}
 }
 // -- NAV Style
@@ -53,5 +69,5 @@ footer {
 //	Button to scroll top
 //==================================================
 #go-top {
-	.button-color(#ffffff; fade(#000000, 50%); fade(#000000, 50%); @primary-color; @primary-bg; @primary-bg);
+	.button-color(#FFF; fade(#000, 50%); fade(#000, 50%); @primary-color; @primary-bg; @primary-bg);
 }

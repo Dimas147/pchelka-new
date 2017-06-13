@@ -1,12 +1,28 @@
+html {
+  height: 100%;
+}
+body.index-page {
+  height: 100%;
+}
 header {
   background: transparent;
   color: #555555;
 }
 header .logo {
   text-decoration: none;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 header .logo a {
   display: inline-block;
+}
+header.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 11;
+  background: rgba(0, 0, 0, 0.5);
 }
 aside .aside-box {
   margin-bottom: 30px;
@@ -18,7 +34,7 @@ footer {
   font-size: 0.85em;
 }
 #go-top {
-  color: #ffffff;
+  color: #FFF;
   border-color: rgba(0, 0, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -56,7 +72,7 @@ form .captcha .captcha_image a {
   height: auto;
   line-height: 2.3em;
   padding: 0 1em;
-  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-family: Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
   display: inline-block;
   vertical-align: middle;
   color: #FFF;
@@ -227,7 +243,7 @@ label.required::after,
 select,
 textarea,
 input {
-  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-family: Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
   border: 1px solid #bbbbbb;
   background-color: #fff;
   color: #2f2f2f;
@@ -410,7 +426,7 @@ textarea.resize {
   background: none;
   color: #f25f5c;
   position: static;
-  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-family: Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
   width: 50%;
   text-align: center;
@@ -530,7 +546,7 @@ textarea.resize {
 .rotator {
   position: relative;
   overflow: hidden;
-  background: #fff;
+  background: #FFF;
 }
 .rotator .slide-description {
   padding: 10px 16px;
@@ -546,25 +562,27 @@ textarea.resize {
   bottom: 0;
   left: 0;
 }
-.cycle-slideshow .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
+.cycle-slideshow {
+  overflow: hidden;
   width: 100%;
-  height: 100%;
-  list-style: none;
 }
-.cycle-slideshow .slide > a.generator-links:not(:first-child),
-.cycle-slideshow .slide > a.tpopup:not(:first-child) {
+.cycle-slideshow .slide {
+  width: 100%;
+  list-style: none;
+  min-height: 100%;
+  background-color: #eeeeee;
+}
+.cycle-slideshow .slide > .tpopup {
   position: absolute;
-  top: 10px;
+  bottom: 10px;
   left: 10px;
 }
 .cycle-slideshow .cycle-pager {
   position: absolute;
-  top: 5px;
-  right: 0;
-  z-index: 20;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  z-index: 11;
   text-align: center;
   font-size: 0;
   line-height: 0;
@@ -636,6 +654,13 @@ textarea.resize {
 }
 .cycle-slideshow:hover .action-button.cycle-next {
   right: 10px;
+}
+.cycle-slideshow.top-slider {
+  height: 100%;
+}
+.cycle-slideshow.top-slider [data-url*="imageonly"] {
+  bottom: 5px;
+  top: auto;
 }
 @media only screen and (min-width: 801px) {
   .d-hide,
