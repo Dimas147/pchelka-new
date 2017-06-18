@@ -1,15 +1,5 @@
 // Alternate buttons
 // --------------------------------------------------
-// Inverse button appears as gray => primary
-&.inverse when (@button-color-inverse) and (@button-colors) {
-    &:hover, &:active {
-        color            : @button-primary-color;
-        background-color : darken(@button-primary-bg, 10%);
-        & when (@button-border-width > 0) {
-            border-color : darken(softlight(@button-primary-bg, #000), 10%);
-        }
-    }
-}
 // Warning appears as orange
 &.warning when (@button-color-warning) and (@button-colors) {
     .button-color(@button-warning-color; @button-warning-bg);
@@ -28,9 +18,7 @@
 }
 // Inverse button appears as gray => primary
 &.inverse when (@button-color-inverse) and (@button-colors) {
-    color            : @button-inverse-color;
-    background-color : @button-inverse-bg;
-    border-color     : softlight(@button-inverse-bg, #000);
+    .button-color(@primary-color; transparent; @primary-color;@primary-color; @brand-primary; @brand-primary);
 }
 // Transparent button appears as transparent => fade
 &.transparent when (@button-color-transparent) and (@button-colors) {
@@ -41,4 +29,7 @@
     &:hover, &:active, &.active {
         .rgba(#000; 10%);
     }
+}
+&.white{
+    .button-color(@primary-color; transparent; transparent;@primary-color; @brand-primary; @brand-primary);
 }

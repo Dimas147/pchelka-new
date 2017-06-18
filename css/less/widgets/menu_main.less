@@ -1,107 +1,109 @@
-@media only screen and (min-width : @responsive-size-tablet) {
-	.main_menu when (@menu-main) {
-		position : relative;
-		z-index  : 11;
-		& when not(@nav-bg = transparent) {
-			background : @nav-bg;
-		}
-		& when not(@nav-color = @link-color) {
-			color : @nav-color;
-		}
+@media only screen and (min-width: @responsive-size-tablet) {
+    .main_menu when (@menu-main) {
+        position: relative;
+        font-family: @font-family-headings;
+        z-index: 11;
+        background: @nav-bg;
+        color: @nav-color;
+        .inline-block-wrap(top);
 
-		& > li {
-			float    : left;
-			position : relative;
+        & > li {
+            position: relative;
+            margin-left: 0.3125rem;
+            margin-right: 0.3125rem;
+            & > a {
+                .border-radius(4px);
+            }
 
-			&:hover {
-				& when not(@nav-bg = @nav-bg-li-hover) {
-					background : @nav-bg-li-hover;
-				}
-				& when not(@nav-color = @nav-color-li-hover) {
-					color : @nav-color-li-hover;
-				}
+            &:hover {
 
-				ul {
-					display : block;
-				}
-			}
-			// TODO Why we had this property for the tag 'a'?
-			//& > a when (@responsive), (@adaptive){
-			//    float : left;
-			//}
-		}
+                & > a {
+                    background: @brand-primary;
+                }
 
-		a {
-			display         : block;
-			padding         : @padding-base-vertical @padding-base-horizontal;
-			text-decoration : none;
-			& when not(@nav-color = @link-color) {
-				color : inherit;
-			}
+                ul {
+                    display: block;
+                }
+            }
 
-			&.current {
-				& when (@nav-bg-li-hover = @nav-bg-li-current) {
-					&:extend(.main_menu > li:hover);
-				}
+            &.has-subpages {
+                & > a {
+                    overflow      : hidden;
+                    padding-right : 20px;
+                    &::after {
+                        margin-right : -16px;
+                        float        : right;
+                        font-family  : @font-family-icons;
+                        content      : "\e0b0";
+                    }
+                }
+            }
+        }
 
-				& when not(@nav-bg-li-hover = @nav-bg-li-current) {
-					background : @nav-bg-li-current;
-				}
-				& when not(@nav-color-li-hover = @nav-color-li-current) {
-					color : @nav-color-li-current;
-				}
-			}
-		}
+        a {
+            display: block;
+            padding: 6px 10px 7px;
+            font-size: 1.125rem;
+            font-weight: 500;
+            line-height: 1.2;
+            text-decoration: none;
+            .transition(background ease-in-out 0.3s);
+            & when not(@nav-color = @link-color) {
+                color: inherit;
+            }
 
-		ul {
-			position   : absolute;
-			left       : 0;
-			top        : 100%;
-			z-index    : 0;
-			display    : none;
-			width      : 300px;
-			background : @nav-drop-down-list-bg;
-			& when not(@nav-drop-down-list-color = @nav-color) {
-				color : @nav-drop-down-list-color;
-			}
-			.box-shadow(0 3px 5px @gray-dark);
+            &.current, &:hover {
+                color: @primary-color;
+                background: @brand-primary;
+            }
+        }
 
-			& when (@mobile-menu) {
-				&.open:extend(.mobile-menu ul.open) {
-				}
-			}
+        ul {
+            padding: 37px 0 20px;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            margin-left: -20px;
+            z-index: 0;
+            display: none;
+            width: 210px;
+            & when not(@nav-drop-down-list-color = @nav-color) {
+                color: @nav-drop-down-list-color;
+            }
+            &::before{
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 20px;
+                content: "";
+                background: @nav-drop-down-list-bg;
+                .border-radius(4px);
+                .box-shadow(1px 4px 5px 2px rgba(0, 0, 0, 0.11));
+            }
 
-			li {
-				float : none;
+            & when (@mobile-menu) {
+                &.open:extend(.mobile-menu ul.open) {
+                }
+            }
 
-				&:hover {
-					& when not(@nav-drop-down-list-bg-hover = @nav-bg-li-hover)
-                   and not(@nav-drop-down-list-bg-hover = @nav-drop-down-list-bg) {
-						background : @nav-drop-down-list-bg-hover;
-					}
-					& when not(@nav-drop-down-list-color-hover = @nav-drop-down-list-color)
-                   and not(@nav-drop-down-list-color-hover = @nav-color-li-hover) {
-						color : @nav-drop-down-list-color-hover;
-					}
-				}
+            li {
+                position: relative;
+                float: none;
+                background: @nav-drop-down-list-bg;
+                a {
+                    padding: 7px 27px 8px;
+                    font-size: 1rem;
+                    font-family: @font-family-text;
+                    font-weight: 400;
+                    line-height: 1.5;
 
-				a {
-					&.current {
-						& when (@nav-drop-down-list-color-hover = @nav-drop-down-list-color-current) {
-							&:extend(.main_menu ul li:hover);
-						}
-
-						& when not(@nav-drop-down-list-bg-current = @nav-drop-down-list-bg)
-                       and not(@nav-drop-down-list-bg-current = @nav-drop-down-list-bg-hover) {
-							background : @nav-drop-down-list-bg-current;
-						}
-						& when not(@nav-drop-down-list-color-current = @nav-drop-down-list-color)
-                       and not(@nav-drop-down-list-color-current = @nav-drop-down-list-color-hover) {
-							color : @nav-drop-down-list-color-current;
-						}
-					}
-				}
-			}
-		}
-	}
+                    &.current, &:hover {
+                        color: @brand-primary;
+                        background: transparent;
+                    }
+                }
+            }
+        }
+    }
 }

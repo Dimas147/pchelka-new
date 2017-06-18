@@ -1,129 +1,190 @@
 .rotator when (@widget-rotator) {
-	position   : relative;
-	overflow   : hidden;
-	background : #FFF;
+    position: relative;
+    overflow: hidden;
+    background: #FFFFFF;
 
-	// -- Description
-	.slide-description {
-		padding : @padding-large-vertical @padding-large-horizontal;
-		color   : #FFF;
-		.rgba(#000; 0.5);
-	}
+    // -- Description
+    .slide-description {
+        padding: @padding-large-vertical @padding-large-horizontal;
+        color: #FFFFFF;
+        .rgba(#000000; 0.5);
+    }
 
-	img {
-		width : 100%;
+    img {
+        width: 100%;
 
-		& ~ .slide-description {
-			position : absolute;
-			right    : 0;
-			bottom   : 0;
-			left     : 0;
-		}
-	}
+        & ~ .slide-description {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
 }
+
 .cycle-slideshow when (@widget-rotator) {
-	overflow : hidden;
-	width    : 100%;
+    overflow: hidden;
+    width: 100%;
 
-	.slide {
-		width            : 100%;
-		list-style       : none;
-		min-height       : 100%;
-		background-color : @gray-lighter;
+    .slide {
+        width: 100%;
+        list-style: none;
+        min-height: 100%;
+        background-color: @gray-lighter;
 
-		& > .tpopup {
-			position : absolute;
-			bottom   : 10px;
-			left     : 10px;
-		}
-	}
+        & > .tpopup {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+    }
 
-	// -- Pager
-	.cycle-pager {
-		position    : absolute;
-		bottom      : 40px;
-		left        : 0;
-		width       : 100%;
-		z-index     : 11;
-		text-align  : center;
-		font-size   : 0;
-		line-height : 0;
+    // -- Pager
+    .cycle-pager {
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        width: 100%;
+        z-index: 11;
+        text-align: center;
+        font-size: 0;
+        line-height: 0;
 
-		> * {
-			.inline-block;
-			cursor     : pointer;
-			margin     : 0 3px;
-			color      : @primary-color;
-			background : #FFF;
-			.border-radius(14px);
-			.icon-size(10px; true);
+        > * {
+            .inline-block;
+            cursor: pointer;
+            margin: 0 12px;
+            color: @primary-color;
+            background: transparent;
+            .border-radius(50%);
+            .icon-size(14px; true);
+            border: 1px solid @primary-color;
 
-			&:hover {
-				background : darken(@primary-bg, 10%);
-			}
+            &:hover {
+                background: @primary-color;
+            }
 
-			&.cycle-pager-active {
-				cursor     : default;
-				color      : @primary-color;
-				background : @primary-bg;
-			}
-		}
-	}
+            &.cycle-pager-active {
+                cursor: default;
+                color: @primary-color;
+                background: @primary-color;
+            }
+        }
+    }
 
-	[class*="cycle-"].action-button {
-		background : @primary-bg;
-		color      : @primary-color;
-		position   : absolute;
-		top        : 50%;
-		z-index    : 20;
-		cursor     : pointer;
-		margin-top : -@slider-button-size / 2 - @padding-large-vertical;
-		padding    : @padding-large-vertical;
-		.box-sizing(content-box);
-		.icon-size(@slider-button-size; true);
-		.transition();
+    [class*="cycle-"].action-button {
+        background: @primary-bg;
+        color: @primary-color;
+        position: absolute;
+        top: 50%;
+        z-index: 20;
+        cursor: pointer;
+        margin-top: -@slider-button-size / 2 - @padding-large-vertical;
+        padding: @padding-large-vertical;
+        .box-sizing(content-box);
+        .icon-size(@slider-button-size; true);
+        .transition();
 
-		&:hover {
-			background : darken(@primary-bg, 10%);
-			color      : @primary-color;
-		}
+        &:hover {
+            background: darken(@primary-bg, 10%);
+            color: @primary-color;
+        }
 
-		&::before {
-			font-family : @font-family-icons;
-		}
+        &::before {
+            font-family: @font-family-icons;
+        }
 
-		&.cycle-prev {
-			left : -@slider-button-size * 3;
+        &.cycle-prev {
+            left: -@slider-button-size * 3;
 
-			&::before {
-				content : "\e0a9";
-			}
-		}
+            &::before {
+                content: "\e0a9";
+            }
+        }
 
-		&.cycle-next {
-			right : -@slider-button-size * 3;
+        &.cycle-next {
+            right: -@slider-button-size * 3;
 
-			&::before {
-				content : "\e0a7";
-			}
-		}
-	}
+            &::before {
+                content: "\e0a7";
+            }
+        }
+    }
 
-	&:hover .action-button {
-		&.cycle-prev {
-			left : 10px;
-		}
+    &:hover .action-button {
+        &.cycle-prev {
+            left: 10px;
+        }
 
-		&.cycle-next {
-			right : 10px;
-		}
+        &.cycle-next {
+            right: 10px;
+        }
 
-	}
-	&.top-slider {
-		height : 100%;
-		[data-url*="imageonly"] {
-			bottom   : 5px;
-			top      : auto;
-		}
-	}
+    }
+    &.top-slider {
+        min-height: 100%;
+        [data-url*="imageonly"] {
+            bottom: 5px;
+            top: auto;
+        }
+        & > .tpopup{
+            display: none;
+        }
+    }
+}
+
+.slide-content {
+    position: relative;
+    z-index: 11;
+    padding-top: 19rem;
+    padding-bottom: 15rem;
+    text-align: center;
+    h2 {
+        margin-bottom: 0.766em;
+        line-height: 1;
+        color: @primary-color;
+        small {
+            position: relative;
+            .inline-block();
+            font-size: 0.5em;
+            font-weight: normal;
+            letter-spacing: 3px;
+            &::before, &::after {
+                .inline-block();
+                position: absolute;
+                top: 50%;
+                width: 100px;
+                border-bottom: 2px solid #FFFFFF;
+                content: "";
+                .translate(0; -50%);
+            }
+            &::before {
+                left: -120px;
+            }
+            &::after {
+                right: -120px;
+            }
+        }
+        span {
+
+            display: block;
+            margin-top: 0.5em;
+        }
+    }
+    .slogan {
+        margin-bottom: 3.125rem;
+    }
+    p {
+        color: @primary-color;
+        font-size: 1.25em;
+    }
+    .btn{
+        font-size: 1.125em;
+        letter-spacing: 0.12em;
+        line-height: 1.5;
+        padding: 0.805em 1.66em;
+        margin-top: 1.875rem;
+        margin-left: 0.9375rem;
+        margin-right: 0.9375rem;
+    }
 }

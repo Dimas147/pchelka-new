@@ -1,7 +1,7 @@
 .button(
     @color        : @button-primary-color;
     @background   : @button-primary-bg;
-    @border       : softlight(@background, #000);
+    @border       : @button-primary-bg;
     @border-width : @button-border-width;
     @radius       : @button-border-radius
 ) {
@@ -11,7 +11,10 @@
     height          : auto;
     line-height     : unit(@button-line-height * 2, em);
     padding         : 0 1em;
-    font-family     : @font-family-text;
+    font-family     : @font-family-headings;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     .inline-block();
     .button-color(@color; @background; @border);
     .border-radius(@radius);
@@ -26,14 +29,14 @@
         border : none;
     }
     & when (@button-transition) {
-        .transition(background 0.3s);
+        .transition(background ease-in-out 0.3s, border ease-in-out 0.3s);
     }
     & when not(@button-transition) {
         .transition(none);
     }
 
     &:active, &.active {
-        .box-shadow(2px 2px 4px rgba(0, 0, 0, .3) inset; @button-box-shadow);
+        //.box-shadow(2px 2px 4px rgba(0, 0, 0, .3) inset; @button-box-shadow);
     }
 }
 
@@ -51,10 +54,10 @@
 .button-color(
     @color;
     @background;
-    @border      : softlight(extract(@background, 1), #000);
+    @border      : extract(@background, 1);
     @color2      : extract(@color, 1);
-    @background2 : darken(extract(@background, 1), 10%);
-    @border2     : darken(extract(@border, 1), 10%)
+    @background2 : extract(@brand-dark, 1);
+    @border2     : extract(@background2, 1);
 ) {
     color            : extract(@color, 1);
     border-color     : extract(@border, 1);

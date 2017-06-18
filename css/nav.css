@@ -10,51 +10,100 @@
 .featureditem li,
 .relatedpages li,
 .related-products li {
-  font-size: 14px;
+  font-size: 1rem;
   display: inline-block;
   vertical-align: top;
 }
 @media only screen and (min-width: 800px) {
   .main_menu {
     position: relative;
+    font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
     z-index: 11;
-    background: #3F51B5;
+    background: transparent;
     color: #FFF;
+    font-size: 0;
+  }
+  .main_menu >* {
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: top;
   }
   .main_menu > li {
-    float: left;
     position: relative;
+    margin-left: 0.3125rem;
+    margin-right: 0.3125rem;
   }
-  .main_menu > li:hover,
-  .main_menu a.current {
-    background: #32408f;
+  .main_menu > li > a {
+    border-radius: 4px;
+  }
+  .main_menu > li:hover > a {
+    background: #e7931a;
   }
   .main_menu > li:hover ul {
     display: block;
   }
+  .main_menu > li.has-subpages > a {
+    overflow: hidden;
+    padding-right: 20px;
+  }
+  .main_menu > li.has-subpages > a::after {
+    margin-right: -16px;
+    float: right;
+    font-family: flexkit-icons;
+    content: "\e0b0";
+  }
   .main_menu a {
     display: block;
-    padding: 8px 12px;
+    padding: 6px 10px 7px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.2;
     text-decoration: none;
+    transition: background ease-in-out 0.3s;
     color: inherit;
   }
+  .main_menu a.current,
+  .main_menu a:hover {
+    color: #FFF;
+    background: #e7931a;
+  }
   .main_menu ul {
+    padding: 37px 0 20px;
     position: absolute;
     left: 0;
     top: 100%;
+    margin-left: -20px;
     z-index: 0;
     display: none;
-    width: 300px;
-    background: #FFF;
-    color: #888888;
-    box-shadow: 0 3px 5px #555555;
+    width: 210px;
+  }
+  .main_menu ul::before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 20px;
+    content: "";
+    background: #343434;
+    border-radius: 4px;
+    box-shadow: 1px 4px 5px 2px rgba(0, 0, 0, 0.11);
   }
   .main_menu ul li {
+    position: relative;
     float: none;
+    background: #343434;
   }
-  .main_menu ul li:hover,
-  .main_menu ul li a.current {
-    background: #eeeeee;
+  .main_menu ul li a {
+    padding: 7px 27px 8px;
+    font-size: 1rem;
+    font-family: Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .main_menu ul li a.current,
+  .main_menu ul li a:hover {
+    color: #e7931a;
+    background: transparent;
   }
 }
 .static_menu {
@@ -70,14 +119,15 @@
 .featureapage,
 .featureditem li,
 .relatedpages li {
-  margin-bottom: 30px;
+  margin-bottom: 1.5rem;
+  text-align: center;
   margin-left: 2%;
   margin-right: 0;
-  width: 32%;
+  width: 23.5%;
 }
-.featureapage:nth-of-type(3n + 1),
-.featureditem li:nth-of-type(3n + 1),
-.relatedpages li:nth-of-type(3n + 1) {
+.featureapage:nth-of-type(4n + 1),
+.featureditem li:nth-of-type(4n + 1),
+.relatedpages li:nth-of-type(4n + 1) {
   margin-left: 0;
 }
 @media only screen and (max-width: 800px) and (min-width: 481px) {
@@ -109,11 +159,39 @@
     margin-left: 0;
   }
 }
-.featureapage .page-teaser-image,
-.featureditem li .page-teaser-image,
-.relatedpages li .page-teaser-image {
+.featureapage a.page-teaser-image,
+.featureditem li a.page-teaser-image,
+.relatedpages li a.page-teaser-image {
+  margin-bottom: 1.5625rem;
   overflow: hidden;
-  margin-bottom: 0.5em;
+}
+.featureapage .page-title,
+.featureditem li .page-title,
+.relatedpages li .page-title {
+  margin-bottom: 0.625rem;
+  padding: 0 0.685rem;
+  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-size: 1.375em;
+  font-weight: 700;
+  line-height: 1.36364;
+  color: #343434;
+}
+.featureapage span,
+.featureditem li span,
+.relatedpages li span,
+.featureapage p,
+.featureditem li p,
+.relatedpages li p {
+  padding: 0 0.685rem;
+}
+.featureditem {
+  font-size: 0;
+  margin-bottom: -1.5rem;
+}
+.featureditem >* {
+  font-size: 1rem;
+  display: inline-block;
+  vertical-align: top;
 }
 .featureapage {
   float: left;
@@ -163,12 +241,12 @@ aside .relatedpages li p {
   text-align: right;
 }
 .news-item .news-item-date {
-  color: #7c7c7c;
+  color: #262626;
 }
 .news-item .news-item-date::before {
   top: 2px;
   font-size: 16px;
-  color: #3F51B5;
+  color: #e7931a;
 }
 .news-item .news-item-tags a {
   color: #888888;
@@ -254,7 +332,7 @@ aside .relatedpages li p {
   top: 0;
   line-height: 56px;
   color: #FFF;
-  background: #3F51B5;
+  background: #e7931a;
 }
 .mobile-bar.top .btn.icon {
   width: 56px;
@@ -312,7 +390,7 @@ aside .relatedpages li p {
   -ms-flex: 1 0 100%;
   flex: 1 0 100%;
   text-transform: uppercase;
-  color: #98a2db;
+  color: #f3c98d;
   font-weight: 500;
   overflow-x: auto;
   height: 48px;
@@ -575,12 +653,7 @@ aside .relatedpages li p {
 .mobile-menu.dropdown li a:hover,
 .mobile-menu.dropdown li a.current {
   background: #f2f2f2;
-  color: #3F51B5;
-}
-.m-menu li:hover,
-.dropdown-menu li:hover,
-.mobile-menu.dropdown li:hover {
-  background: transparent;
+  color: #e7931a;
 }
 .m-menu li:hover ul,
 .dropdown-menu li:hover ul,
@@ -606,7 +679,7 @@ aside .relatedpages li p {
 .mobile-menu.dropdown,
 [data-dropdown-open] .dropdown-menu-mobile {
   background: #fff !important;
-  color: #555555 !important;
+  color: #000 !important;
   position: absolute;
   z-index: 92 !important;
   width: 250px;

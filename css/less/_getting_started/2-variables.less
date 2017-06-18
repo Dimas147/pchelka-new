@@ -22,7 +22,7 @@
 //==================================================
 @font-size-larger     : 1.5em;
 @font-size-large      : 1.25em;
-@font-size-base       : 14px;
+@font-size-base       : 16px;
 @font-size-small      : 0.85em;
 @font-size-mini       : 0.75em;
 
@@ -43,7 +43,7 @@
 // [Grid system]
 //==================================================
 //Width for container
-@grid-container-width    : 960px;
+@grid-container-width    : 1200px;
 @grid-container-maxWidth : 95%;
 @grid-container-minWidth : 0;
 
@@ -78,7 +78,8 @@
 
 // Brand Color ( color schemes => http://javierbyte.github.io/cohesive-colors/ )
 //==================================================
-@brand-primary : #3F51B5; // #c2d2da
+@brand-primary : #e7931a; // #c2d2da
+@brand-dark    : #343434;
 @brand-success : #4fc752; // #52ff8c | #A4F14E | #8fd400
 @brand-info    : #28b0ed; // #94C5FF           | #00a1f1
 @brand-warning : #ffc159; // #ffd17b | #FADA32 | #ffbb00
@@ -126,9 +127,9 @@
 
 // [Scaffolding]
 //==================================================
-@body-bg                  : #FFF;
-@text-color               : @gray-dark;
-@text-weight              : normal;
+@body-bg                  : #f3f0eb;
+@text-color               : #000;
+@text-weight              : 400;
 @line-height              : 1.5;
 
 @text-select-bg           : @primary-bg;
@@ -139,21 +140,21 @@
 @header-color             : @text-color;
 
 // variables for Main Menu
-@nav-bg                           : @primary-bg;
+@nav-bg                           : transparent;
 @nav-color                        : @primary-color;
 
-@nav-bg-li-hover                  : darken(@nav-bg, 10%);
+@nav-bg-li-hover                  : transparent;
 @nav-bg-li-current                : @nav-bg-li-hover;
 
-@nav-color-li-hover               : @nav-color;
+@nav-color-li-hover               : @primary-color;
 @nav-color-li-current             : @nav-color-li-hover;
 
-@nav-drop-down-list-bg            : #FFF;
-@nav-drop-down-list-bg-hover      : @gray-lighter;
+@nav-drop-down-list-bg            : #343434;
+@nav-drop-down-list-bg-hover      : transparent;
 @nav-drop-down-list-bg-current    : @nav-drop-down-list-bg-hover;
 
-@nav-drop-down-list-color         : @gray;
-@nav-drop-down-list-color-hover   : @nav-drop-down-list-color;
+@nav-drop-down-list-color         : @primary-color;
+@nav-drop-down-list-color-hover   : @brand-primary;
 @nav-drop-down-list-color-current : @nav-drop-down-list-color-hover;
 
 // variables for Content
@@ -167,7 +168,7 @@
 
 // [Links]
 //==================================================
-@link-color         : #07A0C3;
+@link-color         : @brand-primary;
 @link-color-hover   : darken(@link-color, 20%);
 @link-color-active  : @link-color-hover;
 @link-color-visited : none;
@@ -242,12 +243,12 @@
 // [Buttons]
 //==================================================
 @button-line-height    : 1.15;
-@button-border-width   : 0;
+@button-border-width   : 2px;
 @button-border-outline : 1px;
 
 @button-icon-size      : 1.25em; //Enter in ems
 
-@button-border-radius  : 0; //Enter in ems
+@button-border-radius  : 6px; //Enter in ems
 
 @button-inverse-bg     : darken(@gray-lighter, 10%);
 @button-inverse-color  : @gray;
@@ -282,7 +283,7 @@
 @input-border-color-focus    : @primary-bg;
 @input-border-color-disabled : darken(@input-bg-disabled, 7%);
 @input-border-radius         : 0;
-@input-shadow-focus          : true;//Do you need a shadow on focus? (true / false)
+@input-shadow-focus          : false;//Do you need a shadow on focus? (true / false)
 @input-inner-shadow          : false;
 @input-shadow-size           : 3px;
 

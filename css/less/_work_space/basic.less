@@ -1,73 +1,109 @@
 //	PAGE Style
 //==================================================
 html {
-	height : 100%;
+    height: 100%;
 }
+
 body {
-	// custom scroll-bar
-	//.scroll-bar();
-	&.index-page {
-		height : 100%;
-	}
+    // custom scroll-bar
+    //.scroll-bar();
+    &.index-page {
+        height: 100%;
+    }
 }
+
 main {
 }
+
 #page {
 }
+
 //	HEADER Style
 //==================================================
 header {
-	background : @header-bg;
-	color      : @header-color;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 3.125rem 0;
+    //background: @header-bg;
+    color: @header-color;
+    .transition();
 
-	// -- LOGO Style
-	.logo {
-		text-decoration : none;
-		margin-top      : 0;
-		margin-bottom   : 0;
-
-		a {
-			display : inline-block;
-		}
-
-		img {
-		}
-	}
-	&.fixed {
-		position : fixed;
-		left     : 0;
-		top      : 0;
-		width    : 100%;
-		z-index  : 11;
-		.rgba(#000; 50%);
-	}
+    // -- LOGO Style
+    .logo {
+        text-decoration: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1;
+        text-transform: none;
+        font-size: 0;
+        a {
+            margin-top: -7px;
+            margin-bottom: -9px;
+            .inline-block();
+            .inline-block-wrap(middle);
+            font-family: "Lobster", sans-serif;
+            color: @primary-color;
+            &:hover {
+                color: @primary-color;
+            }
+        }
+        span {
+            font-size: 2.25rem;
+            line-height: 1;
+            margin-left: 10px;
+        }
+    }
+    &.fixed {
+        padding: 1.25rem 0;
+        .rgba(@brand-dark; 80%);
+    }
 }
+
+.additional-controls {
+    .btn {
+        border-width: 0;
+        line-height: 1.15;
+        padding-top: 5px;
+        padding-bottom: 6px;
+        margin-left: 0.3125rem;
+        margin-right: 0.3125rem;
+    }
+}
+
 // -- NAV Style
 nav {
 }
+
 //	CONTENT Style
 //==================================================
 article {
 }
+
 section {
 }
+
 //	SIDEBAR Style
 //==================================================
 aside {
-	.aside-box {
-		margin-bottom : 30px;
-	}
+    .aside-box {
+        margin-bottom: 30px;
+    }
 }
+
 //	FOOTER Style
 //==================================================
 footer {
-	padding    : @padding-larger-vertical * 2 0;
-	background : @footer-bg;
-	color      : @footer-color;
-	font-size  : @font-size-small;
+    padding: @padding-larger-vertical * 2 0;
+    background: @footer-bg;
+    color: @footer-color;
+    font-size: @font-size-small;
 }
+
 //	Button to scroll top
 //==================================================
 #go-top {
-	.button-color(#FFF; fade(#000, 50%); fade(#000, 50%); @primary-color; @primary-bg; @primary-bg);
+    .button-color(#FFFFFF; fade(#000000, 50%); fade(#000000, 50%); @primary-color; @primary-bg; @primary-bg);
 }
