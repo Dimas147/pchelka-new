@@ -5,6 +5,27 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Roboto-Light";
+  src: url("../fonts/Roboto-Light/Roboto-Light.eot");
+  src: url("../fonts/Roboto-Light/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Light/Roboto-Light.woff") format("woff"), url("../fonts/Roboto-Light/Roboto-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Merriweather-Regular";
+  src: url("../fonts/Merriweather-Regular/Merriweather-Regular.eot");
+  src: url("../fonts/Merriweather-Regular/Merriweather-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Merriweather-Regular/Merriweather-Regular.woff") format("woff"), url("../fonts/Merriweather-Regular/Merriweather-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Merriweather-Bold";
+  src: url("../fonts/Merriweather-Bold/Merriweather-Bold.eot");
+  src: url("../fonts/Merriweather-Bold/Merriweather-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Merriweather-Bold/Merriweather-Bold.woff") format("woff"), url("../fonts/Merriweather-Bold/Merriweather-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 .icon12,
 .icon14,
 .icon16,
@@ -2389,7 +2410,7 @@ h6,
   margin-top: 1.5em;
   margin-bottom: 0.66em;
   color: #222222;
-  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
@@ -2420,6 +2441,20 @@ h6:first-child:not(.logo),
 .slide .slide-description .h5,
 .slide .slide-description .h6 {
   color: inherit;
+}
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6,
+footer .h1,
+footer .h2,
+footer .h3,
+footer .h4,
+footer .h5,
+footer .h6 {
+  color: #FFF;
 }
 h1:empty,
 h2:empty,
@@ -2468,7 +2503,7 @@ h5,
 .h5 {
   font-size: 1.25em;
   text-transform: none;
-  font-weight: normal;
+  font-family: Merriweather-Regular, serif;
   line-height: 1.6;
   letter-spacing: 0.02em;
 }
@@ -2511,7 +2546,7 @@ blockquote {
   margin: 2em 0;
   padding: 0.25em 2.5em;
   color: #1a1a1a;
-  font-size: 1.25em;
+  font-size: 1rem;
   position: relative;
 }
 blockquote::before,
@@ -2545,8 +2580,9 @@ blockquote .v2::before {
   content: "\e065";
 }
 blockquote.noquotes {
-  border-left: 2px solid #bbbbbb;
-  padding: .5em 1em;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 blockquote.noquotes::before,
 blockquote.noquotes::after {
@@ -2775,7 +2811,7 @@ ul.list-facts-in-numbers li .value {
   font-size: 4.2rem;
   line-height: 1.1;
   font-weight: 700;
-  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif, serif;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif, serif;
   color: #e7931a;
 }
 ul.list-facts-in-numbers li .title {
@@ -2987,7 +3023,7 @@ button,
   height: auto;
   line-height: 2.3em;
   padding: 0 1em;
-  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -3255,7 +3291,7 @@ hr.dotted {
   color: #222222;
   border-bottom: inherit;
   font-size: 1.25em;
-  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
 }
 .panel .panel-content {
   background: #fff;
@@ -3570,10 +3606,10 @@ a.inherit-color:hover {
   padding-right: 1%;
 }
 .ff-text {
-  font-family: Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-family: Roboto-Light, Helvetica, "Helvetica Neue", Arial, sans-serif;
 }
 .ff-header {
-  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
 }
 .h-auto {
   height: auto !important;
@@ -3652,7 +3688,81 @@ a.inherit-color:hover {
   padding-bottom: 5.625rem;
 }
 .light-bg {
-  background-color: #f6f6f6;
+  background-color: #F6F6F6;
+}
+.admin-actions,
+.newslog-admin-actions,
+.form-controls {
+  font-size: 0;
+  padding: 16px 0 0.35rem;
+  margin: 16px 0;
+  border-top: 1px solid #bbbbbb;
+  border-bottom: 1px solid #bbbbbb;
+  text-align: center;
+}
+.admin-actions >*,
+.newslog-admin-actions >*,
+.form-controls >* {
+  font-size: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.admin-actions >*,
+.newslog-admin-actions >*,
+.form-controls >* {
+  font-size: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.admin-actions a,
+.newslog-admin-actions a,
+.form-controls a {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  height: auto;
+  line-height: 2.3em;
+  padding: 0 1em;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  color: #FFF;
+  border-color: #e7931a;
+  background-color: #e7931a;
+  border-radius: 6px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-width: 2px;
+  border-style: solid;
+  transition: background ease-in-out 0.3s, border ease-in-out 0.3s;
+  margin-bottom: 0.72rem;
+  margin-right: 0.35rem;
+  margin-left: 0.35rem;
+  text-transform: capitalize;
+}
+.admin-actions a:hover,
+.newslog-admin-actions a:hover,
+.form-controls a:hover,
+.admin-actions a:active,
+.newslog-admin-actions a:active,
+.form-controls a:active,
+.admin-actions a.active,
+.newslog-admin-actions a.active,
+.form-controls a.active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
+}
+.orange-bg {
+  background: #e7931a;
+}
+.orange-bg h2 {
+  color: #FFF;
 }
 .primary {
   color: #e7931a;

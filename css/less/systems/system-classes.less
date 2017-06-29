@@ -366,10 +366,34 @@
     position: absolute;
 }
 
-.space{
+.space {
     padding-top: 5.625rem;
     padding-bottom: 5.625rem;
 }
-.light-bg{
-    background-color: #f6f6f6;
+
+.light-bg {
+    background-color: #F6F6F6;
+}
+
+.admin-actions, .newslog-admin-actions, .form-controls {
+    .inline-block-wrap();
+    padding: @font-size-base 0 0.35rem;
+    margin: @font-size-base 0;
+    border-top: @hr-size solid @hr-color;
+    border-bottom: @hr-size solid @hr-color;
+    text-align: center;
+    a {
+        .button();
+        margin-bottom: 0.72rem;
+        margin-right: 0.35rem;
+        margin-left: 0.35rem;
+        text-transform: capitalize;
+    }
+}
+
+.orange-bg{
+    background: @brand-primary;
+    h2{
+        color: @primary-color;
+    }
 }

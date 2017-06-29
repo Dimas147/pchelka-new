@@ -37,6 +37,7 @@
     {/repeat}
     <div class="slide-content container">
         <h2 class="h1 grid_8 prefix_2 suffix_2">{$header:slide-title:static}</h2>
+
         <div class="grid_8 prefix_2 suffix_2 slogan">{$content:slide-content:static}</div>
         <div class="grid_8 prefix_2 suffix_2 slide-buttons">{$content:slide-buttons:static}</div>
     </div>
@@ -47,6 +48,7 @@
     <article class="light-bg">
         <div class="container space">
             <h2 class="title-underlined grid_12">{$header:content_1}</h2>
+
             <div class="grid_12">
                 {$featured:area:product:3:0:template=_fa - categories}
             </div>
@@ -56,7 +58,7 @@
     <article class="container space">
         <h2 class="grid_12 title-underlined">{$header:facts-in-numbers-main-title:static}</h2>
         {adminonly}
-            <div class="grid_12">{repeat:facts-in-numbers-list:key:0:static} {/repeat}</div>
+        <div class="grid_12">{repeat:facts-in-numbers-list:key:0:static} {/repeat}</div>
         {/adminonly}
         <div class="grid_12">
             <ul class="list-facts-in-numbers" id="counter">
@@ -67,8 +69,11 @@
                         <div class="panel-header">Counter:</div>
                         <div class="panel-content">
                             <p>Icon class{$prepop:icon-class_key:text:static}</p>
+
                             <p>First value{$prepop:first-value_key:text:static}</p>
+
                             <p>Target value{$prepop:target-value_key:text:static}</p>
+
                             <p>Other signs{$prepop:other-signs_key:text:static}</p>
                         </div>
                     </div>
@@ -77,6 +82,7 @@
                         <span class="counter-value" data-count="{$prepop:target-value_key:text:static:readonly}">{$prepop:first-value_key:text:static:readonly}</span>
                         <span class="other-sign">{$prepop:other-signs_key:text:static:readonly}</span>
                     </p>
+
                     <h3 class="title h5">{$header:facts-in-numbers-title_key:static}</h3>
                 </li>
                 {/repeat}
@@ -84,12 +90,124 @@
         </div>
     </article>
 
-    
-    
+    <article class="parallax take-from-widget height-auto space contact-us-container light-bg">
+        {$imageonly:contact-us-parallax-bg:1920}
+        <div class="container">
+            <h2 class="grid_12 title-underlined">{$header:contact-us-main-title}</h2>
+
+            <div class="grid_6 prefix_3 suffix_3">
+                {$form:contact-us-form:{$prepop:submit:text:static:readonly}}
+                {adminonly}
+                <div class="panel">
+                    <div class="panel-header">Submit button name:</div>
+                    <div class="panel-content">
+                        {$prepop:submit:text:static}
+                    </div>
+                </div>
+                {/adminonly}
+            </div>
+        </div>
+    </article>
+
+    <article class="light-bg">
+        <div class="container space">
+            <h2 class="grid_12 title-underlined">{$header:products-for-sale:static}</h2>
+
+            <div class="grid_12">
+                <div id="products-in-carousel">
+                    {$productlist:_products list carousel::12}
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article class="orange-bg testimonials-container">
+        <div class="container space">
+            <h2 class="grid_12 title-underlined">{$header:testimonials-main-title:static}</h2>
+
+            <div class="grid_6 prefix_3 suffix_3">
+                <div class="testimonials-slider-container">
+                    <div class="cycle-slideshow"
+                         data-cycle-slides=".slide"
+                         data-cycle-fx="scrollHorz"
+                         data-cycle-speed="400"
+                         data-cycle-timeout="false"
+                         data-cycle-max-z="10"
+                         data-cycle-pager="#testimonials-slider-pager"
+                         data-cycle-auto-height="calc">
+                        {repeat:testimonials-slider:key:0:static}
+                        <div class="slide">
+                            <figure class="testimonial-image">
+                                {$imageonly:testimonial-img_key:150:static}
+                            </figure>
+                            <blockquote class="noquotes">
+                                {$textonly:testimonial-text_key:static}
+                            </blockquote>
+                            <p class="testimonial-name">{$header:testimonial-name_key:static}</p>
+                        </div>
+                        {/repeat}
+                    </div>
+                </div>
+                {repeat:testimonials-slider:key:0:static}{/repeat}
+                <div id="testimonials-slider-pager" class="cycle-pager"></div>
+            </div>
+        </div>
+    </article>
+
+    <article class="light-bg">
+        <div class="container space">
+            <h2 class="grid_12 title-underlined">{$header:blog-title:static}</h2>
+
+            <div class="grid_12">
+                <div class="news-list">
+                    {$newslist:_news list:desc:3}
+                </div>
+            </div>
+        </div>
+    </article>
+
 </section>
+{$template:_footer}
 {$template:_mobile elements}
 {$template:_scripts}
 <script src="js/plugin/jquery.cycle2.min.js"></script>
 <script src="js/plugin/counter.js"></script>
+
+<script src="js/plugin/owl.carousel.min.js"></script>
+<script>
+    $(function () {
+        $('#products-in-carousel .show-more').remove();
+        $('#products-in-carousel .product-list').addClass("owl-carousel");
+        $('.owl-carousel').owlCarousel({
+            loop: 'true',
+            margin: 10,
+            responsiveClass: 'true',
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: 'true'
+                },
+                481: {
+                    items: 2,
+                    nav: 'false',
+                    margin: 30
+                },
+                480: {
+                    items: 2,
+                    nav: 'true',
+                    loop: 'false',
+                    margin: 26
+                },
+                1025: {
+                    items: 4,
+                    nav: 'true',
+                    loop: 'false',
+                    margin: 30
+                }
+            }
+        });
+    })
+</script>
+
 </body>
 </html>

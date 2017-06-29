@@ -1,13 +1,40 @@
 .product .edit-product-btn {
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: #e7931a;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  height: auto;
+  line-height: 2.3em;
+  padding: 0 1em;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
   color: #FFF;
-  padding: 5px;
+  border-color: #e7931a;
+  background-color: #e7931a;
+  border-radius: 6px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-width: 2px;
+  border-style: solid;
+  transition: background ease-in-out 0.3s, border ease-in-out 0.3s;
+  margin-bottom: 0.72rem;
+  margin-right: 0.35rem;
+  margin-left: 0.35rem;
+  text-transform: capitalize;
+}
+.product .edit-product-btn:hover,
+.product .edit-product-btn:active,
+.product .edit-product-btn.active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
 }
 .product .product-image {
-  border: 3px solid #bbbbbb;
   display: block;
 }
 .product .product-image img {
@@ -52,7 +79,7 @@
   height: auto;
   line-height: 2.3em;
   padding: 0 1em;
-  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -79,34 +106,163 @@
   background-color: #343434;
 }
 .show-more {
-  border-bottom: 1px solid #DDDDDD;
-  border-top: 1px solid #DDDDDD;
-  display: block;
-  font-size: 20px;
-  padding: 10px 0;
   text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  height: auto;
+  line-height: 2.3em;
+  padding: 0 1em;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-weight: 700;
   text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  color: #FFF;
+  border-color: #e7931a;
+  background-color: #e7931a;
+  border-radius: 6px;
+  border-width: 2px;
+  border-style: solid;
+  transition: background ease-in-out 0.3s, border ease-in-out 0.3s;
+  display: block !important;
+  clear: both;
+  margin: 0 auto;
+  padding: 0.805em 1.66em;
+  font-size: 1.125em;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.show-more:hover,
+.show-more:active,
+.show-more.active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
+}
+.product-list {
+  font-size: 0;
+}
+.product-list >* {
+  font-size: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.product-item {
+  position: relative;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem 0;
+  font-family: "Merriweather-Bold", serif;
+  margin-left: 2%;
+  margin-right: 0;
+  width: 23.5%;
 }
 .product-item::after {
   content: "";
   display: table;
   clear: both;
 }
+.product-item:nth-of-type(4n + 1) {
+  margin-left: 0;
+}
+@media only screen and (max-width: 800px) and (min-width: 481px) {
+  .product-item {
+    width: 49%;
+  }
+  .product-item:nth-of-type(n) {
+    margin-left: 2%;
+  }
+  .product-item:nth-of-type(2n + 1) {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .product-item {
+    width: 100%;
+  }
+  .product-item:nth-of-type(1n + 1) {
+    margin-left: 0;
+  }
+}
+.owl-carousel .product-item {
+  margin-left: 2%;
+  margin-right: 0;
+  width: 100%;
+}
+.owl-carousel .product-item:nth-of-type(1n + 1) {
+  margin-left: 0;
+}
+@media only screen and (max-width: 800px) and (min-width: 481px) {
+  .owl-carousel .product-item {
+    width: 100%;
+  }
+  .owl-carousel .product-item:nth-of-type(1n + 1) {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .owl-carousel .product-item {
+    width: 100%;
+  }
+  .owl-carousel .product-item:nth-of-type(1n + 1) {
+    margin-left: 0;
+  }
+}
+.product-item > * {
+  position: relative;
+}
+.product-item::before {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  bottom: 0;
+  left: 3px;
+  content: "";
+  border-radius: 6px;
+  transition: all ease-in-out 0.4s;
+}
 .product-item .product-image {
-  float: left;
-  margin-right: 2%;
-  width: 150px;
+  display: block;
+  margin: 0 1.25rem 1.25rem;
+  height: 200px;
   overflow: hidden;
+  padding: 0.325rem;
+}
+.product-item .product-image img {
+  width: 100%;
+  max-width: 100%;
+}
+.product-item .product-image.parallax {
+  background-size: contain;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 .product-item .product-title {
+  padding: 0 1.25rem;
   display: block;
-  margin: 0 0 0.25em;
-  font-size: 1.25em;
-  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-size: 1.125em;
+  line-height: 1.55556;
+  color: #e7931a;
+  margin-bottom: 0;
+  height: 56px;
+  overflow: hidden;
+}
+.product-item .product-title:hover {
+  color: inherit;
+}
+.product-item .product-description {
+  margin-bottom: 0.625rem;
 }
 .product-item .product-price {
-  font-weight: bold;
-  font-size: 1.25em;
+  padding: 0 1.25rem;
+  margin-bottom: 0.625rem;
+  height: 30px;
+  font-size: 1.375em;
+  line-height: 1.36364;
 }
 .product-item .tcart-add {
   text-align: center;
@@ -115,7 +271,7 @@
   height: auto;
   line-height: 2.3em;
   padding: 0 1em;
-  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -139,6 +295,24 @@
   color: #FFF;
   border-color: #343434;
   background-color: #343434;
+}
+.product-item .starrating {
+  overflow: hidden;
+  margin-bottom: 0.3125rem;
+}
+.product-item .stars-container {
+  padding: 0 1.25rem;
+  width: auto !important;
+  margin-bottom: 0;
+}
+.product-item .btn {
+  margin-right: 1.25rem;
+  margin-left: 1.25rem;
+  display: block;
+}
+.product-item:hover::before {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #FFF;
 }
 .ui-state-error,
 .errors {
@@ -1012,7 +1186,7 @@
   height: auto;
   line-height: 2.3em;
   padding: 0 1em;
-  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;

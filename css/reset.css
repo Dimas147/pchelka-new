@@ -1,7 +1,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-size: 16px;
-  font-family: Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-family: Roboto-Light, Helvetica, "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -297,25 +297,65 @@ input::-webkit-input-placeholder,
 select::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder,
 button::-webkit-input-placeholder {
-  color: #e6e6e6;
+  color: #b7b7b7;
 }
 input::-moz-placeholder,
 select::-moz-placeholder,
 textarea::-moz-placeholder,
 button::-moz-placeholder {
-  color: #e6e6e6;
+  color: #b7b7b7;
 }
 input:-ms-input-placeholder,
 select:-ms-input-placeholder,
 textarea:-ms-input-placeholder,
 button:-ms-input-placeholder {
-  color: #e6e6e6;
+  color: #b7b7b7;
 }
 input:placeholder,
 select:placeholder,
 textarea:placeholder,
 button:placeholder {
-  color: #e6e6e6;
+  color: #b7b7b7;
+}
+input:focus::-webkit-input-placeholder,
+select:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder,
+button:focus::-webkit-input-placeholder,
+input:active::-webkit-input-placeholder,
+select:active::-webkit-input-placeholder,
+textarea:active::-webkit-input-placeholder,
+button:active::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus::-moz-placeholder,
+select:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder,
+button:focus::-moz-placeholder,
+input:active::-moz-placeholder,
+select:active::-moz-placeholder,
+textarea:active::-moz-placeholder,
+button:active::-moz-placeholder {
+  color: transparent;
+}
+input:focus:-ms-input-placeholder,
+select:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder,
+button:focus:-ms-input-placeholder,
+input:active:-ms-input-placeholder,
+select:active:-ms-input-placeholder,
+textarea:active:-ms-input-placeholder,
+button:active:-ms-input-placeholder {
+  color: transparent;
+}
+input:focus:placeholder,
+select:focus:placeholder,
+textarea:focus:placeholder,
+button:focus:placeholder,
+input:active:placeholder,
+select:active:placeholder,
+textarea:active:placeholder,
+button:active:placeholder {
+  color: transparent;
 }
 button,
 [type="file"],
@@ -453,7 +493,7 @@ select optgroup {
 .related-products .page-title {
   margin: 0 0 0.25em;
   font-size: 1.25em;
-  font-family: Merriweather, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
 }
 .listpages span,
 .listcategories span,

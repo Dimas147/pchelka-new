@@ -15,8 +15,8 @@
 
 // [Fonts]
 //==================================================
-@font-family-text     : Roboto, Helvetica, "Helvetica Neue", Arial, sans-serif;
-@font-family-headings : Merriweather ,"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+@font-family-text     : Roboto-Light, Helvetica, "Helvetica Neue", Arial, sans-serif;
+@font-family-headings : Merriweather-Bold ,"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
 
 // [Fonts size]
 //==================================================
@@ -162,9 +162,9 @@
 @content-color            : @text-color;
 
 // variables for Footer
-@footer-bg                : transparent;
-@footer-color             : @text-color;
-@footer-heading-color     : @heading-color;
+@footer-bg                : @brand-dark;
+@footer-color             : #b6afa8;
+@footer-heading-color     : @primary-color;
 
 // [Links]
 //==================================================
@@ -282,12 +282,12 @@
 @input-border-color          : @gray-light;//border color and shadow in focus
 @input-border-color-focus    : @primary-bg;
 @input-border-color-disabled : darken(@input-bg-disabled, 7%);
-@input-border-radius         : 0;
+@input-border-radius         : @button-border-radius;
 @input-shadow-focus          : false;//Do you need a shadow on focus? (true / false)
 @input-inner-shadow          : false;
 @input-shadow-size           : 3px;
 
-@input-color-placeholder  : darken(@input-bg, 10%);
+@input-color-placeholder  :#b7b7b7;
 
 @checkbox-radio-width     : 16px;
 
