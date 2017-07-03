@@ -10,7 +10,7 @@
 .featureditem li,
 .relatedpages li,
 .related-products li {
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
   vertical-align: top;
 }
@@ -24,11 +24,12 @@
     font-size: 0;
   }
   .main_menu >* {
-    font-size: 1rem;
+    font-size: 16px;
     display: inline-block;
     vertical-align: top;
   }
   .main_menu > li {
+    text-align: left;
     position: relative;
     margin-left: 0.3125rem;
     margin-right: 0.3125rem;
@@ -104,6 +105,29 @@
   .main_menu ul li a:hover {
     color: #e7931a;
     background: transparent;
+  }
+  footer .main_menu > li {
+    margin: 0 0 0.625rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: block;
+  }
+  footer .main_menu > li:hover > a {
+    background: none;
+  }
+  footer .main_menu a {
+    font-size: inherit;
+    background: none;
+    padding: 0;
+    color: #e7931a;
+    font-family: Roboto-Light, Helvetica, "Helvetica Neue", Arial, sans-serif;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  footer .main_menu a:hover,
+  footer .main_menu a.current {
+    background: none;
+    color: #FFF;
   }
 }
 .static_menu {
@@ -194,7 +218,7 @@
   margin-bottom: -1.5rem;
 }
 .featureditem >* {
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
   vertical-align: top;
 }
@@ -247,7 +271,7 @@ aside .relatedpages li p {
   margin-bottom: -1.5rem;
 }
 .news-list >* {
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
   vertical-align: top;
 }
@@ -335,6 +359,7 @@ footer .news-item .news-item-date::before {
   font-size: 1.375em;
   line-height: 1.36364;
   font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  margin-bottom: 0.5rem;
 }
 .news-item .newslog-admin-actions {
   text-align: right;
@@ -342,7 +367,7 @@ footer .news-item .news-item-date::before {
 .news-item .news-item-date {
   display: block;
   color: #B7B7B7;
-  margin-bottom: 1.0625rem;
+  margin-bottom: 0.5rem;
 }
 .news-item .news-item-date::before {
   display: inline-block;
@@ -353,7 +378,7 @@ footer .news-item .news-item-date::before {
   color: #343434;
 }
 .news-item .news-item-description {
-  margin-bottom: 1.0625rem;
+  margin-bottom: 0.8rem;
 }
 .news-item .news-item-description p:last-child {
   margin: 0;
@@ -365,7 +390,7 @@ footer .news-item .news-item-date::before {
   margin-bottom: -0.325rem;
 }
 .news-item .news-item-tags >* {
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
   vertical-align: top;
 }
@@ -407,6 +432,9 @@ footer .news-item .news-item-date::before {
 }
 .news-item .news-item-tags a::before {
   margin-right: 5px;
+}
+.news-item .news-item-tags a:first-child {
+  display: none;
 }
 .news-item .newslog-tag-filter::before {
   font-family: flexkit-icons;

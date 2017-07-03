@@ -50,7 +50,7 @@
             <h2 class="title-underlined grid_12">{$header:content_1}</h2>
 
             <div class="grid_12">
-                {$featured:area:product:3:0:template=_fa - categories}
+                {$featured:area:categories:3:0:template=_fa - categories}
             </div>
         </div>
     </article>
@@ -124,33 +124,49 @@
     <article class="orange-bg testimonials-container">
         <div class="container space">
             <h2 class="grid_12 title-underlined">{$header:testimonials-main-title:static}</h2>
-
-            <div class="grid_6 prefix_3 suffix_3">
-                <div class="testimonials-slider-container">
-                    <div class="cycle-slideshow"
-                         data-cycle-slides=".slide"
-                         data-cycle-fx="scrollHorz"
-                         data-cycle-speed="400"
-                         data-cycle-timeout="false"
-                         data-cycle-max-z="10"
-                         data-cycle-pager="#testimonials-slider-pager"
-                         data-cycle-auto-height="calc">
-                        {repeat:testimonials-slider:key:0:static}
-                        <div class="slide">
+            <div class="cycle-slideshow"
+                 data-cycle-slides=".slide"
+                 data-cycle-fx="scrollHorz"
+                 data-cycle-speed="400"
+                 data-cycle-timeout="false"
+                 data-cycle-max-z="10"
+                 data-cycle-pager="#testimonials-slider-pager"
+                 data-cycle-auto-height="calc">
+                {repeat:testimonials-slider:key:0:static}
+                <div class="slide clearfix">
+                    <div class="grid_3 text-center">
+                        <figure class="organization-image">
+                            {$imageonly:organization-image:original:static}
+                        </figure>
+                    </div>
+                    <div class="grid_4">
+                        {$textonly:organization-text:static}
+                    </div>
+                    <div class="grid_5 text-left">
+                        <div class="testimonials-quote-container clearfix">
                             <figure class="testimonial-image">
-                                {$imageonly:testimonial-img_key:150:static}
+                                {$imageonly:testimonial-img_key:70:static}
                             </figure>
                             <blockquote class="noquotes">
                                 {$textonly:testimonial-text_key:static}
                             </blockquote>
                             <p class="testimonial-name">{$header:testimonial-name_key:static}</p>
                         </div>
-                        {/repeat}
+                        <div class="testimonials-quote-container clearfix">
+                            <figure class="testimonial-image">
+                                {$imageonly:testimonial-img_key:70:static}
+                            </figure>
+                            <blockquote class="noquotes">
+                                {$textonly:testimonial-text_key:static}
+                            </blockquote>
+                            <p class="testimonial-name">{$header:testimonial-name_key:static}</p>
+                        </div>
                     </div>
                 </div>
-                {repeat:testimonials-slider:key:0:static}{/repeat}
-                <div id="testimonials-slider-pager" class="cycle-pager"></div>
+                {/repeat}
             </div>
+            {repeat:testimonials-slider:key:0:static}{/repeat}
+            <div id="testimonials-slider-pager" class="cycle-pager"></div>
         </div>
     </article>
 

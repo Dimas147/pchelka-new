@@ -147,7 +147,7 @@
   font-size: 0;
 }
 .product-list >* {
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -481,7 +481,7 @@
   font-size: 0;
 }
 #checkout-landing-forms >* {
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
   vertical-align: top;
 }
@@ -726,7 +726,7 @@
   font-size: 0;
 }
 #checkout-user-address >* {
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
   vertical-align: top;
 }
@@ -883,7 +883,7 @@
   font-size: 0;
 }
 #payment-zone form.paymentForm >* {
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
   vertical-align: top;
 }

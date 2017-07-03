@@ -2765,7 +2765,7 @@ ul.list-facts-in-numbers > .tpopup {
   display: none;
 }
 ul.list-facts-in-numbers >* {
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
   vertical-align: top;
 }
@@ -3080,6 +3080,18 @@ button.disabled,
 [class*="column_"] > .btn {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+.orange-bg .btn.inverse {
+  color: #FFF;
+  border-color: #FFF;
+  background-color: transparent;
+}
+.orange-bg .btn.inverse:hover,
+.orange-bg .btn.inverse:active,
+.orange-bg .btn.inverse.active {
+  color: #FFF;
+  border-color: #D8840A;
+  background-color: #D8840A;
 }
 .btn.rounded {
   border-radius: 0.25em;
@@ -3457,7 +3469,7 @@ hr.dotted {
   font-size: 0;
 }
 .inline-block-wrap >* {
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -3688,7 +3700,7 @@ a.inherit-color:hover {
   padding-bottom: 5.625rem;
 }
 .light-bg {
-  background-color: #F6F6F6;
+  background: url("../images/body-bg.png") 0 0 repeat #F6F6F6;
 }
 .admin-actions,
 .newslog-admin-actions,
@@ -3703,14 +3715,14 @@ a.inherit-color:hover {
 .admin-actions >*,
 .newslog-admin-actions >*,
 .form-controls >* {
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
   vertical-align: middle;
 }
 .admin-actions >*,
 .newslog-admin-actions >*,
 .form-controls >* {
-  font-size: 1rem;
+  font-size: 16px;
   display: inline-block;
   vertical-align: middle;
 }
