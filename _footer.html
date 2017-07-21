@@ -25,7 +25,7 @@
            <h4>{$header:subscribe-title:static}</h4>
            {$form:subscribe-form:{$prepop:subscribe-submit:text:static:readonly}}
            {adminonly}
-           <div class="panel">
+           <div class="panel admin-panel">
                <div class="panel-header">Name for submit button:</div>
                <div class="panel-content">
                    <p>{$prepop:subscribe-submit:text:static}</p>
@@ -36,8 +36,32 @@
    </div>
     <div class="copyright">
         <div class="container">
-            <div class="grid_6">{$header:copyright:static}</div>
-            <div class="grid_6 text-right"></div>
+            <div class="grid_6 copyright-text">{$header:copyright:static}</div>
+            <div class="grid_6 text-right social-links">
+                {$template:_social links}
+            </div>
         </div>
     </div>
 </footer>
+
+{adminonly}
+<div class="editor-block">
+    <button class="editor-blocker icon-cog"></button>
+    <button class="refresh-css icon-reload"></button>
+</div>
+<script src="js/developer-helper.js"></script>
+<script>
+    $(function () {
+        $(".editor-blocker").click(function () {
+            $('body').toggleClass("editor-blocked");
+            $(this).toggleClass("active");
+        });
+        $(".refresh-css").click(function () {
+            DeveloperTool.Init().ReloadAllCSSThisPage();
+        });
+        $(".hard-refresh-css").click(function () {
+            location.reload(true);
+        });
+    })
+</script>
+{/adminonly}

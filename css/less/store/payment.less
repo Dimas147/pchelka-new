@@ -1,94 +1,142 @@
-#payment-zone{
-    form.paymentForm{
-        margin-bottom : 2 * @font-size-base;
-        .inline-block-wrap(top);
+#payment-zone {
+	form.paymentForm {
+		position      : relative;
+		.inline-block-wrap(top);
+		border        : 1px solid #DDDDDD;
+		margin-bottom : 30px;
 
-        h4{
-            font-size     : 1.3 * @font-size-base;
-            color         : @heading-color;
-            font-weight   : @heading-weight;
-            border-bottom : 1px solid @gray-light;
-            padding       : 0 0 0.25em;
-            margin        : 0 0 0.5em;
-            display       : block;
+		h4 {
+			width            : 100%;
+			text-transform   : uppercase;
+			font-weight      : bold;
+			color            : #000000;
+			font-size        : 13px;
+			background-color : #FAFAFA;
+			padding          : 15px 10px;
+			border-bottom    : 1px solid #DDDDDD;
+			margin-bottom    : 15px;
+		}
 
-            & + fieldset{
-                margin-right : 2*@grid-margin-width;
-                margin-left  : 0;
-            }
-        }
+		& > fieldset {
+			.grid-elements(2; 2*@grid-margin-width; true; 1; 1);
+			padding-left : 10px;
+			& + fieldset {
+				padding-left  : 0;
+				padding-right : 10px;
+				& + img {
+					.inline-block();
+					margin-left   : 10px;
+					margin-bottom : 15px;
+				}
+			}
+			@media only screen and (max-width : @responsive-size-tablet) {
+				padding-right : 10px;
+				& + fieldset {
+					margin-top   : 50px;
+					padding-left : 10px;
+					& + img {
+						.inline-block();
+						margin-left   : 10px;
+						margin-bottom : 15px;
+					}
+				}
+			}
+		}
 
-        & > fieldset{
-            .grid-elements(2; 2*@grid-margin-width; true; 1; 1);
-        }
+		legend {
+			width         : 100%;
+			margin        : 0 0 15px;
+			border-bottom : 1px solid #DDDDDD;
+			padding       : 0 0 10px;
+			font-weight   : bold;
+		}
 
-        legend{
-            font-size     : 1.1em;
-            font-weight   : bold;
-            color         : lighten(@heading-color, 10%);
-            padding       : 0;
-            margin-bottom : 0.5em;
-            display       : block;
-        }
+		.shipping-to-billing-label {
+			width        : auto;
+			margin-right : 5px;
+			line-height  : 1.5;
+		}
 
-        .shipping-to-billing-label{
-            width        : auto;
-            min-height   : unit(@button-line-height * 2, em)-0.25em;
-            margin-right : 5px;
-        }
+		.card-verification-label {
+			width : 60%;
+		}
 
-        .card-verification-label{
-            width : 60%;
-        }
+		.card-verification-payment {
+			width : 40%;
+		}
 
-        .card-verification-payment{
-            width : 40%;
-        }
+		.card-expiration {
+			margin-right : 3%;
+			width        : 22%;
+		}
 
-        .card-expiration{
-            margin-right : 3%;
-            width        : 22%;
-        }
+		.card-expiration-year {
+			width : 40%;
+		}
+		input[type="submit"] {
+			position : absolute;
+			bottom   : 15px;
+			right    : 10px;
+			@media only screen and (max-width : @responsive-size-mobile) {
+				position : static;
+				margin   : 10px 10px 15px;
+				width    : ~"calc(100% - 20px)";
+				float    : none;
+			}
+		}
+	}
 
-        .card-expiration-year{
-            width : 40%;
-        }
+	form.payment-button {
+		margin-top    : 30px;
+		margin-bottom : 30px;
+		border        : 1px solid #DDDDDD;
 
-    }
+		legend {
+			width            : 100%;
+			text-transform   : uppercase;
+			font-weight      : bold;
+			color            : #000000;
+			font-size        : 13px;
+			background-color : #FAFAFA;
+			padding          : 15px 10px;
+			border-bottom    : 1px solid #DDDDDD;
+			margin-bottom    : 15px;
+		}
 
-    form.payment-button{
-        margin-bottom : 2em;
+		input[type='image'] {
+			margin  : 0 10px;
+			padding : 0;
+			border  : none;
+			width   : auto;
+			height  : auto;
+			float   : left;
+			&:active, &:focus {
+				.box-shadow(none);
+			}
+		}
 
-        legend{
-            font-size     : 1.25 * @font-size-base;
-            color         : @heading-color;
-            font-weight   : @heading-weight;
-            border-bottom : 1px solid @gray-light;
-            padding       : 0 0 0.25em;
-            margin        : 0 0 0.5em;
-            display       : block;
-            width         : 100%;
-        }
+		input[type='submit'] {
+			float : none;
+		}
 
-        input[type='image']{
-            padding : 0;
-            border  : none;
-            float   : none;
-            width   : auto;
-            height  : auto;
-        }
+		img {
+			vertical-align : top;
+		}
 
-        input[type='submit']{
-            float : none;
-        }
+		.seo-tip {
+			padding : 0 10px 0 126px;
+		}
+	}
+	input[type="submit"] {
+		clear       : none;
+		width       : auto;
+		float       : right;
+		font-size   : 1rem;
+		padding     : 0 0.5rem;
+		line-height : 2.3em;
+	}
+}
 
-        img{
-            vertical-align : top;
-        }
+#paypal_button {
 
-        .seo-tip{
-            clear      : both;
-            margin-top : 0.5em;
-        }
-    }
 }

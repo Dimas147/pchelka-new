@@ -1,52 +1,118 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Include head template -->
-        {$template:_head}
-    </head>
-    <body>
+<head>
+    <!-- Include head template -->
+    {$template:_head}
+</head>
+<body class="news-page">
 
-        <!-- Container -->
-        <div id="page" class="container">
-
-            <!-- Include header template -->
-            {$template:_header}
-
-            <h1 class="grid_12" role="heading">{$page:h1}</h1>
-
-            <!-- Content box -->
-            <section class="grid_9" role="main">
-                <!-- news content -->
-                {newscontent}
-                {repeat:Article blocks:key}
-                <article>
-                    <h2>{$header:content_key}</h2>
-                    {$content:content_key1}
-                    {$content:content_key2}
-                </article>
-                {/repeat}
-                {/newscontent}
-            </section>
-
-            <!-- Right box -->
-            <aside class="grid_3" role="complementary">
-                {repeat:Aside right box:key:1}
-                <section class="aside-box">
-                    <h3>{$header:right_key}</h3>
-                    {$content:right_key}
-                </section>
-                {/repeat}
-            </aside>
-
-            <!-- Footer -->
-            <!-- Include Footer template -->
-            {$template:_footer}
+<header role="banner">
+    <div class="container">
+        <div class="h1 logo grid_3" itemscope itemtype="http://schema.org/Organization">
+            <a href="{$website:url}" title="{$plugin:widcard:BizOrgName:notag}" itemprop="url">
+                <img src="{$plugin:widcard:bizLogo:url}" alt="{$page:h1}" width="50" height="50" itemprop="logo">
+                <span itemprop="name">{$plugin:widcard:BizOrgName:notag}</span>
+            </a>
         </div>
+        <nav id="main-menu" role="navigation" class="grid_7 text-center">{$menu:main:_main menu}</nav>
+        <div class="grid_2 text-right additional-controls">
+            <!--{ $search:form}-->
+            <!--{ $store:cartblock}-->
+            <a href="" class="icon-phone btn icon white"></a>
+            <a href="" class="icon-search btn icon white"></a>
+            <a href="" class="icon-cart btn icon white"></a>
+        </div>
+    </div>
+</header>
+<div class="title-part parallax take-from-widget height-auto bg-scroll">
+    {$imageonly:title-part-bg:1920:static}
+    <div class="container">
+        <h1 class="grid_12 text-center" role="heading">
+            <small>{$header:top-title-news:static}</small>
+            <span>{$header:top-subtitle-news:static}</span>
+        </h1>
+    </div>
+</div>
 
-        <!-- Include mobile elements template -->
-        {$template:_mobile elements}
+<div class="breadcrumbs-container">
+    <ul class="list-breadcrumbs text-center">
+        <li>
+            <a href="{$website:url}">Main</a>
+        </li>
+        <li>
+            {$page:navName}
+        </li>
+    </ul>
+</div>
 
-        <!-- Include scripts template -->
-        {$template:_scripts}
-    </body>
+<div class="container">
+
+    <section class="grid_8 space pr30px omega" role="main">
+        <!-- news content -->
+        <h2 class="title-underlined" role="heading">{$page:h1}</h2>
+        <div class="news-description">
+            <time class="news-item-date text-center" datetime="{$news:date:Y-m-d}">
+                {$news:date: M d, Y}
+            </time>
+            <a class="news-item-image" href="{$news:url}">
+                <img src="{$news:preview}" alt="{$news:title:inline}"/>
+            </a>
+            {$news:actions}
+        </div>
+        {newscontent}
+        {repeat:Article blocks:key}
+        <article>
+            <h3>{$header:content_key}</h3>
+            {$content:content_key}
+        </article>
+        {/repeat}
+        {/newscontent}
+        <div class="news-controls clearfix">
+            <div class="grid_8 alpha">
+                <p class="news-item-tags">{$news:tags}</p>
+            </div>
+            <div class="grid_4 omega text-right">
+                <p class="social-links">{$template:_social share}</p>
+            </div>
+        </div>
+        <div id="comment-block" class="space-top">
+            <h3 class="recent-posts-title title-underlined">Comments</h3>
+            <div class="news-post-comment">
+                {$plugin:pagerating:review:moderated}
+            </div>
+        </div>
+    </section>
+
+    <aside class="grid_4 space alpha" role="complementary">
+        <section class="aside-box">
+            <h4 class="text-center">{$header:blog-categories:static}</h4>
+            <div class="tags-container">
+                {$news:tags}
+            </div>
+        </section>
+        <section class="aside-box">
+            <h4 class="text-center">{$header:blog-title:static}</h4>
+            <div class="news-list">
+                {$newslist:_news list footer:desc:3}
+            </div>
+        </section>
+        <section class="aside-box pb0px">
+            <h4 class="text-center">{$header:gallery-title:static}</h4>
+            {$content:gallery:static}
+        </section>
+    </aside>
+
+</div>
+{$template:_footer}
+{$template:_mobile elements}
+{$template:_scripts}
+<script>
+    $(function () {
+        $(".main_menu a[href*='novosti']").addClass("current");
+        if(!$('#comment-block .pagerating-review').length) {
+            $('.recent-posts-title, .pagerating-list').remove();
+        }
+    })
+</script>
+</body>
 </html>

@@ -5,45 +5,68 @@
     {$template:_head}
 </head>
 <body>
+
 {$template:_header}
-<!-- Container -->
-<div id="page" class="container">
 
-    <!-- Include header template -->
-
-
-    <h1 class="grid_12" role="heading">{$page:h1}</h1>
-
-    <!-- Content box -->
-    <section class="grid_12 contact" role="main">
-        {$plugin:gmaps:bizlocation:1200:300}
-        <div class="grid_8 alpha mt30px">
-            <h2>{$header:contact1}</h2>
-            {$content:contact1}
-        </div>
-        <div class="grid_4 omega mt30px">
-            <h3>{$header:contact2}</h3>
-
-            <p class="fs12">
-                <strong>Address: </strong>{$plugin:widcard:BizAddress1}  {$plugin:widcard:BizAddress2},
-                {$plugin:widcard:BizCity}, {$plugin:widcard:BizState} {$plugin:widcard:BizZip}<br/>
-                <strong>Phone: </strong>{$plugin:widcard:BizTelephone}<br/>
-                <strong>Email: </strong><a href="mailto:{$plugin:widcard:BizEmail:notag}">{$plugin:widcard:BizEmail}</a>
-            </p>
-
-            <h3>{$header:contact3}</h3>
-            {$content:contact2}
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <!-- Include Footer template -->
+<div class="breadcrumbs-container">
+    <ul class="list-breadcrumbs text-center">
+        <li>
+            <a href="{$website:url}">Main</a>
+        </li>
+        <li>
+            {$page:navName}
+        </li>
+    </ul>
 </div>
-{$template:_footer}
-<!-- Include mobile elements template -->
-{$template:_mobile elements}
 
-<!-- Include scripts template -->
+<section role="main">
+    <article class="container space-top">
+        <ul class="list-contact-information text-right">
+            <li class="icon-location">
+                <h3>Address</h3>
+                <address>
+                    {$plugin:widcard:BizAddress1:notag},<br />
+                    {$plugin:widcard:BizCity:notag}, {$plugin:widcard:BizCountry:notag}
+                </address>
+            </li>
+            <li class="icon-mail">
+                <h3>E-mail</h3>
+                <p>
+                    <a href="mailto:{$plugin:widcard:BizEmail:notag}" target="_blank">{$plugin:widcard:BizEmail:notag}</a>
+                </p>
+            </li>
+            <li class="icon-phone">
+                <h3>Phone</h3>
+                <p>
+                    <a href="tel:{$plugin:widcard:BizTelephone:notag}" target="_blank">{$plugin:widcard:BizTelephone:notag}</a>
+                </p>
+            </li>
+        </ul>
+    </article>
+    <article class="space container">
+        <h2 class="grid_12 title-underlined">{$header:contact-us-main-title}</h2>
+        <div class="grid_8 prefix_2 suffix_2">
+            {$form:contact-page-form:{$prepop:submit:text:static:readonly}}
+            {adminonly}
+            <div class="panel admin-panel">
+                <div class="panel-header">Submit button name:</div>
+                <div class="panel-content">
+                    {$prepop:submit:text:static}
+                </div>
+            </div>
+            {/adminonly}
+        </div>
+    </article>
+
+    <article class="container space-bottom">
+        <div class="grid_8 prefix_2 suffix_2 map-container">
+            {$plugin:gmaps:bizlocation:1200:300:18}
+        </div>
+    </article>
+</section>
+
+{$template:_footer}
+{$template:_mobile elements}
 {$template:_scripts}
 </body>
 </html>

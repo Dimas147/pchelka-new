@@ -35,9 +35,19 @@
 		}
 		&#subscribeform {
 			input[type="submit"] {
-				width: 100%;
-				float: left;
+				width : 100%;
+				float : left;
 				.button-color(@primary-color; @brand-primary; @brand-primary; @primary-color; transparent; @primary-color);
+			}
+		}
+		&.review-form {
+			input[type="submit"] {
+				clear       : none;
+				width       : auto;
+				float       : right;
+				font-size   : 1rem;
+				padding     : 0 0.5rem;
+				line-height : 2.3em;
 			}
 		}
 	}
@@ -92,7 +102,7 @@
 		border           : @input-border-width solid @input-border-color;
 		background-color : @input-bg;
 		color            : @input-color;
-		padding          : 0.8125rem 1.375rem;
+		padding          : 0.8125rem;
 		line-height      : 2.125;
 		.border-radius(@input-border-radius);
 		//.box-shadow(1px 1px 3px @gray-light inset, @input-inner-shadow);
@@ -155,6 +165,7 @@
 	}
 
 	select {
+		height: 59px;
 		option {
 			//        color : @text-color;
 		}

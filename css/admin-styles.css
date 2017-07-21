@@ -1,0 +1,166 @@
+.editor-block {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1006;
+}
+.editor-block button {
+  float: left;
+  padding: 10px;
+  margin-right: 1px;
+  line-height: 1;
+  border-radius: 0 0 0 0;
+}
+.editor-blocked .tpopup,
+.editor-blocked #seotoaster-cpanel,
+.editor-blocked .form-controls,
+.editor-blocked .admin-panel,
+.editor-blocked .newslog-admin-actions,
+.editor-blocked .admin-actions {
+  display: none !important;
+}
+.editor-blocker {
+  color: #4fc752;
+}
+.editor-blocker.active {
+  color: #f25f5c;
+}
+.hard-refresh-css {
+  color: #ffc159;
+}
+.form-controls,
+.newslog-admin-actions {
+  font-size: 0;
+}
+.form-controls >*,
+.newslog-admin-actions >* {
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.form-controls a,
+.newslog-admin-actions a {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  height: auto;
+  line-height: 2.3em;
+  padding: 0 1em;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  color: #FFF;
+  border-color: #e7931a;
+  background-color: #e7931a;
+  border-radius: 6px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-width: 2px;
+  border-style: solid;
+  transition: background ease-in-out 0.3s, border ease-in-out 0.3s;
+  font-size: 0.714rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0 0 0 0;
+}
+.form-controls a:hover,
+.newslog-admin-actions a:hover,
+.form-controls a:active,
+.newslog-admin-actions a:active,
+.form-controls a.active,
+.newslog-admin-actions a.active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
+}
+.form-controls a:hover,
+.newslog-admin-actions a:hover,
+.form-controls a:active,
+.newslog-admin-actions a:active,
+.form-controls a:focus,
+.newslog-admin-actions a:focus {
+  background: #000000;
+  border-color: #000000;
+}
+.form-controls {
+  margin-top: 15px;
+}
+.form-controls a {
+  margin-left: 1%;
+  margin-right: 0;
+  width: 32.66666667%;
+  font-size: 0;
+  height: 2.3rem;
+  line-height: 2rem;
+}
+.form-controls a:nth-of-type(3n + 1) {
+  margin-left: 0;
+}
+@media only screen and (max-width: 800px) and (min-width: 481px) {
+  .form-controls a {
+    width: 49.5%;
+  }
+  .form-controls a:nth-of-type(n) {
+    margin-left: 1%;
+  }
+  .form-controls a:nth-of-type(2n + 1) {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .form-controls a {
+    width: 100%;
+  }
+  .form-controls a:nth-of-type(1n + 1) {
+    margin-left: 0;
+  }
+}
+.form-controls a::before {
+  font-family: flexkit-icons;
+  font-size: 0.857rem;
+}
+.form-controls a.tpopup::before {
+  content: "\e074";
+}
+.form-controls a[href*="free-form-maker"]::before {
+  content: "\e09e";
+}
+.form-controls a._tdelete img {
+  display: none;
+}
+.form-controls a._tdelete::before {
+  content: "\e078";
+}
+.newslog-admin-actions a {
+  margin-left: 1%;
+  margin-right: 0;
+  width: 49.5%;
+}
+.newslog-admin-actions a:nth-of-type(2n + 1) {
+  margin-left: 0;
+}
+@media only screen and (max-width: 800px) and (min-width: 481px) {
+  .newslog-admin-actions a {
+    width: 49.5%;
+  }
+  .newslog-admin-actions a:nth-of-type(n) {
+    margin-left: 1%;
+  }
+  .newslog-admin-actions a:nth-of-type(2n + 1) {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .newslog-admin-actions a {
+    width: 100%;
+  }
+  .newslog-admin-actions a:nth-of-type(1n + 1) {
+    margin-left: 0;
+  }
+}

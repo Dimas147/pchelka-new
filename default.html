@@ -8,39 +8,14 @@
 
 {$template:_header}
 
-<div class="container">
-
-    <!-- Content box -->
-    <section class="grid_6 push_3" role="main">
-        {repeat:Section box:key:1}
-        <article>
-            <h2>{$header:content_key}</h2>
-            {$content:content_key1}
-            {$content:content_key2}
-        </article>
-        {/repeat}
-    </section>
-
-    <!-- Left box -->
-    <aside class="grid_3 pull_6" role="complementary">
-        {repeat:Aside left box:key:1}
-        <section class="aside-box">
-            <h3>{$header:left_key}</h3>
-            {$content:left_key}
-        </section>
-        {/repeat}
-    </aside>
-
-    <!-- Right box -->
-    <aside class="grid_3" role="complementary">
-        {repeat:Aside right box:key:1}
-        <section class="aside-box">
-            <h3>{$header:right_key}</h3>
-            {$content:right_key}
-        </section>
-        {/repeat}
-    </aside>
-</div>
+<section role="main" class="space container">
+    {repeat:Section box:key:1}
+    <article class="grid_12">
+        <h2 class="title-underlined text-center">{$header:content_key}</h2>
+        {$content:content_key}
+    </article>
+    {/repeat}
+</section>
 
 {$template:_footer}
 {$template:_mobile elements}

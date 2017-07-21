@@ -1,53 +1,70 @@
 // Product Style
-.product{
+.product {
 
-    .edit-product-btn{
-        .button();
-        margin-bottom: 0.72rem;
-        margin-right: 0.35rem;
-        margin-left: 0.35rem;
-        text-transform: capitalize;
+    .edit-product-btn {
+        position         : absolute;
+        left             : 0;
+        top              : 0;
+        background-color : @primary-bg;
+        color            : @primary-color;
+        padding          : 5px;
     }
-    .product-image{
-        display : block;
+    .product-image {
+        display       : block;
+        background    : @primary-color;
+        padding       : 2.14rem;
+        margin-bottom : 2.14rem;
 
-        img{
+        img {
             width : 100%;
         }
     }
-    .product-name{ }
+    .product-name {
+    }
 
-    .product-price {}
+    .product-price {
+        display        : block;
+        font-weight    : 700;
+        font-size      : 2.428em;
+        line-height    : 1;
+        color          : #292929;
+        padding        : 0;
+        //text-transform : uppercase;
+    }
 
     .product-info {
         .title {
-            font-weight: bold;
+            font-weight : bold;
         }
     }
 
-    .product-description-short{
-        border-bottom : 1px solid @gray-light;
-        border-top    : 1px solid @gray-light;
-        padding       : 1em 0;
+    .product-description-short {
     }
 
-    .product-description-full{ }
+    .product-description-full {
+        &:empty {
+            display : none;
+        }
+    }
 
-    .product-options-listing{
+    .product-option {
         margin-bottom : 1em;
-        overflow: hidden;
+        overflow      : hidden;
+    }
 
-        .product-option{
+    .product-options-listing {
+        overflow : hidden;
+
+        .product-option {
             overflow : hidden;
-            margin-bottom: 1em;
 
-            & > label{
+            & > label {
                 font-weight : bold;
                 width       : auto;
-                display: inline;
+                display     : inline;
             }
 
-            & > div label{
+            & > div label {
                 cursor       : pointer;
                 float        : left;
                 font-size    : 12px;
@@ -55,18 +72,89 @@
                 width        : 27%;
             }
 
-            select{
+            select {
                 padding : 2px;
                 width   : auto;
             }
         }
     }
 
-    .tcart-add{
+    .tcart-add {
         .button();
         .user-select();
         .box-shadow(none; @input-shadow-focus);
-        display: block;
+        display : block;
+        font-weight: 900;
+    }
 
+    .product-rating {
+        .r-head-text, .total-review {
+            display : none;
+        }
+        .starrating {
+            .inline-block();
+        }
+    }
+    .product-top-part {
+        margin-bottom : @font-size-base;
+    }
+    .stars-container{
+
+    }
+    @media only screen and (max-width : @responsive-size-tablet) {
+        .product-image {
+            .inline-block();
+            max-width: 50%;
+        }
+    }
+}
+
+.product-tabs {
+    margin-bottom : 2.142rem;
+    .tab_nav {
+        margin-top    : 0;
+        margin-bottom : 0;
+        .inline-block-wrap(top);
+        li {
+            .grid-elements(1; 0; true; 1; 1);
+            width  : auto;
+            &.active {
+                a {
+                    color      : #FFFFFF;
+                    background : #292929;
+                    border     : 1px solid #101010;
+                }
+            }
+            margin : 0 1px 0 0;
+            @media only screen and (max-width : @responsive-size-phone) {
+                margin : 0;
+            }
+            a {
+                text-shadow     : none;
+                color           : inherit;
+                padding         : 8px 15px;
+                font-weight     : bold;
+                text-decoration : none;
+                display         : block;
+                background      : #EEEEEE;
+                border-radius   : 0 0 0 0;
+                border          : 1px solid @input-border-color;
+                margin          : 0 0 -1px 0;
+            }
+        }
+        & + .product-tab {
+            display : block;
+        }
+    }
+    .product-tab {
+        display       : none;
+        padding       : 1.07em;
+        background    : #FDFDFD;
+        border        : 1px solid @input-border-color;
+        border-radius : 0;
+        .box-shadow(0 2px 3px rgba(0, 0, 0, 0.05));
+        .h2 {
+            margin-bottom : 1.07rem;
+        }
     }
 }

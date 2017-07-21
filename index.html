@@ -56,37 +56,14 @@
     </article>
 
     <article class="container space">
-        <h2 class="grid_12 title-underlined">{$header:facts-in-numbers-main-title:static}</h2>
-        {adminonly}
-        <div class="grid_12">{repeat:facts-in-numbers-list:key:0:static} {/repeat}</div>
-        {/adminonly}
+        <h2 class="grid_12 title-underlined">{$header:products-for-sale:static}</h2>
         <div class="grid_12">
-            <ul class="list-facts-in-numbers" id="counter">
-                {repeat:facts-in-numbers-list:key:0:static}
-                <li class="{$prepop:icon-class_key:text:static:readonly}">
-                    {adminonly}
-                    <div class="panel">
-                        <div class="panel-header">Counter:</div>
-                        <div class="panel-content">
-                            <p>Icon class{$prepop:icon-class_key:text:static}</p>
-
-                            <p>First value{$prepop:first-value_key:text:static}</p>
-
-                            <p>Target value{$prepop:target-value_key:text:static}</p>
-
-                            <p>Other signs{$prepop:other-signs_key:text:static}</p>
-                        </div>
-                    </div>
-                    {/adminonly}
-                    <p class="value">
-                        <span class="counter-value" data-count="{$prepop:target-value_key:text:static:readonly}">{$prepop:first-value_key:text:static:readonly}</span>
-                        <span class="other-sign">{$prepop:other-signs_key:text:static:readonly}</span>
-                    </p>
-
-                    <h3 class="title h5">{$header:facts-in-numbers-title_key:static}</h3>
-                </li>
-                {/repeat}
-            </ul>
+            <div id="products-in-carousel">
+                {$productlist:_products list carousel::12}
+            </div>
+        </div>
+        <div class="grid_12 space-top text-center">
+            <a class="btn big" href="">Other products</a>
         </div>
     </article>
 
@@ -98,7 +75,7 @@
             <div class="grid_6 prefix_3 suffix_3">
                 {$form:contact-us-form:{$prepop:submit:text:static:readonly}}
                 {adminonly}
-                <div class="panel">
+                <div class="panel admin-panel">
                     <div class="panel-header">Submit button name:</div>
                     <div class="panel-content">
                         {$prepop:submit:text:static}
@@ -111,12 +88,37 @@
 
     <article class="light-bg">
         <div class="container space">
-            <h2 class="grid_12 title-underlined">{$header:products-for-sale:static}</h2>
-
+            <h2 class="grid_12 title-underlined">{$header:facts-in-numbers-main-title:static}</h2>
+            {adminonly}
+            <div class="grid_12">{repeat:facts-in-numbers-list:key:0:static} {/repeat}</div>
+            {/adminonly}
             <div class="grid_12">
-                <div id="products-in-carousel">
-                    {$productlist:_products list carousel::12}
-                </div>
+                <ul class="list-facts-in-numbers" id="counter">
+                    {repeat:facts-in-numbers-list:key:0:static}
+                    <li class="{$prepop:icon-class_key:text:static:readonly}">
+                        {adminonly}
+                        <div class="panel admin-panel">
+                            <div class="panel-header">Counter:</div>
+                            <div class="panel-content">
+                                <p>Icon class{$prepop:icon-class_key:text:static}</p>
+
+                                <p>First value{$prepop:first-value_key:text:static}</p>
+
+                                <p>Target value{$prepop:target-value_key:text:static}</p>
+
+                                <p>Other signs{$prepop:other-signs_key:text:static}</p>
+                            </div>
+                        </div>
+                        {/adminonly}
+                        <p class="value">
+                            <span class="counter-value" data-count="{$prepop:target-value_key:text:static:readonly}">{$prepop:first-value_key:text:static:readonly}</span>
+                            <span class="other-sign">{$prepop:other-signs_key:text:static:readonly}</span>
+                        </p>
+
+                        <h3 class="title h5">{$header:facts-in-numbers-title_key:static}</h3>
+                    </li>
+                    {/repeat}
+                </ul>
             </div>
         </div>
     </article>
@@ -178,6 +180,9 @@
                 <div class="news-list">
                     {$newslist:_news list:desc:3}
                 </div>
+            </div>
+            <div class="grid_12 space-top text-center">
+                <a class="btn big" href="">Other news</a>
             </div>
         </div>
     </article>
