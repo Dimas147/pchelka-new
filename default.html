@@ -7,14 +7,20 @@
 <body>
 
 {$template:_header}
+{$template:_breadcrumbs}
 
-<section role="main" class="space container">
+<section role="main">
     {repeat:Section box:key:1}
-    <article class="grid_12">
-        <h2 class="title-underlined text-center">{$header:content_key}</h2>
-        {$content:content_key}
+    <article class="space container">
+        <h2 class="title-underlined text-center grid_12">{$header:content_key}</h2>
+        <div class="grid_12">
+            {$content:content_key}
+        </div>
     </article>
     {/repeat}
+    <div class="light-bg">
+        {$template:_contacts}
+    </div>
 </section>
 
 {$template:_footer}

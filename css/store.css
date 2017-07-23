@@ -1,10 +1,37 @@
 .product .edit-product-btn {
   position: absolute;
-  left: 0;
-  top: 0;
-  background-color: #e7931a;
+  left: 10px;
+  top: 10px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  height: auto;
+  line-height: 2.3em;
+  padding: 0 1em;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
   color: #FFF;
-  padding: 5px;
+  border-color: #e7931a;
+  background-color: #e7931a;
+  border-radius: 6px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-width: 2px;
+  border-style: solid;
+  transition: background ease-in-out 0.3s, border ease-in-out 0.3s;
+}
+.product .edit-product-btn:hover,
+.product .edit-product-btn:active,
+.product .edit-product-btn.active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
 }
 .product .product-image {
   display: block;
@@ -64,7 +91,6 @@
   padding: 0 1em;
   font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
   font-weight: 700;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
   display: inline-block;
   vertical-align: middle;
@@ -81,6 +107,10 @@
   user-select: none;
   display: block;
   font-weight: 900;
+  font-size: 1.125em;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  padding: 0.805em;
 }
 .product .tcart-add:hover,
 .product .tcart-add:active,
@@ -112,8 +142,9 @@
 }
 .product-tabs .tab_nav {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 2.142rem;
   font-size: 0;
+  text-align: center;
 }
 .product-tabs .tab_nav >* {
   font-size: 16px;
@@ -121,66 +152,77 @@
   vertical-align: top;
 }
 .product-tabs .tab_nav li {
-  margin-left: 0%;
-  margin-right: 0;
-  width: 100%;
-  width: auto;
-  margin: 0 1px 0 0;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  height: auto;
+  line-height: 2.3em;
+  padding: 0 1em;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  color: #FFF;
+  background-color: #e7931a;
+  border-radius: 6px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-width: 2px;
+  border-style: solid;
+  transition: background ease-in-out 0.3s, border ease-in-out 0.3s;
+  color: #e7931a;
+  border-color: #e7931a;
+  background-color: transparent;
+  font-size: 1.125rem;
+  letter-spacing: 0.12rem;
+  line-height: 1.5;
+  padding: 0.805rem 1.66rem;
+  margin-left: 0.9375rem;
+  margin-right: 0.9375rem;
 }
-.product-tabs .tab_nav li:nth-of-type(1n + 1) {
-  margin-left: 0;
+.product-tabs .tab_nav li:hover,
+.product-tabs .tab_nav li:active,
+.product-tabs .tab_nav li.active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
 }
-@media only screen and (max-width: 800px) and (min-width: 481px) {
-  .product-tabs .tab_nav li {
-    width: 100%;
-  }
-  .product-tabs .tab_nav li:nth-of-type(1n + 1) {
-    margin-left: 0;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .product-tabs .tab_nav li {
-    width: 100%;
-  }
-  .product-tabs .tab_nav li:nth-of-type(1n + 1) {
-    margin-left: 0;
-  }
-}
-.product-tabs .tab_nav li.active a {
-  color: #FFFFFF;
-  background: #292929;
-  border: 1px solid #101010;
-}
-@media only screen and (max-width: 320px) {
-  .product-tabs .tab_nav li {
-    margin: 0;
-  }
+.product-tabs .tab_nav li:hover,
+.product-tabs .tab_nav li:active,
+.product-tabs .tab_nav li.active {
+  color: #FFF;
+  border-color: #e7931a;
+  background-color: #e7931a;
 }
 .product-tabs .tab_nav li a {
-  text-shadow: none;
-  color: inherit;
-  padding: 8px 15px;
-  font-weight: bold;
-  text-decoration: none;
-  display: block;
-  background: #EEEEEE;
-  border-radius: 0 0 0 0;
-  border: 1px solid #FFF;
-  margin: 0 0 -1px 0;
+  color: #e7931a;
+}
+.product-tabs .tab_nav li.active,
+.product-tabs .tab_nav li:hover {
+  color: #FFF;
+  background: #e7931a;
+}
+.product-tabs .tab_nav li.active a,
+.product-tabs .tab_nav li:hover a {
+  color: #FFF;
 }
 .product-tabs .tab_nav + .product-tab {
   display: block;
 }
 .product-tabs .product-tab {
   display: none;
-  padding: 1.07em;
-  background: #FDFDFD;
-  border: 1px solid #FFF;
-  border-radius: 0;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 }
-.product-tabs .product-tab .h2 {
-  margin-bottom: 1.07rem;
+.product-price-buy {
+  margin-bottom: 2.142rem;
+}
+.product-price-buy input,
+.product-price-buy div {
+  margin-bottom: 1rem;
+  text-align: center;
 }
 .show-more {
   text-align: center;
@@ -682,6 +724,12 @@
     margin-left: 0;
   }
 }
+#checkout-pickup p:nth-child(4) {
+  display: none;
+}
+#checkout-signup p:nth-child(4) {
+  display: none;
+}
 #checkout-pickup-form::after {
   content: "";
   display: table;
@@ -797,6 +845,14 @@
 #plugin-quote-quoteform .recaptcha_links {
   margin-bottom: 0;
 }
+#plugin-quote-quoteform #fieldset-leftColumn p:nth-child(3),
+#plugin-quote-quoteform #fieldset-leftColumn p:nth-child(6) {
+  display: none;
+}
+#plugin-quote-quoteform #fieldset-rightColumn p:nth-child(3),
+#plugin-quote-quoteform #fieldset-rightColumn p:nth-child(4) {
+  display: none;
+}
 .cart-content {
   margin-bottom: 0;
   width: 100%;
@@ -823,6 +879,7 @@
   background-color: #FAFAFA;
   font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
   font-size: 0.928rem;
+  letter-spacing: 0.12em;
 }
 .cart-content .quote-item-name,
 .cart-content .toastercart-item-name,
@@ -1386,7 +1443,7 @@
   font-size: inherit;
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDDDDD;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
@@ -1403,7 +1460,7 @@
   font-size: inherit;
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDDDDD;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
@@ -1448,7 +1505,7 @@
   min-height: 180px;
   width: 100%;
   display: block;
-  border: 1px solid #DDD;
+  border: 1px solid #DDDDDD;
   padding: 10px;
 }
 #quote-details {
@@ -1463,7 +1520,7 @@
 #quote-details h2 {
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDDDDD;
   padding-bottom: 15px;
   margin-bottom: 10px;
   font-size: 2em;
@@ -1474,7 +1531,7 @@
   padding: 5px;
 }
 #quote-details span {
-  color: #000;
+  color: #000000;
 }
 #quote-details .dates {
   margin-top: 0;
@@ -1482,7 +1539,7 @@
 }
 #quoteControlls .quote-controlls {
   background: rgba(170, 170, 170, 0.008);
-  border-top: 5px solid #888;
+  border-top: 5px solid #888888;
   bottom: 0;
   left: 0;
   padding: 10px 0;
@@ -1495,8 +1552,8 @@
   width: 500px;
   padding: 5px;
   font-size: 18px;
-  color: #666;
-  border: 1px solid #DDD;
+  color: #666666;
+  border: 1px solid #DDDDDD;
 }
 body.quote {
   font-size: 14px;
@@ -1504,10 +1561,18 @@ body.quote {
 }
 body.quote .container {
   max-width: 960px;
+  width: auto;
+}
+body.quote .logo-background {
+  background: #343434;
+}
+body.quote .logo-background.box {
+  background: #343434;
 }
 body.quote header {
+  position: relative;
   line-height: 1.4;
-  padding-top: 0;
+  padding: 0;
 }
 body.quote .logo-quote {
   text-align: center;
@@ -1516,7 +1581,8 @@ body.quote .box {
   margin-top: 15px;
   margin-bottom: 15px;
   padding: 15px;
-  border: 1px solid #DDD;
+  border: 1px solid #DDDDDD;
+  background: #FFF;
 }
 body.quote .box p:empty {
   display: none;
@@ -1554,7 +1620,7 @@ body.quote .quote-summary-row,
 body.quote .post-purchase-row {
   margin: 0;
   padding: 10px;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDDDDD;
 }
 body.quote .dates span {
   font-weight: bold;
@@ -1572,7 +1638,7 @@ body.quote .video-container h4.title {
   font-size: inherit;
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDDDDD;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
@@ -1583,7 +1649,7 @@ body.quote .quote-expired-notification {
 body.quote #paypal_button {
   margin-bottom: 15px;
   padding: 15px;
-  border: 1px solid #DDD;
+  border: 1px solid #DDDDDD;
 }
 body.quote #paypal_button fieldset {
   margin: 0;
@@ -1596,7 +1662,7 @@ body.quote #paypal_button legend {
   font-size: inherit;
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDDDDD;
   margin-bottom: 10px;
 }
 body.quote #paypal_button .seo-tip {
@@ -1630,7 +1696,13 @@ body.quote #paypalSubmit {
   }
 }
 body.quote .toaster-quote-content {
-  border-top: 1px solid #DDD;
+  border-top: 1px solid #DDDDDD;
+  background: #FFF;
+}
+body.quote select,
+body.quote textarea,
+body.quote input {
+  border-color: #DDDDDD;
 }
 #user-grid-part ul.user-stats {
   list-style: none outside none;

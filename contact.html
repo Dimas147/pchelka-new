@@ -8,57 +8,31 @@
 
 {$template:_header}
 
-<div class="breadcrumbs-container">
-    <ul class="list-breadcrumbs text-center">
-        <li>
-            <a href="{$website:url}">Main</a>
-        </li>
-        <li>
-            {$page:navName}
-        </li>
-    </ul>
-</div>
+{$template:_breadcrumbs}
 
 <section role="main">
-    <article class="container space-top">
-        <ul class="list-contact-information text-right">
-            <li class="icon-location">
-                <h3>Address</h3>
-                <address>
-                    {$plugin:widcard:BizAddress1:notag},<br />
-                    {$plugin:widcard:BizCity:notag}, {$plugin:widcard:BizCountry:notag}
-                </address>
-            </li>
-            <li class="icon-mail">
-                <h3>E-mail</h3>
-                <p>
-                    <a href="mailto:{$plugin:widcard:BizEmail:notag}" target="_blank">{$plugin:widcard:BizEmail:notag}</a>
-                </p>
-            </li>
-            <li class="icon-phone">
-                <h3>Phone</h3>
-                <p>
-                    <a href="tel:{$plugin:widcard:BizTelephone:notag}" target="_blank">{$plugin:widcard:BizTelephone:notag}</a>
-                </p>
-            </li>
-        </ul>
-    </article>
-    <article class="space container">
-        <h2 class="grid_12 title-underlined">{$header:contact-us-main-title}</h2>
-        <div class="grid_8 prefix_2 suffix_2">
-            {$form:contact-page-form:{$prepop:submit:text:static:readonly}}
-            {adminonly}
-            <div class="panel admin-panel">
-                <div class="panel-header">Submit button name:</div>
-                <div class="panel-content">
-                    {$prepop:submit:text:static}
+    {$template:_contacts}
+    <article class="parallax take-from-widget height-auto space contact-us-container light-bg">
+        {$imageonly:contact-us-parallax-bg:1920:static}
+        <div class="container">
+            <h2 class="grid_12 title-underlined">{$header:contact-us-main-title:static}</h2>
+
+            <div class="grid_6 prefix_3 suffix_3">
+                {$form:contact-us-form:{$prepop:submit:text:static:readonly}}
+                {adminonly}
+                <div class="panel admin-panel">
+                    <div class="panel-header">Submit button name:</div>
+                    <div class="panel-content">
+                        {$prepop:submit:text:static}
+                    </div>
                 </div>
+                {/adminonly}
             </div>
-            {/adminonly}
         </div>
     </article>
 
-    <article class="container space-bottom">
+    <article class="container space">
+        <h2 class="grid_12 title-underlined">{$header:map-title}</h2>
         <div class="grid_8 prefix_2 suffix_2 map-container">
             {$plugin:gmaps:bizlocation:1200:300:18}
         </div>

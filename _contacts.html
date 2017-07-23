@@ -1,0 +1,24 @@
+<article class="container space">
+	<h2 class="grid_12 title-underlined">{$header:contact-data-title:static}</h2>
+	<ul class="list-contact-information grid_12 text-right">
+		<li class="icon-location">
+			<h3>{$header:our-address:static}</h3>
+			<address>
+				{$plugin:widcard:BizAddress1:notag},<br />
+				{$plugin:widcard:BizCity:notag}, {$plugin:widcard:BizCountry:notag}
+			</address>
+		</li>
+		<li class="icon-mail">
+			<h3>{$header:our-email:static}</h3>
+			<p>
+				<a href="mailto:{$plugin:widcard:BizEmail:notag}" target="_blank">{$plugin:widcard:BizEmail:notag}</a>
+			</p>
+		</li>
+		<li class="icon-phone">
+			<h3>{$header:our-phone:static}</h3>
+			<p>
+				<a href="tel:{$plugin:widcard:BizTelephone:notag}" target="_blank">{$plugin:widcard:BizTelephone:notag}</a>
+			</p>
+		</li>
+	</ul>
+</article>

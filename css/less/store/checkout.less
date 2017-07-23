@@ -249,6 +249,21 @@
 	}
 }
 
+#checkout-pickup {
+	p{
+		&:nth-child(4){
+			display: none;
+		}
+	}
+}
+#checkout-signup{
+	p{
+		&:nth-child(4){
+			display: none;
+		}
+	}
+}
+
 #checkout-pickup-form {
 	.clearfix-mixin();
 	div.checkout-pickup-default {
@@ -353,6 +368,20 @@
 #plugin-quote-quoteform {
 	.recaptcha_links {
 		margin-bottom : 0;
+	}
+	#fieldset-leftColumn{
+		p{
+			&:nth-child(3), &:nth-child(6){
+				display: none;
+			}
+		}
+	}
+	#fieldset-rightColumn{
+		p{
+			&:nth-child(3), &:nth-child(4){
+				display: none;
+			}
+		}
 	}
 }
 

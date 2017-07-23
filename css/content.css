@@ -831,6 +831,18 @@ ul.list-select > li.active::after {
 .icon-remove-circle:before {
   content: "\e0e6";
 }
+.icon-bee:before {
+  content: "\e900";
+}
+.icon-scale:before {
+  content: "\e901";
+}
+.icon-thermometer:before {
+  content: "\e902";
+}
+.icon-weight:before {
+  content: "\e903";
+}
 .container {
   position: relative;
   margin-left: auto;
@@ -2923,6 +2935,10 @@ ul.list-contact-information a {
 ul.list-contact-information a:hover {
   color: #e7931a;
 }
+ul.list-contact-information p,
+ul.list-contact-information address {
+  margin-bottom: 0;
+}
 table {
   width: 100%;
   background-color: transparent;
@@ -2950,7 +2966,7 @@ table tfoot {
   background: #d5d5d5;
 }
 table table {
-  background-color: #fff;
+  background-color: #FFFFFF;
 }
 table.table-outline {
   border: 1px solid #dddddd;
@@ -3047,6 +3063,18 @@ table.responsive .table-head {
     margin-bottom: 0.5em;
     opacity: 0.75;
   }
+}
+table.product-characteristics-table {
+  margin-top: 2.142rem;
+  margin-bottom: 2.142rem;
+}
+table.product-characteristics-table td {
+  padding: 13px 25px;
+  line-height: 1.5;
+  border: none;
+}
+table.product-characteristics-table td:first-child {
+  color: #b7b7b7;
 }
 tr.primary,
 th.primary,

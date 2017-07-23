@@ -111,6 +111,7 @@ footer h4 {
 }
 .site-description {
   padding-right: 1.07rem;
+  margin-bottom: 0;
 }
 .copyright {
   background: #242424;
@@ -216,6 +217,12 @@ footer h4 {
   color: #FFF;
   border-color: #5B5B5B;
   background-color: #5B5B5B;
+}
+.footer-box-container {
+  margin-bottom: -4rem;
+}
+.footer-box-container .footer-box {
+  margin-bottom: 4rem;
 }
 form::after {
   content: "";

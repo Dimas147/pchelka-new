@@ -4,7 +4,7 @@
     {$template:_head}
 </head>
 <body class="index-page">
-<header role="banner">
+<header role="banner" class="d-visible">
     <div class="container">
         <h1 class="logo grid_3" itemscope itemtype="http://schema.org/Organization">
             <a href="{$website:url}" title="{$plugin:widcard:BizOrgName:notag}" itemprop="url">
@@ -45,6 +45,7 @@
 </div>
 {repeat:top-slider:key:0}{/repeat}
 <section role="main">
+
     <article class="light-bg">
         <div class="container space">
             <h2 class="title-underlined grid_12">{$header:content_1}</h2>
@@ -63,14 +64,14 @@
             </div>
         </div>
         <div class="grid_12 space-top text-center">
-            <a class="btn big" href="">Other products</a>
+            {$content:bottom-button_1}
         </div>
     </article>
 
     <article class="parallax take-from-widget height-auto space contact-us-container light-bg">
-        {$imageonly:contact-us-parallax-bg:1920}
+        {$imageonly:contact-us-parallax-bg:1920:static}
         <div class="container">
-            <h2 class="grid_12 title-underlined">{$header:contact-us-main-title}</h2>
+            <h2 class="grid_12 title-underlined">{$header:contact-us-main-title:static}</h2>
 
             <div class="grid_6 prefix_3 suffix_3">
                 {$form:contact-us-form:{$prepop:submit:text:static:readonly}}
@@ -111,8 +112,7 @@
                         </div>
                         {/adminonly}
                         <p class="value">
-                            <span class="counter-value" data-count="{$prepop:target-value_key:text:static:readonly}">{$prepop:first-value_key:text:static:readonly}</span>
-                            <span class="other-sign">{$prepop:other-signs_key:text:static:readonly}</span>
+                            <span class="counter-value" data-count="{$prepop:target-value_key:text:static:readonly}">{$prepop:first-value_key:text:static:readonly}</span>&nbsp;<span class="other-sign">{$prepop:other-signs_key:text:static:readonly}</span>
                         </p>
 
                         <h3 class="title h5">{$header:facts-in-numbers-title_key:static}</h3>
@@ -156,12 +156,12 @@
                         </div>
                         <div class="testimonials-quote-container clearfix">
                             <figure class="testimonial-image">
-                                {$imageonly:testimonial-img_key:70:static}
+                                {$imageonly:testimonial-img_key-1:70:static}
                             </figure>
                             <blockquote class="noquotes">
-                                {$textonly:testimonial-text_key:static}
+                                {$textonly:testimonial-text_key-1:static}
                             </blockquote>
-                            <p class="testimonial-name">{$header:testimonial-name_key:static}</p>
+                            <p class="testimonial-name">{$header:testimonial-name_key-1:static}</p>
                         </div>
                     </div>
                 </div>
@@ -182,10 +182,12 @@
                 </div>
             </div>
             <div class="grid_12 space-top text-center">
-                <a class="btn big" href="">Other news</a>
+                {$content:bottom-button_2}
             </div>
         </div>
     </article>
+
+    {$template:_contacts}
 
 </section>
 {$template:_footer}
