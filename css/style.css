@@ -988,7 +988,17 @@ textarea.resize {
   overflow: hidden;
   width: 70px;
   height: 70px;
+  line-height: 70px;
+  text-align: center;
+  z-index: 1;
   border-radius: 50%;
+  background: #EEEEEE;
+}
+.testimonials-quote-container .testimonial-image::before {
+  color: #B7B7B7;
+  font-family: flexkit-icons;
+  content: "\e05f";
+  font-size: 40px;
 }
 .testimonials-quote-container .testimonial-image img {
   width: 100%;

@@ -138,11 +138,11 @@
   }
 }
 .product-tabs {
-  margin-bottom: 2.142rem;
+  margin-bottom: 0;
 }
 .product-tabs .tab_nav {
   margin-top: 0;
-  margin-bottom: 2.142rem;
+  margin-bottom: 5.625rem;
   font-size: 0;
   text-align: center;
 }
@@ -272,6 +272,9 @@
 }
 .product-list.owl-carousel {
   margin-bottom: -40px;
+}
+.product-list .total-review {
+  display: none;
 }
 .product-item {
   position: relative;

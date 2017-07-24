@@ -559,13 +559,17 @@ ul {
 			}
 		}
 		a {
-
+			&.current {
+				color          : #B8B8B8;
+				pointer-events : none;
+				cursor         : default;
+			}
 		}
 	}
-	&.list-contact-information{
-		margin-bottom: -2.142rem;
+	&.list-contact-information {
+		margin-bottom : -2.142rem;
 		.inline-block-wrap(top);
-		li{
+		li {
 			.grid-elements(3; @grid-margin-width; true; 2; 1);
 			padding-left : 3.857rem;
 			margin       : 0 0 2.142rem;
@@ -581,14 +585,14 @@ ul {
 				.border-radius(50%);
 			}
 		}
-		h3{
-			margin-bottom: 0.5rem;
+		h3 {
+			margin-bottom : 0.5rem;
 		}
-		a{
+		a {
 			.link-color(@text-color; @brand-primary);
 		}
-		p, address{
-			margin-bottom: 0;
+		p, address {
+			margin-bottom : 0;
 		}
 	}
 }

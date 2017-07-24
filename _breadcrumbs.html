@@ -1,10 +1,18 @@
 <div class="breadcrumbs-container">
-	<ul class="list-breadcrumbs text-center">
-		<li>
-			<a href="{$website:url}">{$header:main-page:static}</a>
-		</li>
-		<li>
-			{$page:navName}
-		</li>
-	</ul>
+    <ul class="list-breadcrumbs text-center" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="{$website:url}">
+                <span itemprop="name">{$header:main-page:static}</span>
+            </a>
+            <meta itemprop="position" content="1"/>
+        </li>
+        <li itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="{$page:url}" class="current">
+                <span itemprop="name">{$page:navName}</span>
+            </a>
+            <meta itemprop="position" content="2"/>
+        </li>
+    </ul>
 </div>

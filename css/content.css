@@ -2877,6 +2877,11 @@ ul.list-breadcrumbs li + li::before {
   color: #B8B8B8;
   content: "/ ";
 }
+ul.list-breadcrumbs a.current {
+  color: #B8B8B8;
+  pointer-events: none;
+  cursor: default;
+}
 ul.list-contact-information {
   margin-bottom: -2.142rem;
   font-size: 0;
