@@ -511,14 +511,14 @@ ul {
 		}
 	}
 	&.list-facts-in-numbers {
-		margin-bottom : -1.5rem;
+		margin-bottom : -4rem;
 		& > .tpopup {
 			display : none;
 		}
 		.inline-block-wrap(top);
 		li {
 			.grid-elements(4; @grid-margin-width; true; 2; 1);
-			margin-bottom : 1.5rem;
+			margin-bottom : 4rem;
 			text-align    : center;
 			&::before {
 				display       : block;
@@ -570,7 +570,7 @@ ul {
 		margin-bottom : -2.142rem;
 		.inline-block-wrap(top);
 		li {
-			.grid-elements(3; @grid-margin-width; true; 2; 1);
+			.grid-elements(3; @grid-margin-width; true; 3; 1);
 			padding-left : 3.857rem;
 			margin       : 0 0 2.142rem;
 			text-align   : left;
@@ -593,6 +593,71 @@ ul {
 		}
 		p, address {
 			margin-bottom : 0;
+		}
+	}
+	&.list-additional-controls {
+		.inline-block-wrap(middle);
+		li {
+			position : relative;
+			padding: 0 5px;
+		}
+		.btn{
+			background: none;
+			color: @primary-color;
+			border: none;
+			&:hover{
+				color: @brand-primary;
+			}
+		}
+		.toaster-cart {
+			line-height : 0;
+			.cartblock-totaltax-row, span, .cartblock-totalprice-row {
+				display : none;
+			}
+			.toaster-cart-quantity, a[href="checkout.html"] {
+				display : block;
+			}
+			.cartblock-items-row {
+				position     : relative;
+				padding-left : 1.785rem;
+				line-height  : 0;
+				.inline-block();
+				&::before {
+					display     : block;
+					position    : absolute;
+					left        : 0;
+					top         : 0;
+					font-family : @font-family-icons;
+					content     : "\e029";
+					font-size   : 25px;
+					height      : 25px;
+					line-height : 25px;
+					width       : 25px;
+					color       : @primary-color;
+				}
+				.toaster-cart-quantity {
+					.inline-block();
+					height      : 25px;
+					line-height : 25px;
+					width       : 25px;
+					background  : @link-color;
+					color       : @primary-color;
+					text-align  : center;
+					font-size   : 0.8rem;
+					.border-radius(50%);
+				}
+			}
+			a[href="checkout.html"] {
+				position  : absolute;
+				top       : 0;
+				left      : 0;
+				right     : 0;
+				bottom    : 0;
+				font-size : 0;
+			}
+			&:hover{
+				color: @primary-color;
+			}
 		}
 	}
 }

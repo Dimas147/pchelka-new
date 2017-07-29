@@ -64,17 +64,6 @@ header, footer {
 	}
 }
 
-.additional-controls {
-	.btn {
-		border-width   : 0;
-		line-height    : 1.15;
-		padding-top    : 5px;
-		padding-bottom : 6px;
-		margin-left    : 0.3125rem;
-		margin-right   : 0.3125rem;
-	}
-}
-
 // -- NAV Style
 nav {
 }
@@ -152,6 +141,9 @@ footer {
 	padding    : 1em 0;
 	.copyright-text {
 		padding-top : 0.5rem;
+		@media only screen and (max-width : @responsive-size-mobile) {
+			padding-bottom : 0.5rem;
+		}
 	}
 }
 
@@ -160,6 +152,9 @@ footer {
 		margin-bottom : 0.766em;
 		line-height   : 1;
 		color         : @primary-color;
+		@media only screen and (max-width : @responsive-size-mobile) {
+			line-height : 1.3;
+		}
 		small {
 			position       : relative;
 			.inline-block();
@@ -226,9 +221,9 @@ footer {
 	.button-color(@primary-color; #D8840A; #D8840A; @primary-color; #5B5B5B; #5B5B5B);
 }
 
-.footer-box-container {
+.footer-box-container, .testimonial-slider-container {
 	margin-bottom : -4rem;
-	.footer-box {
+	.footer-box, .testimonial-slider-box {
 		margin-bottom : 4rem;
 	}
 }

@@ -7,13 +7,15 @@
             </a>
         </div>
         <nav id="main-menu" role="navigation" class="grid_7 text-center">{$menu:main:_main menu}</nav>
-        <div class="grid_2 text-right additional-controls">
-            <!--{ $search:form}-->
-            <!--{ $store:cartblock}-->
-            <a href="" class="icon-phone btn icon white"></a>
-            <a href="" class="icon-search btn icon white"></a>
-            <a href="" class="icon-cart btn icon white"></a>
-        </div>
+        <ul class="grid_2 text-right list-additional-controls">
+            <li>
+                <a href="" class="icon-search btn icon"></a>
+                <!--{_$search:form}-->
+            </li>
+            <li>
+                {$store:cartblock}
+            </li>
+        </ul>
     </div>
 </header>
 <div class="title-part parallax take-from-widget height-auto bg-scroll">

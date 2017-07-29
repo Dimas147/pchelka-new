@@ -2522,10 +2522,23 @@ h1,
   font-size: 3.75em;
   line-height: 1.16667;
 }
+@media only screen and (max-width: 480px) {
+  h1,
+  .h1 {
+    font-size: 2.3em;
+    line-height: 1.3;
+  }
+}
 h2,
 .h2 {
   font-size: 2.857em;
   line-height: 1.13;
+}
+@media only screen and (max-width: 480px) {
+  h2,
+  .h2 {
+    font-size: 2.2em;
+  }
 }
 h3,
 .h3 {
@@ -2578,7 +2591,7 @@ address {
   height: 2px;
   width: 100px;
   margin-left: -50px;
-  background: #b7b7b7;
+  background: #B7B7B7;
   content: "";
 }
 blockquote {
@@ -2797,7 +2810,7 @@ ul.list-select > li:hover {
   background: #eeeeee;
 }
 ul.list-facts-in-numbers {
-  margin-bottom: -1.5rem;
+  margin-bottom: -4rem;
   font-size: 0;
 }
 ul.list-facts-in-numbers > .tpopup {
@@ -2812,7 +2825,7 @@ ul.list-facts-in-numbers li {
   margin-left: 2%;
   margin-right: 0;
   width: 23.5%;
-  margin-bottom: 1.5rem;
+  margin-bottom: 4rem;
   text-align: center;
 }
 ul.list-facts-in-numbers li:nth-of-type(4n + 1) {
@@ -2904,12 +2917,12 @@ ul.list-contact-information li:nth-of-type(3n + 1) {
 }
 @media only screen and (max-width: 800px) and (min-width: 481px) {
   ul.list-contact-information li {
-    width: 49%;
+    width: 32%;
   }
   ul.list-contact-information li:nth-of-type(n) {
     margin-left: 2%;
   }
-  ul.list-contact-information li:nth-of-type(2n + 1) {
+  ul.list-contact-information li:nth-of-type(3n + 1) {
     margin-left: 0;
   }
 }
@@ -2943,6 +2956,81 @@ ul.list-contact-information a:hover {
 ul.list-contact-information p,
 ul.list-contact-information address {
   margin-bottom: 0;
+}
+ul.list-additional-controls {
+  font-size: 0;
+}
+ul.list-additional-controls >* {
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+ul.list-additional-controls li {
+  position: relative;
+  padding: 0 5px;
+}
+ul.list-additional-controls .btn {
+  background: none;
+  color: #FFF;
+  border: none;
+}
+ul.list-additional-controls .btn:hover {
+  color: #e7931a;
+}
+ul.list-additional-controls .toaster-cart {
+  line-height: 0;
+}
+ul.list-additional-controls .toaster-cart .cartblock-totaltax-row,
+ul.list-additional-controls .toaster-cart span,
+ul.list-additional-controls .toaster-cart .cartblock-totalprice-row {
+  display: none;
+}
+ul.list-additional-controls .toaster-cart .toaster-cart-quantity,
+ul.list-additional-controls .toaster-cart a[href="checkout.html"] {
+  display: block;
+}
+ul.list-additional-controls .toaster-cart .cartblock-items-row {
+  position: relative;
+  padding-left: 1.785rem;
+  line-height: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+ul.list-additional-controls .toaster-cart .cartblock-items-row::before {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: flexkit-icons;
+  content: "\e029";
+  font-size: 25px;
+  height: 25px;
+  line-height: 25px;
+  width: 25px;
+  color: #FFF;
+}
+ul.list-additional-controls .toaster-cart .cartblock-items-row .toaster-cart-quantity {
+  display: inline-block;
+  vertical-align: middle;
+  height: 25px;
+  line-height: 25px;
+  width: 25px;
+  background: #e7931a;
+  color: #FFF;
+  text-align: center;
+  font-size: 0.8rem;
+  border-radius: 50%;
+}
+ul.list-additional-controls .toaster-cart a[href="checkout.html"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 0;
+}
+ul.list-additional-controls .toaster-cart:hover {
+  color: #FFF;
 }
 table {
   width: 100%;
@@ -3543,6 +3631,34 @@ hr.dotted {
 }
 .text-justify {
   text-align: justify;
+}
+@media only screen and (max-width: 800px) {
+  .t-text-left {
+    text-align: left;
+  }
+  .t-text-center {
+    text-align: center;
+  }
+  .t-text-right {
+    text-align: right;
+  }
+  .t-text-justify {
+    text-align: justify;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .m-text-left {
+    text-align: left;
+  }
+  .m-text-center {
+    text-align: center;
+  }
+  .m-text-right {
+    text-align: right;
+  }
+  .m-text-justify {
+    text-align: justify;
+  }
 }
 .align-top {
   vertical-align: top !important;

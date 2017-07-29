@@ -54,14 +54,6 @@ footer .logo span {
   line-height: 1;
   margin-left: 10px;
 }
-.additional-controls .btn {
-  border-width: 0;
-  line-height: 1.15;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  margin-left: 0.3125rem;
-  margin-right: 0.3125rem;
-}
 aside .aside-box {
   padding: 1.428rem 2.142rem;
   margin-bottom: 2.142rem;
@@ -120,6 +112,11 @@ footer h4 {
 .copyright .copyright-text {
   padding-top: 0.5rem;
 }
+@media only screen and (max-width: 480px) {
+  .copyright .copyright-text {
+    padding-bottom: 0.5rem;
+  }
+}
 .title-part h1,
 .slide-content h1,
 .title-part .h1,
@@ -127,6 +124,14 @@ footer h4 {
   margin-bottom: 0.766em;
   line-height: 1;
   color: #FFF;
+}
+@media only screen and (max-width: 480px) {
+  .title-part h1,
+  .slide-content h1,
+  .title-part .h1,
+  .slide-content .h1 {
+    line-height: 1.3;
+  }
 }
 .title-part h1 small,
 .slide-content h1 small,
@@ -218,10 +223,14 @@ footer h4 {
   border-color: #5B5B5B;
   background-color: #5B5B5B;
 }
-.footer-box-container {
+.footer-box-container,
+.testimonial-slider-container {
   margin-bottom: -4rem;
 }
-.footer-box-container .footer-box {
+.footer-box-container .footer-box,
+.testimonial-slider-container .footer-box,
+.footer-box-container .testimonial-slider-box,
+.testimonial-slider-container .testimonial-slider-box {
   margin-bottom: 4rem;
 }
 form::after {
@@ -950,6 +959,11 @@ textarea.resize {
 .cycle-slideshow.top-slider .cycle-pager {
   display: none;
 }
+@media only screen and (max-width: 800px) {
+  .cycle-slideshow.top-slider {
+    min-height: 0;
+  }
+}
 .testimonials-container .cycle-slideshow p {
   color: #FFF;
 }
@@ -959,6 +973,9 @@ textarea.resize {
   padding-top: 19rem;
   padding-bottom: 15rem;
   text-align: center;
+}
+.slide-content .organization-image {
+  margin-bottom: 7.14rem;
 }
 .slide-content .slogan {
   margin-bottom: 3.125rem;
@@ -975,6 +992,17 @@ textarea.resize {
   margin-top: 1.875rem;
   margin-left: 0.9375rem;
   margin-right: 0.9375rem;
+}
+@media only screen and (max-width: 480px) {
+  .slide-content .btn {
+    display: block;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .slide-content {
+    padding-top: 10rem;
+    padding-bottom: 9rem;
+  }
 }
 .testimonials-quote-container {
   position: relative;
@@ -1251,7 +1279,7 @@ textarea.resize {
   margin-left: 1.07rem;
 }
 .owl-carousel .owl-nav .owl-next::before {
-  content: "\e0a7";
+  content: "\e0a6";
 }
 @media only screen and (min-width: 801px) {
   .d-hide,

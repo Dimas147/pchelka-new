@@ -136,6 +136,9 @@
 		.cycle-pager {
 			display : none;
 		}
+		@media only screen and (max-width : @responsive-size-tablet) {
+			min-height: 0;
+		}
 	}
 	.testimonials-container & {
 		p {
@@ -150,6 +153,9 @@
 	padding-top    : 19rem;
 	padding-bottom : 15rem;
 	text-align     : center;
+	.organization-image{
+		margin-bottom: 7.14rem;
+	}
 	.slogan {
 		margin-bottom : 3.125rem;
 	}
@@ -165,6 +171,13 @@
 		margin-top     : 1.875rem;
 		margin-left    : 0.9375rem;
 		margin-right   : 0.9375rem;
+		@media only screen and (max-width : @responsive-size-mobile) {
+			display: block;
+		}
+	}
+	@media only screen and (max-width : @responsive-size-tablet) {
+		padding-top    : 10rem;
+		padding-bottom : 9rem;
 	}
 }
 
