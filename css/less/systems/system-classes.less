@@ -19,7 +19,34 @@
 .text-justify {
     text-align: justify;
 }
-
+@media only screen and (max-width : @responsive-size-tablet) {
+    .t-text-left {
+        text-align : left;
+    }
+    .t-text-center {
+        text-align : center;
+    }
+    .t-text-right {
+        text-align : right;
+    }
+    .t-text-justify {
+        text-align : justify;
+    }
+}
+@media only screen and (max-width : @responsive-size-mobile) {
+    .m-text-left {
+        text-align : left;
+    }
+    .m-text-center {
+        text-align : center;
+    }
+    .m-text-right {
+        text-align : right;
+    }
+    .m-text-justify {
+        text-align : justify;
+    }
+}
 .align-top {
     vertical-align: top !important;
 }
@@ -243,10 +270,10 @@
 
 //--- Padding
 .padding-list(0px);
-.padding-list(none; top);
-.padding-list(none; bottom);
-.padding-list(none; right);
-.padding-list(none; left);
+.padding-list(30px; top);
+.padding-list(30px; bottom);
+.padding-list(30px; right);
+.padding-list(30px; left);
 
 .pl-grid {
     padding-left: @grid-margin-width / 2;
@@ -368,6 +395,12 @@
 
 .space {
     padding-top: 5.625rem;
+    padding-bottom: 5.625rem;
+}
+.space-top {
+    padding-top: 5.625rem;
+}
+.space-bottom {
     padding-bottom: 5.625rem;
 }
 

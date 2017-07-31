@@ -1,34 +1,83 @@
 .img_gallery when (@image-gallery) {
-    margin    : 10px 0;
-    font-size : 0;
+	margin    : 10px 0;
+	font-size : 0;
+	.aside-box & {
+		margin : 0 -2.142rem;
+	}
 
-    li {
-        font-size  : 1rem;
-        position   : relative;
-        margin     : 5px;
-        text-align : center;
-        .inline-block(middle);
-    }
+	li {
+		margin-bottom : @grid-margin-width;
+		font-size     : 1rem;
+		position      : relative;
+		text-align    : center;
+		.inline-block(middle);
+		.grid-elements(4; @grid-margin-width; true; 3; 2);
+		.aside-box & {
+			.grid-elements(2; 0; true; 2; 2);
+			margin-bottom: 0;
+		}
+		img {
+			width : 100%;
+		}
 
-    a {
-        img {
-            .thumbnail-state();
-        }
-    }
+		&::before, &::after {
+			pointer-events : none;
+			content        : "";
+			position       : absolute;
+			.opacity(0);
+			.transition();
+			z-index        : 1;
+		}
+		&::before {
+			.rgba(@brand-primary; 30%);
+			top    : 0;
+			left   : 0;
+			right  : 0;
+			bottom : 0;
+		}
+		&::after {
+			top         : 50%;
+			left        : 50%;
+			height      : 3.2rem;
+			width       : 3.2rem;
+			line-height : 2.9rem;
+			margin-left : -1.6rem;
+			margin-top  : -1.6rem;
+			text-align  : center;
+			font-family : @font-family-icons;
+			content     : "\e069";
+			font-size   : 2rem;
+			color       : @primary-color;
+			.border-radius(50%);
+		}
+		&:hover {
+			&::before, &::after {
+				.opacity(1);
+			}
+		}
+	}
 
-    .image_caption {
-        position    : absolute;
-        bottom      : 0;
-        left        : 0;
-        right       : 0;
-        z-index     : 10;
-        margin      : 0;
-        line-height : @line-height;
-        padding     : @padding-small-vertical;
-        color       : @thumbnail-caption-color;
-        text-align  : center;
-        font-size   : @font-size-small;
-        .text-overflow;
-        .rgba(@thumbnail-caption-bg; @thumbnail-caption-opacity);
-    }
+	a {
+		display  : block;
+		position : relative;
+		img {
+			width : 100%;
+		}
+	}
+
+	.image_caption {
+		position    : absolute;
+		bottom      : 0;
+		left        : 0;
+		right       : 0;
+		z-index     : 10;
+		margin      : 0;
+		line-height : @line-height;
+		padding     : @padding-small-vertical;
+		color       : @thumbnail-caption-color;
+		text-align  : center;
+		font-size   : @font-size-small;
+		.text-overflow;
+		.rgba(@thumbnail-caption-bg; @thumbnail-caption-opacity);
+	}
 }

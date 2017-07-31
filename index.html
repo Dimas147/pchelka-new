@@ -2,9 +2,10 @@
 <html>
 <head>
     {$template:_head}
+    <meta name="google-site-verification" content="cOXohkQCauADvWJc-GBGPKWMPArvYdVmivY4wvYOCTE" />
 </head>
 <body class="index-page">
-<header role="banner">
+<header role="banner" class="d-visible">
     <div class="container">
         <h1 class="logo grid_3" itemscope itemtype="http://schema.org/Organization">
             <a href="{$website:url}" title="{$plugin:widcard:BizOrgName:notag}" itemprop="url">
@@ -13,13 +14,15 @@
             </a>
         </h1>
         <nav id="main-menu" role="navigation" class="grid_7 text-center">{$menu:main:_main menu}</nav>
-        <div class="grid_2 text-right additional-controls">
-            <!--{ $search:form}-->
-            <!--{ $store:cartblock}-->
-            <a href="" class="icon-phone btn icon white"></a>
-            <a href="" class="icon-search btn icon white"></a>
-            <a href="" class="icon-cart btn icon white"></a>
-        </div>
+        <ul class="grid_2 text-right list-additional-controls">
+            <li>
+                <a href="" class="icon-search btn icon"></a>
+                <!--{_$search:form}-->
+            </li>
+            <li>
+                {$store:cartblock}
+            </li>
+        </ul>
     </div>
 </header>
 <div class="cycle-slideshow top-slider"
@@ -36,8 +39,10 @@
     </div>
     {/repeat}
     <div class="slide-content container">
-        <h2 class="h1 grid_8 prefix_2 suffix_2">{$header:slide-title:static}</h2>
-
+        <figure class="organization-image grid_12 d-hide">
+            {$imageonly:organization-image:original:static:readonly}
+        </figure>
+        <h2 class="h1 mt0px grid_8 prefix_2 suffix_2">{$header:slide-title:static}</h2>
         <div class="grid_8 prefix_2 suffix_2 slogan">{$content:slide-content:static}</div>
         <div class="grid_8 prefix_2 suffix_2 slide-buttons">{$content:slide-buttons:static}</div>
     </div>
@@ -45,6 +50,7 @@
 </div>
 {repeat:top-slider:key:0}{/repeat}
 <section role="main">
+
     <article class="light-bg">
         <div class="container space">
             <h2 class="title-underlined grid_12">{$header:content_1}</h2>
@@ -56,49 +62,26 @@
     </article>
 
     <article class="container space">
-        <h2 class="grid_12 title-underlined">{$header:facts-in-numbers-main-title:static}</h2>
-        {adminonly}
-        <div class="grid_12">{repeat:facts-in-numbers-list:key:0:static} {/repeat}</div>
-        {/adminonly}
+        <h2 class="grid_12 title-underlined">{$header:products-for-sale:static}</h2>
         <div class="grid_12">
-            <ul class="list-facts-in-numbers" id="counter">
-                {repeat:facts-in-numbers-list:key:0:static}
-                <li class="{$prepop:icon-class_key:text:static:readonly}">
-                    {adminonly}
-                    <div class="panel">
-                        <div class="panel-header">Counter:</div>
-                        <div class="panel-content">
-                            <p>Icon class{$prepop:icon-class_key:text:static}</p>
-
-                            <p>First value{$prepop:first-value_key:text:static}</p>
-
-                            <p>Target value{$prepop:target-value_key:text:static}</p>
-
-                            <p>Other signs{$prepop:other-signs_key:text:static}</p>
-                        </div>
-                    </div>
-                    {/adminonly}
-                    <p class="value">
-                        <span class="counter-value" data-count="{$prepop:target-value_key:text:static:readonly}">{$prepop:first-value_key:text:static:readonly}</span>
-                        <span class="other-sign">{$prepop:other-signs_key:text:static:readonly}</span>
-                    </p>
-
-                    <h3 class="title h5">{$header:facts-in-numbers-title_key:static}</h3>
-                </li>
-                {/repeat}
-            </ul>
+            <div id="products-in-carousel">
+                {$productlist:_products list carousel::12}
+            </div>
+        </div>
+        <div class="grid_12 space-top text-center">
+            {$content:bottom-button_1}
         </div>
     </article>
 
     <article class="parallax take-from-widget height-auto space contact-us-container light-bg">
-        {$imageonly:contact-us-parallax-bg:1920}
+        {$imageonly:contact-us-parallax-bg:1920:static}
         <div class="container">
-            <h2 class="grid_12 title-underlined">{$header:contact-us-main-title}</h2>
+            <h2 class="grid_12 title-underlined">{$header:contact-us-main-title:static}</h2>
 
             <div class="grid_6 prefix_3 suffix_3">
                 {$form:contact-us-form:{$prepop:submit:text:static:readonly}}
                 {adminonly}
-                <div class="panel">
+                <div class="panel admin-panel">
                     <div class="panel-header">Submit button name:</div>
                     <div class="panel-content">
                         {$prepop:submit:text:static}
@@ -111,12 +94,36 @@
 
     <article class="light-bg">
         <div class="container space">
-            <h2 class="grid_12 title-underlined">{$header:products-for-sale:static}</h2>
-
+            <h2 class="grid_12 title-underlined">{$header:facts-in-numbers-main-title:static}</h2>
+            {adminonly}
+            <div class="grid_12">{repeat:facts-in-numbers-list:key:0:static} {/repeat}</div>
+            {/adminonly}
             <div class="grid_12">
-                <div id="products-in-carousel">
-                    {$productlist:_products list carousel::12}
-                </div>
+                <ul class="list-facts-in-numbers" id="counter">
+                    {repeat:facts-in-numbers-list:key:0:static}
+                    <li class="{$prepop:icon-class_key:text:static:readonly}">
+                        {adminonly}
+                        <div class="panel admin-panel">
+                            <div class="panel-header">Counter:</div>
+                            <div class="panel-content">
+                                <p>Icon class{$prepop:icon-class_key:text:static}</p>
+
+                                <p>First value{$prepop:first-value_key:text:static}</p>
+
+                                <p>Target value{$prepop:target-value_key:text:static}</p>
+
+                                <p>Other signs{$prepop:other-signs_key:text:static}</p>
+                            </div>
+                        </div>
+                        {/adminonly}
+                        <p class="value">
+                            <span class="counter-value" data-count="{$prepop:target-value_key:text:static:readonly}">{$prepop:first-value_key:text:static:readonly}</span>&nbsp;<span class="other-sign">{$prepop:other-signs_key:text:static:readonly}</span>
+                        </p>
+
+                        <h3 class="title h5">{$header:facts-in-numbers-title_key:static}</h3>
+                    </li>
+                    {/repeat}
+                </ul>
             </div>
         </div>
     </article>
@@ -133,16 +140,16 @@
                  data-cycle-pager="#testimonials-slider-pager"
                  data-cycle-auto-height="calc">
                 {repeat:testimonials-slider:key:0:static}
-                <div class="slide clearfix">
-                    <div class="grid_3 text-center">
+                <div class="slide clearfix testimonial-slider-container">
+                    <div class="grid_3 text-center testimonial-slider-box">
                         <figure class="organization-image">
                             {$imageonly:organization-image:original:static}
                         </figure>
                     </div>
-                    <div class="grid_4">
+                    <div class="grid_4 testimonial-slider-box">
                         {$textonly:organization-text:static}
                     </div>
-                    <div class="grid_5 text-left">
+                    <div class="grid_5 text-left testimonial-slider-box">
                         <div class="testimonials-quote-container clearfix">
                             <figure class="testimonial-image">
                                 {$imageonly:testimonial-img_key:70:static}
@@ -154,12 +161,12 @@
                         </div>
                         <div class="testimonials-quote-container clearfix">
                             <figure class="testimonial-image">
-                                {$imageonly:testimonial-img_key:70:static}
+                                {$imageonly:testimonial-img_key-1:70:static}
                             </figure>
                             <blockquote class="noquotes">
-                                {$textonly:testimonial-text_key:static}
+                                {$textonly:testimonial-text_key-1:static}
                             </blockquote>
-                            <p class="testimonial-name">{$header:testimonial-name_key:static}</p>
+                            <p class="testimonial-name">{$header:testimonial-name_key-1:static}</p>
                         </div>
                     </div>
                 </div>
@@ -179,8 +186,13 @@
                     {$newslist:_news list:desc:3}
                 </div>
             </div>
+            <div class="grid_12 space-top text-center">
+                {$content:bottom-button_2}
+            </div>
         </div>
     </article>
+
+    {$template:_contacts}
 
 </section>
 {$template:_footer}

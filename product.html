@@ -1,93 +1,198 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Include head template -->
-        {$template:_head}
-    </head>
-    <body>
-    {$template:_header}
-    <!-- Container -->
-    <div id="page" class="container">
+<head>
+    {$template:_head}
+</head>
+<body class="product-page">
 
-        <!-- Include header template -->
+{$template:_header}
 
+<div class="breadcrumbs-container">
+    <ul class="list-breadcrumbs text-center" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="{$website:url}">
+                <span itemprop="name">{$header:main-page:static}</span>
+            </a>
+            <meta itemprop="position" content="1"/>
+        </li>
+        <li itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="https://www.pchelka.kh.ua/shop.html">
+                <span itemprop="name">{$header:product-page:static}</span>
+            </a>
+            <meta itemprop="position" content="2"/>
+        </li>
+        <li itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="{$page:url}" class="current">
+                <span itemprop="name">{$page:navName}</span>
+            </a>
+            <meta itemprop="position" content="3"/>
+        </li>
+    </ul>
+</div>
 
-        <section class="clearfix product" itemscope="" itemtype="http://schema.org/Product">
-
-            <h1 class="grid_12 product-name" role="heading" itemprop="name">{$product:name}</h1>
-
-            <article class="grid_5 t-grid_3">
-                {$product:editproduct}
-                <a class="_lbox product-image" href="{$product:photourl:original}">
-                    <img itemprop="image" src="{$product:photourl:medium}" alt="{$product:name}"/>
-                </a>
-                <p class="h3">{$header:product-gallery:static}</p>
+<section class="product" role="main">
+    <article class="container space" itemscope="" itemtype="http://schema.org/Product">
+        <div class="prefix_2 grid_4 alpha omega t-grid_2">
+            {$product:editproduct}
+            <a class="_lbox product-image" href="{$product:photourl:original}">
+                <img itemprop="image" src="{$product:photourl:medium}" alt="{$product:name}"/>
+            </a>
+            <div id="product-image-gallery">
                 {$content:product-gallery}
-                <ul class="list-unstyled list-bordered product-info mt20px">
-                    <li><span class="title">Weight:</span> {$product:weight}</li>
-                    <li>
-                        <div itemprop="brand" itemscope itemtype="http://schema.org/Organization">
-                            <span class="title">Brand: </span>
-                            <span itemprop="name">{$product:brand}</span>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="title">Product ID: </span><span itemprop="productID">{$product:id}</span>
-                    </li>
-                    <li>
-                        <span class="title">SKU code:</span> {$product:sku}
-                    </li>
-                    <li>
-                        <span class="title">MPN code:</span> {$product:mpn}
-                    </li>
-                    <li>
-                        <span class="title">Product tags:</span> {$product:tags}
-                    </li>
-                </ul>
-            </article>
-
-            <article class="grid_7 t-grid_3" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                <div class="mb15px clearfix">
-                    <span itemprop="priceCurrency" content="{$plugin:shopping:currency}"></span>
-                    <span itemprop="price" content="{$product:price:nocurrency}" class="product-price grid_6 alpha h2">{$product:price}</span>
-                    <input id="productquantity" class="grid_2 t-grid_2 m-grid_1 t-alpha m-alpha " type="text" name="productquantity-{$product:id}" value="1"/>
-                    <div class="grid_4 t-grid_4 m-grid_3 t-omega m-omega omega text-center">{$store:addtocart:{$product:id}}</div>
-                </div>
-                <div class="product-options">
-                    {$product:options}
-                </div>
+            </div>
+        </div>
+        <div class="grid_4 suffix_2 alpha omega pl30px t-grid_4">
+            <h2 class="h4 mb15px" itemprop="name">{$page:h1}</h2>
+            <div class="offers" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                 <p class="product-description-short" itemprop="description">{$product:description}</p>
+                <div class="product-top-part clearfix">
+                    <div class="grid_4 t-grid_3 t-alpha product-rating alpha m-text-left">
+                        {$plugin:pagerating:stars}
+                    </div>
+                    <div itemprop="price" content="{$product:price:nocurrency}"
+                         class="product-price grid_8 omega t-grid_3 t-omega text-right">{$product:price}
+                    </div>
+                    <div class="hide" itemprop="priceCurrency">UAH</div>
+                </div>
+                <div class="product-price-buy">
+                    <div class="clearfix inline-block-wrap">
+                        <p class="grid_6 alpha text-left fl-none">{$header:quantity:static}</p>
+                        <input class="mb0px grid_6 omega fl-none" id="productquantity" type="text"
+                               name="productquantity-{$product:id}" value="1"/>
+                    </div>
+                    <p>{$store:addtocart:{$product:id}}</p>
+                    <p><a href="" class="btn big block m0px">{$header:order:static}</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="grid_8 prefix_2 suffix_2 alpha omega space-top">
+            <div class="product-tabs">
+                <ul class="tab_nav list-inline">
+                    <li><a href="#tab-1">{$header:tab1:static}</a></li>
+                    <li><a href="#tab-2">{$header:tab2:static}</a></li>
+                    <li><a href="#tab-3">{$header:tab3:static}</a></li>
+                </ul>
+                <div class="product-tab" id="tab-1">
+                    <div class="product-description-full text-center" itemprop="description">{$product:description:full}</div>
+                    {$content:product-description-{$product:id}:static}
+                </div>
 
-                <div class="tabs mt20px mb20px">
-                    <ul class="list-unstyled list-inline">
-                        <li><a href="#tabs-1">{$header:tab1:static}</a></li>
-                        <li><a href="#tabs-2">{$header:tab2:static}</a></li>
-                        <li><a href="#tabs-3">{$header:tab3:static}</a></li>
-                    </ul>
-                    <div id="tabs-1">
-                        <p class="product-description-full" itemprop="description">{$product:description:full}</p>
-                    </div>
-                    <div id="tabs-2">
-                        {$product:related}
-                    </div>
-                    <div id="tabs-3">
-                        {$quote:form}
+                <div class="product-tab" id="tab-2">
+                    <table class="product-characteristics-table table-striped">
+                        <tr>
+                            <td>
+                                {$header:weight:static}:
+                            </td>
+                            <td>
+                                {$product:weight}
+                            </td>
+                        </tr>
+                        <tr itemscope itemtype="http://schema.org/Organization">
+                            <td itemprop="brand">
+                                {$header:brand:static}:
+                            </td>
+                            <td>
+                                <span itemprop="name">{$product:brand}</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {$header:product-id:static}:
+                            </td>
+                            <td itemprop="productID">
+                                {$product:id}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!--<div class="product-tab" id="tab-3">-->
+                <!--{$quote:form}-->
+                <!--</div>-->
+
+                <div class="product-tab" id="tab-3">
+                    <h3 class="recent-posts-title title-underlined">{$header:comments:static}</h3>
+                    <div class="product-comment">
+                        {$plugin:pagerating:review:moderated}
                     </div>
                 </div>
-            </article>
-            <article class="grid_12">{$productlist:_products list:sametags}</article>
-        </section>
+            </div>
+        </div>
+    </article>
+    <article class="light-bg">
+        <div class="container space">
+            <h2 class="grid_12 title-underlined">{$header:related-products:static}</h2>
+            <div class="grid_12">
+                <div id="products-in-carousel">
+                    {$productlist:_products list carousel::12}
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
 
-        <!-- Footer -->
-        <!-- Include Footer template -->
+{$template:_footer}
+{$template:_mobile elements}
+{$template:_scripts}
 
-    </div>
-    {$template:_footer}
+<script src="js/plugin/owl.carousel.min.js"></script>
+<script>
+    $(function () {
+        $('#products-in-carousel .show-more').remove();
+        $('#products-in-carousel .product-list').addClass("owl-carousel");
+        $('.owl-carousel').owlCarousel({
+            loop: 'true',
+            margin: 10,
+            responsiveClass: 'true',
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: 'true'
+                },
+                481: {
+                    items: 2,
+                    nav: 'false',
+                    margin: 30
+                },
+                480: {
+                    items: 2,
+                    nav: 'true',
+                    loop: 'false',
+                    margin: 26
+                },
+                1025: {
+                    items: 4,
+                    nav: 'true',
+                    loop: 'false',
+                    margin: 30
+                }
+            }
+        });
 
-    <!-- Include mobile elements template -->
-    {$template:_mobile elements}
+        $("a[href^='#tab']").on("click", function (e) {
+            e.preventDefault();
+        });
 
-    <!-- Include scripts template -->
-    {$template:_scripts}
-    </body>
+        var $tab = $(".product-tab"), $tab_li = $(".tab_nav li");
+        $tab.hide();
+        $tab_li.first().addClass("active").show();
+        $tab.first().show();
+        $tab_li.click(function () {
+            $tab_li.removeClass("active");
+            $(this).addClass("active");
+            $tab.hide();
+            var a = $tab_li.index(this);
+            $tab.eq(a).show()
+        });
+
+        if(!$('#tab-3 .pagerating-review').length) {
+            $('.recent-posts-title, .pagerating-list').remove();
+        }
+    })
+
+</script>
+
+</body>
 </html>

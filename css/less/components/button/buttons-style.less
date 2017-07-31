@@ -1,19 +1,28 @@
 // Buttons style
 // --------------------------------------------------
 & when (@button-styles) {
-    &.rounded when (@button-styles-rounded) {
-        .border-radius(.25em);
-    }
+	&.rounded when (@button-styles-rounded) {
+		.border-radius(.25em);
+	}
 
-    &.circle when (@button-styles-circle) {
-        .border-radius(10em);
-    }
+	&.circle when (@button-styles-circle) {
+		.border-radius(10em);
+	}
 }
 
 // Buttons social
 // --------------------------------------------------
 &.social when (@social-button) and (@social-styles) {
-    &::before {
-        font-size : @social-icon-size;
-    }
+	&::before {
+		font-size : @social-icon-size;
+	}
+}
+
+&.big {
+	font-size      : 1.125em;
+	letter-spacing : 0.12em;
+	line-height    : 1.5;
+	padding        : 0.805em 1.66em;
+	margin-left    : 0.9375rem;
+	margin-right   : 0.9375rem;
 }

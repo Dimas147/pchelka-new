@@ -1,72 +1,158 @@
 // Product Style
-.product{
+.product {
 
-    .edit-product-btn{
-        .button();
-        margin-bottom: 0.72rem;
-        margin-right: 0.35rem;
-        margin-left: 0.35rem;
-        text-transform: capitalize;
-    }
-    .product-image{
-        display : block;
+	.edit-product-btn {
+		position         : absolute;
+		left             : 10px;
+		top              : 10px;
+		background-color : @primary-bg;
+		color            : @primary-color;
+		.button();
+	}
+	.product-image {
+		display       : block;
+		background    : @primary-color;
+		padding       : 2.14rem;
+		margin-bottom : 2.14rem;
 
-        img{
-            width : 100%;
-        }
-    }
-    .product-name{ }
+		img {
+			width : 100%;
+		}
+	}
+	.product-name {
+	}
 
-    .product-price {}
+	.product-price {
+		display     : block;
+		font-weight : 700;
+		font-size   : 2.428em;
+		line-height : 1;
+		color       : #292929;
+		padding     : 0;
+		//text-transform : uppercase;
+	}
 
-    .product-info {
-        .title {
-            font-weight: bold;
-        }
-    }
+	.product-info {
+		.title {
+			font-weight : bold;
+		}
+	}
 
-    .product-description-short{
-        border-bottom : 1px solid @gray-light;
-        border-top    : 1px solid @gray-light;
-        padding       : 1em 0;
-    }
+	.product-description-short {
+	}
 
-    .product-description-full{ }
+	.product-description-full {
+		&:empty {
+			display : none;
+		}
+	}
 
-    .product-options-listing{
-        margin-bottom : 1em;
-        overflow: hidden;
+	.product-option {
+		margin-bottom : 1em;
+		overflow      : hidden;
+	}
 
-        .product-option{
-            overflow : hidden;
-            margin-bottom: 1em;
+	.product-options-listing {
+		overflow : hidden;
 
-            & > label{
-                font-weight : bold;
-                width       : auto;
-                display: inline;
-            }
+		.product-option {
+			overflow : hidden;
 
-            & > div label{
-                cursor       : pointer;
-                float        : left;
-                font-size    : 12px;
-                margin-right : 1%;
-                width        : 27%;
-            }
+			& > label {
+				font-weight : bold;
+				width       : auto;
+				display     : inline;
+			}
 
-            select{
-                padding : 2px;
-                width   : auto;
-            }
-        }
-    }
+			& > div label {
+				cursor       : pointer;
+				float        : left;
+				font-size    : 12px;
+				margin-right : 1%;
+				width        : 27%;
+			}
 
-    .tcart-add{
-        .button();
-        .user-select();
-        .box-shadow(none; @input-shadow-focus);
-        display: block;
+			select {
+				padding : 2px;
+				width   : auto;
+			}
+		}
+	}
 
-    }
+	.tcart-add {
+		.button();
+		.user-select();
+		.box-shadow(none; @input-shadow-focus);
+		display        : block;
+		font-weight    : 900;
+		font-size      : 1.125em;
+		letter-spacing : 0.12em;
+		line-height    : 1.5;
+		padding        : 0.805em;
+	}
+
+	.product-rating {
+		.r-head-text, .total-review {
+			display : none;
+		}
+		.starrating {
+			.inline-block();
+		}
+	}
+	.product-top-part {
+		margin-bottom : @font-size-base;
+	}
+	.stars-container {
+
+	}
+	@media only screen and (max-width : @responsive-size-tablet) {
+		.product-image {
+			.inline-block();
+			max-width : 50%;
+		}
+	}
+}
+
+.product-tabs {
+	margin-bottom : 0;
+	.tab_nav {
+		margin-top    : 0;
+		margin-bottom : 5.625rem;
+		.inline-block-wrap(top);
+		text-align    : center;
+		li {
+			.button();
+			.button-color(@brand-primary; transparent; @brand-primary; @primary-color; @brand-primary; @brand-primary);
+			font-size      : 1.125rem;
+			letter-spacing : 0.12rem;
+			line-height    : 1.5;
+			padding        : 0.805rem 1.66rem;
+			margin-left    : 0.9375rem;
+			margin-right   : 0.9375rem;
+			a {
+				color : @brand-primary;
+			}
+			&.active, &:hover {
+				color      : @primary-color;
+				background : @brand-primary;
+				a {
+					color : @primary-color;
+				}
+			}
+		}
+		& + .product-tab {
+			display : block;
+		}
+	}
+	.product-tab {
+		display : none;
+	}
+}
+
+.product-price-buy {
+	margin-bottom : 2.142rem;
+	input, div {
+		margin-bottom : 1rem;
+		text-align    : center;
+	}
 }

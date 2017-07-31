@@ -10,132 +10,142 @@
 // Links
 //==================================================
 a {
-    color: @link-color;
-    text-decoration: none;
+	color           : @link-color;
+	text-decoration : none;
 
-    &:visited when not(@link-color-visited = none) {
-        color: @link-color-visited;
-    }
+	&:visited when not(@link-color-visited = none) {
+		color : @link-color-visited;
+	}
 
-    &:hover {
-        color: @link-color-hover
-    }
+	&:hover {
+		color : @link-color-hover
+	}
 
-    &:active {
-        color: @link-color-active;
-    }
+	&:active {
+		color : @link-color-active;
+	}
 }
 
 // Heading
 //==================================================
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-    margin-top: 1.5em;
-    margin-bottom: 0.66em;
-    color: @heading-color;
-    font-family: @font-family-headings;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    & when not(@heading-weight = bold) and not (@heading-weight = 700) {
-        font-weight: @heading-weight;
-    }
+	margin-top     : 1.5em;
+	margin-bottom  : 0.66em;
+	color          : @heading-color;
+	font-family    : @font-family-headings;
+	text-transform : uppercase;
+	letter-spacing : 0.12em;
+	& when not(@heading-weight = bold) and not (@heading-weight = 700) {
+		font-weight : @heading-weight;
+	}
 
-    &:first-child:not(.logo) {
-        margin-top: 0;
-    }
+	&:first-child:not(.logo) {
+		margin-top : 0;
+	}
 
-    & when (@componentsJS) and (@widget-rotator) {
-        .slide .slide-description & {
-            color: @slider-heading-color;
-        }
-    }
+	& when (@componentsJS) and (@widget-rotator) {
+		.slide .slide-description & {
+			color : @slider-heading-color;
+		}
+	}
 
-    & when not(@footer-heading-color = @heading-color) {
-        footer & {
-            color: @footer-heading-color;
-        }
-    }
+	& when not(@footer-heading-color = @heading-color) {
+		footer & {
+			color : @footer-heading-color;
+		}
+	}
 
-    &:empty {
-        display: none;
-    }
-    & when (@heading-color = #FFFFFF) {
-        #tinymce & {
-            color: #000000;
-        }
-    }
+	&:empty {
+		display : none;
+	}
+	& when (@heading-color = #FFFFFF) {
+		#tinymce & {
+			color : #000000;
+		}
+	}
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6 {
-    & when (@heading-weight = bold) or (@heading-weight = 700) {
-        font-weight: @heading-weight;
-    }
+	& when (@heading-weight = bold) or (@heading-weight = 700) {
+		font-weight : @heading-weight;
+	}
 }
 
 h1, .h1 {
-    font-size: 3.75em;
-    line-height: 1.16667;
+	font-size   : 3.75em;
+	line-height : 1.16667;
+	@media only screen and (max-width : @responsive-size-mobile) {
+		font-size   : 2.3em;
+		line-height : 1.3;
+	}
 }
 
 h2, .h2 {
-    font-size: 2.857em;
-    line-height: 1.13;
+	font-size   : 2.857em;
+	line-height : 1.13;
+	@media only screen and (max-width : @responsive-size-mobile) {
+		font-size : 2.2em;
+	}
 }
 
 h3, .h3 {
-    font-size: 1.857em;
-    line-height: 1.33333;
+	font-size   : 1.857em;
+	line-height : 1.33333;
 }
 
 h4, .h4 {
-    font-size: 1.375em;
-    line-height: 1.36364;
-    letter-spacing: 0.06em;
+	font-size      : 1.375em;
+	line-height    : 1.36364;
+	letter-spacing : 0.06em;
 }
 
 h5, .h5 {
-    font-size: 1.25em;
-    text-transform: none;
-    font-family: Merriweather-Regular, serif;
-    line-height: 1.6;
-    letter-spacing: 0.02em;
+	font-size      : 1.25em;
+	text-transform : none;
+	font-family    : Merriweather-Regular, serif;
+	line-height    : 1.6;
+	letter-spacing : 0.02em;
 }
 
 h6, .h6 {
-    font-size: 1.125em;
-    text-transform: none;
-    line-height: 1.55556;
-    letter-spacing: 0;
+	font-size      : 1.125em;
+	text-transform : none;
+	line-height    : 1.55556;
+	letter-spacing : 0;
 }
 
 .subtitle {
-    color: @subheading-color;
-    font-size: @font-size-mini;
+	color     : @subheading-color;
+	font-size : @font-size-mini;
 }
 
 p {
-    margin-top: 0;
-    margin-bottom: 15px;
+	margin-top    : 0;
+	margin-bottom : 15px;
 }
 
 address {
-    margin-bottom: 20px;
-    font-style: normal;
+	margin-bottom : 20px;
+	font-style    : normal;
 }
 
-.title-underlined{
-    position: relative;
-    padding-bottom: 1.875rem;
-    margin-bottom: 3.75rem;
-    text-align: center;
-    &::before {
-        position    : absolute;
-        left        : 50%;
-        bottom      : -2px;
-        height      : 2px;
-        width       : 100px;
-        margin-left : -50px;
-        background  : #b7b7b7;
-        content     : "";
-    }
+.title-underlined {
+	position       : relative;
+	padding-bottom : 1.875rem;
+	margin-bottom  : 3.75rem;
+	text-align     : center;
+	&::before {
+		position    : absolute;
+		left        : 50%;
+		bottom      : -2px;
+		height      : 2px;
+		width       : 100px;
+		margin-left : -50px;
+		background  : #B7B7B7;
+		content     : "";
+	}
+	.news-page & {
+
+	}
 }

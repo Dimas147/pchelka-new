@@ -1,0 +1,91 @@
+@import "_getting_started/2-variables";
+
+.editor-block {
+	overflow : hidden;
+	position : fixed;
+	top      : 0;
+	left     : 0;
+	z-index  : 1006;
+	button {
+		float        : left;
+		padding      : 10px;
+		margin-right : 1px;
+		line-height  : 1;
+		.border-radius(0 0 0 0);
+	}
+}
+
+.editor-blocked {
+	.tpopup,
+	#seotoaster-cpanel,
+	.form-controls,
+	.admin-panel,
+	.newslog-admin-actions,
+	.admin-actions{
+		display : none !important;
+	}
+}
+
+.editor-blocker {
+	color : @brand-success;
+	&.active {
+		color : @brand-error;
+	}
+}
+
+.hard-refresh-css {
+	color : @brand-warning;
+}
+
+.form-controls, .newslog-admin-actions {
+	.inline-block-wrap();
+	a {
+		.button();
+		font-size     : 0.714rem;
+		padding-left  : 0.5rem;
+		padding-right : 0.5rem;
+		.border-radius(0 0 0 0);
+		&:hover, &:active, &:focus {
+			background   : #000000;
+			border-color : #000000;
+		}
+	}
+}
+
+.form-controls {
+	margin-top : 15px;
+	a {
+		.grid-elements(3; 1%; true; 2; 1);
+		font-size   : 0;
+		height      : 2.3rem;
+		line-height : 2rem;
+		&::before {
+			font-family : @font-family-icons;
+			font-size   : 0.857rem;
+		}
+		&.tpopup {
+			&::before {
+				content : "\e074";
+			}
+		}
+		&[href*="free-form-maker"] {
+			&::before {
+				content : "\e09e";
+			}
+		}
+		&._tdelete {
+			img {
+				display : none;
+			}
+			&::before {
+				content : "\e078";
+			}
+		}
+	}
+}
+
+.newslog-admin-actions {
+	a {
+		.grid-elements(2; 1%; true; 2; 1);
+	}
+}

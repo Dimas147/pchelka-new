@@ -1,134 +1,155 @@
-.cart-content{
-    border        : none;
-    margin-bottom : 1em;
-    width         : 100%;
+.cart-content {
+	margin-bottom : 0;
+	width         : 100%;
+	border        : 1px solid #DDDDDD;
 
-    th,
-    td{
-        text-align    : center;
-        padding       : 0.5em 0.75em;
-        border-bottom : 1px solid @table-border-color;
+	th,
+	td {
+		text-align : center;
+		padding    : 15px 10px;
+		border     : 1px solid #DDDDDD;
 
-        &.product-info{
-            text-align : left;
-        }
+		&.product-info {
+			text-align : left;
+		}
 
-        &.product-img{
-            width : 130px;
-        }
-    }
+		&.product-img {
+			width : 130px;
+		}
+	}
 
-    th{
-        background : @gray-lighter;
-    }
+	th {
+		text-transform   : uppercase;
+		font-weight      : bold;
+		color            : #000000;
+		background-color : #FAFAFA;
+		font-family      : @font-family-headings;
+		font-size        : 0.928rem;
+		letter-spacing   : 0.12em;
+	}
 
-    .quote-item-name,
-    .toastercart-item-name,
-    .post-purchase-report-product-name{
-        font-size   : 1.1em;
-        font-weight : bold;
-    }
+	.quote-item-name,
+	.toastercart-item-name,
+	.post-purchase-report-product-name {
+		font-size   : 1.1em;
+		font-weight : bold;
+	}
 
-    .itemID,
-    .options{
-        font-size : @font-size-small;
-        color     : #000;
+	.itemID,
+	.options {
+		font-size : @font-size-small;
+		color     : #000000;
 
-        span:first-child{
-            color : @gray;
-        }
+		span:first-child {
+			color : @gray;
+		}
 
-        span + span + span{
-            color : @gray;
-        }
-    }
+		span + span + span {
+			color : @gray;
+		}
+	}
 
-    .itemID{
-        margin : 5px 0 0;
-    }
+	.itemID {
+		margin : 5px 0 0;
+	}
 
-    .product-qty input{
-        width      : 50px;
-        text-align : center;
-    }
+	.product-qty input {
+		width      : 100px;
+		text-align : center;
+	}
 
-    .product-unit-price input{
-        width : 100px;
-    }
+	.product-unit-price input {
+		width : 100px;
+	}
+	.product-remove {
+		width : 50px;
+		.remove-item.ticon-close {
+			&::before {
+				font-family : @font-family-icons !important;
+				content     : "\e078";
+			}
+		}
+	}
 
-    & when (@responsive){
-        @media only screen and (max-width : @responsive-size-tablet){
-            thead, .product-unit-additional-row{
-                display : none;
-            }
+	& when (@responsive) {
+		@media only screen and (max-width : @responsive-size-tablet) {
+			border-top : none;
+			thead, .product-unit-additional-row {
+				display : none;
+			}
 
-            tr{
-                display       : block;
-                border        : 1px solid @table-border-color;
-                margin-bottom : 10px;
-                overflow      : hidden;
-                position      : relative;
-            }
+			tr {
+				display  : block;
+				border   : none;
+				overflow : hidden;
+				position : relative;
+			}
 
-            td{
-                display  : block;
-                overflow : hidden;
-                border   : none;
+			td {
+				display  : block;
+				overflow : hidden;
+				border   : none;
 
-                .product-qty{ }
-            }
+				.product-qty {
+				}
+			}
 
-            .options{ }
+			.options {
+			}
 
-            td.product-img{
-                float : left;
-            }
+			td.product-img {
+				float : left;
+			}
 
-            td.product-unit-price{
-                clear : left;
-            }
+			td.product-unit-price {
+				clear : left;
+			}
 
-            td.product-qty,
-            td.product-total,
-            td.product-unit-price{
-                float       : left;
-                line-height : unit(@button-line-height * 2, em);
-            }
+			td.product-qty,
+			td.product-total,
+			td.product-unit-price {
+				float       : left;
+				line-height : unit(@button-line-height * 2, em);
+			}
 
-            td.product-total,
-            td.product-unit-price{
-                width : 40%;
-            }
+			td.product-total,
+			td.product-unit-price {
+				width : 40%;
+			}
 
-            td.product-total{
-                font-weight : bold;
-            }
+			td.product-total {
+				font-weight : bold;
+			}
 
-            td.product-qty{
-                width         : 20%;
-                padding-left  : 0;
-                padding-right : 0;
+			td.product-qty {
+				width         : 20%;
+				padding-left  : 0;
+				padding-right : 0;
 
-                &:before{
-                    content : 'x ';
-                }
-            }
+				&:before {
+					content : 'x ';
+				}
+				input[type="text"] {
+					margin : 0 1.07rem;
+				}
+			}
 
-            .product-remove{
-                font-size : @font-size-larger;
-                position  : absolute;
-                top       : 0;
-                right     : 8px;
-                padding   : 0;
-            }
-        }
+			.product-remove {
+				font-size : 2.5em;
+				position  : absolute;
+				top       : 0;
+				right     : 8px;
+				padding   : 0;
+			}
+		}
 
-        @media only screen and (max-width : @responsive-size-mobile){
-            .product-img{
-                float : none;
+		@media only screen and (max-width : @responsive-size-mobile) {
+			.product-img {
+				float : none;
 
-                img{ }
-            }
-        }
-    }
+				img {
+				}
+			}
+		}
+	}
 }

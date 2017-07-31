@@ -1,52 +1,145 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- Include head template -->
-        {$template:_head}
-    </head>
-    <body>
+<head>
+    <!-- Include head template -->
+    {$template:_head}
+</head>
+<body class="news-page">
 
-        <!-- Container -->
-        <div id="page" class="container">
+{$template:_header}
 
-            <!-- Include header template -->
-            {$template:_header}
+<div class="breadcrumbs-container">
+    <ul class="list-breadcrumbs text-center" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="{$website:url}">
+                <span itemprop="name">{$header:main-page:static}</span>
+            </a>
+            <meta itemprop="position" content="1"/>
+        </li>
+        <li itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="https://www.pchelka.kh.ua/news/">
+                <span itemprop="name">{$header:news-page:static}</span>
+            </a>
+            <meta itemprop="position" content="2"/>
+        </li>
+        <li itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="{$page:url}" class="current">
+                <span itemprop="name">{$page:navName}</span>
+            </a>
+            <meta itemprop="position" content="3"/>
+        </li>
+    </ul>
+</div>
 
-            <h1 class="grid_12" role="heading">{$page:h1}</h1>
+<section role="main">
+    <div class="container">
+        <article class="grid_8 space pr30px omega" role="main" itemscope itemtype="http://schema.org/NewsArticle">
+            {adminonly}
+            <div class="panel mt30px mb30px admin-panel">
+                <div class="panel-header">Author information:</div>
+                <div class="panel-content">
+                    <p>Author name:{$prepop:news-author-name-{$news:id}:text:static}</p>
+                    <p>Publisher name:{$prepop:news-publisher-name-{$news:id}:text:static}</p>
+                </div>
+            </div>
+            {/adminonly}
+            <!-- news content -->
+            <h2 class="title-underlined" role="heading" itemprop="headline">{$page:h1}</h2>
+            <meta itemprop="mainEntityOfPage" content="https://www.pchelka.kh.ua/news/">
+            <div class="news-description">
+                <time class="news-item-date text-center" datetime="{$news:date:Y-m-d}" itemprop="datePublished">
+                    {$news:date: M d, Y}
+                    <meta itemprop="dateModified" content="{$news:date: M d, Y}">
+                </time>
+                <a class="news-item-image" href="{$news:url}" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                    <img src="{$news:preview}" alt="{$news:title:inline}"/>
+                    <meta itemprop="url" content="{$news:preview}">
+                    <meta itemprop="width" content="450">
+                    <meta itemprop="height" content="300">
+                </a>
+                <p class="news-item-description" itemprop="description">{$news:teaser}</p>
+                {$plugin:pagerating:stars}
+                {$news:actions}
+            </div>
+            {newscontent}
+            {repeat:Article blocks:key}
+            <article>
+                <h3>{$header:content_key}</h3>
+                {$content:content_key}
+            </article>
+            {/repeat}
+            {/newscontent}
+            <div class="news-controls clearfix">
+                <div class="grid_8 alpha">
+                    <p class="news-item-tags">{$news:tags}</p>
+                </div>
+                <div class="grid_4 omega text-right fl-right">
+                    <p class="social-links">{$template:_social share}</p>
+                </div>
+            </div>
+            <div class="author-block icon-user clearfix">
+                <div class="grid_6 alpha">
+                    <h3 class="h4">{$header:author:static}</h3>
+                    <span class="news-author-name block" itemprop="author">{$prepop:news-author-name-{$news:id}:text:static:readonly}</span>
+                </div>
+                <div class="grid_6 omega">
+                    <h3 class="h4">{$header:publisher:static}</h3>
+                    <div class="news-publisher-name block" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                        <div class="hide" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                            <meta itemprop="url" content="{$plugin:widcard:bizLogo:url}">
+                            <meta itemprop="width" content="50">
+                            <meta itemprop="height" content="50">
+                        </div>
+                        <span itemprop="name">{$prepop:news-publisher-name-{$news:id}:text:static:readonly}</span>
+                    </div>
+                </div>
+            </div>
+            <div id="comment-block" class="space-top">
+                <h3 class="recent-posts-title title-underlined">{$header:comments:static}</h3>
+                <div class="news-post-comment">
+                    {$plugin:pagerating:review:moderated}
+                </div>
+            </div>
+        </article>
 
-            <!-- Content box -->
-            <section class="grid_9" role="main">
-                <!-- news content -->
-                {newscontent}
-                {repeat:Article blocks:key}
-                <article>
-                    <h2>{$header:content_key}</h2>
-                    {$content:content_key1}
-                    {$content:content_key2}
-                </article>
-                {/repeat}
-                {/newscontent}
+        <aside class="grid_4 space alpha" role="complementary">
+            <section class="aside-box">
+                <h4 class="text-center">{$header:blog-categories:static}</h4>
+                <div class="tags-container">
+                    {$news:tags}
+                </div>
             </section>
+            <section class="aside-box">
+                <h4 class="text-center">{$header:blog-title:static}</h4>
+                <div class="news-list">
+                    {$newslist:_news list footer:desc:3}
+                </div>
+            </section>
+            <section class="aside-box pb0px">
+                <h4 class="text-center">{$header:gallery-title:static}</h4>
+                {$content:gallery:static}
+            </section>
+        </aside>
+    </div>
 
-            <!-- Right box -->
-            <aside class="grid_3" role="complementary">
-                {repeat:Aside right box:key:1}
-                <section class="aside-box">
-                    <h3>{$header:right_key}</h3>
-                    {$content:right_key}
-                </section>
-                {/repeat}
-            </aside>
+    <div class="light-bg">
+        {$template:_contacts}
+    </div>
 
-            <!-- Footer -->
-            <!-- Include Footer template -->
-            {$template:_footer}
-        </div>
-
-        <!-- Include mobile elements template -->
-        {$template:_mobile elements}
-
-        <!-- Include scripts template -->
-        {$template:_scripts}
-    </body>
+</section>
+{$template:_footer}
+{$template:_mobile elements}
+{$template:_scripts}
+<script>
+    $(function () {
+        $(".main_menu a[href*='novosti']").addClass("current");
+        if(!$('#comment-block .pagerating-review').length) {
+            $('.recent-posts-title, .pagerating-list').remove();
+        }
+    })
+</script>
+</body>
 </html>
