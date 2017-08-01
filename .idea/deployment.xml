@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="pchelka.kh.ua" promptOnLocalOverwrite="false">
+    <serverData>
+      <paths name="pchelka.kh.ua">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/pchelka-new" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
