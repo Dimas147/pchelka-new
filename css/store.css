@@ -130,11 +130,9 @@
 .product .product-top-part {
   margin-bottom: 16px;
 }
-@media only screen and (max-width: 800px) {
-  .product .product-image {
-    display: inline-block;
-    vertical-align: middle;
-    max-width: 50%;
+@media only screen and (max-width: 480px) {
+  .product .pl30px {
+    padding-left: 0 !important;
   }
 }
 .product-tabs {
@@ -212,6 +210,14 @@
 }
 .product-tabs .tab_nav + .product-tab {
   display: block;
+}
+@media only screen and (max-width: 800px) {
+  .product-tabs .tab_nav li {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
 }
 .product-tabs .product-tab {
   display: none;
@@ -358,12 +364,6 @@
 .product-item .product-image img {
   width: 100%;
   max-width: 100%;
-}
-.product-item .product-image.parallax {
-  background-size: contain;
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
 .product-item .product-title {
   padding: 0 1.25rem;

@@ -105,14 +105,12 @@
 	.stars-container {
 
 	}
-	@media only screen and (max-width : @responsive-size-tablet) {
-		.product-image {
-			.inline-block();
-			max-width : 50%;
+	@media only screen and (max-width : @responsive-size-mobile) {
+		.pl30px {
+			padding-left : 0 !important;
 		}
 	}
 }
-
 .product-tabs {
 	margin-bottom : 0;
 	.tab_nav {
@@ -143,12 +141,19 @@
 		& + .product-tab {
 			display : block;
 		}
+		@media only screen and (max-width : @responsive-size-tablet) {
+			li {
+				display       : block;
+				margin-left   : 0;
+				margin-right  : 0;
+				margin-bottom : 15px;
+			}
+		}
 	}
 	.product-tab {
 		display : none;
 	}
 }
-
 .product-price-buy {
 	margin-bottom : 2.142rem;
 	input, div {
