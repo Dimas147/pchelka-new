@@ -1,5 +1,6 @@
 function _accordion() {
     $(".accordion").accordion({
+        header: "div > h4",
         heightStyle : "content",
         icons       : {
             "header"       : "icon-arrow-right2",

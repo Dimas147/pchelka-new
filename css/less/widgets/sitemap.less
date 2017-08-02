@@ -1,15 +1,46 @@
-.sitemap when (@widget-sitemap){
-    li{
-        a{
-            &.current{ }
+.sitemap when (@widget-sitemap) {
+    &, & ul {
+        border-left : 1px solid lighten(@brand-primary, 10%);
+    }
+    margin  : 0;
+    padding : 0;
+    li {
+        list-style : none;
+        position   : relative;
+        margin     : 0.55rem 0 0.55rem 2.5rem;
+        .transition();
+
+        &:hover {
+            color : @gray-darker;
+        }
+        &::before {
+            font-family : @font-family-icons;
+            line-height : 1;
+            position    : absolute;
+            top         : 0;
+            left        : -2.5rem;
+            content     : "-\e017";
+            color       : @brand-primary;
+            font-size   : 1.4rem;
+        }
+        li {
+            &::before {
+                content   : "-\e012";
+                color     : lighten(@brand-primary, 10%);
+                font-size : 1.3rem;
+            }
         }
     }
-
-    ul{
-        li{
-            a{
-                &.current{ }
-            }
+    ul {
+        margin-left  : -1rem;
+        padding-left : 0;
+        padding-top  : 0.22rem;
+        margin-top   : -0.22rem;
+    }
+    a {
+        color : @text-color;
+        &:hover {
+            color : @brand-primary;
         }
     }
 }

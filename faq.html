@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Include head template -->
+    {$template:_head}
+</head>
+<body class="faq">
+
+{$template:_header}
+{$template:_breadcrumbs}
+
+<section role="main">
+    <article class="space container">
+        <h2 class="title-underlined text-center grid_12">{$header:faq-title}</h2>
+        <div class="grid_12">
+            <div id="accordion" class="{adminonly}no-{/adminonly}accordion"
+                 data-accordion-icons="icon-arrow-right2,icon-arrow-down2">
+                {repeat:accordion:key:0}
+                <div itemscope itemtype="http://schema.org/Question">
+                    <h4 itemprop="name">{$header:accordion-header_key}</h4>
+                    <div itemprop="suggestedAnswer" itemscope itemtype="http://schema.org/Answer">
+                        <div itemprop="text">{$content:accordion-content_key}</div>
+                    </div>
+                </div>
+                {/repeat}
+            </div>
+        </div>
+    </article>
+    <div class="light-bg">
+        {$template:_contacts}
+    </div>
+</section>
+
+{$template:_footer}
+{$template:_mobile elements}
+{$template:_scripts}
+<script>
+    $(function () {
+        $( "#accordion" ).accordion({
+            header: "> div > h4"
+        });
+    })
+</script>
+
+</body>
+</html>

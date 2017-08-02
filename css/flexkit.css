@@ -166,6 +166,108 @@
   border-color: #343434;
   background-color: #343434;
 }
+.ui-accordion:not(#cpanelul) > div {
+  margin-bottom: 5px;
+}
+.ui-accordion:not(#cpanelul) .ui-accordion-header {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  color: #000;
+  background: #FFF;
+  padding: 1.857rem 1.857rem 1.875rem 5rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border: 1px solid #eadbc2;
+  line-height: 1.2;
+  transition: all 0.3s;
+  border-radius: 6px;
+}
+.ui-accordion:not(#cpanelul) .ui-accordion-header:hover {
+  color: #e7931a;
+  background: #FFF;
+}
+.ui-accordion:not(#cpanelul) .ui-accordion-header a {
+  color: inherit;
+  text-decoration: none;
+}
+.ui-accordion:not(#cpanelul) .ui-accordion-header.ui-accordion-header-active {
+  color: #000;
+  background: #eadbc2;
+  border-radius: 3px 3px 0 0;
+}
+.ui-accordion:not(#cpanelul) .ui-accordion-header.ui-accordion-header-active .ui-accordion-header-icon {
+  margin-right: 5px;
+}
+.ui-accordion:not(#cpanelul) .ui-accordion-header.icon-right::before {
+  color: #4fc752;
+  float: right;
+  line-height: inherit;
+}
+.ui-accordion:not(#cpanelul) .ui-accordion-icons .ui-accordion-header-icon {
+  display: block;
+  float: left;
+  margin: -4px 0 0 -50px;
+  height: 26px;
+  width: 26px;
+  line-height: 23px;
+  background: #e7931a;
+  font-weight: bold;
+  border-radius: 6px;
+  color: #FFF;
+  text-align: center;
+}
+.ui-accordion:not(#cpanelul) .ui-accordion-icons .ui-accordion-header-icon::before {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+.ui-accordion:not(#cpanelul) .ui-accordion-content {
+  background: #eadbc2;
+  border: 1px solid #eadbc2;
+  border-top: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 1.857rem 1.875rem 5rem;
+  overflow: auto;
+  border-radius: 0 0 6px 6px;
+}
+.ui-accordion:not(#cpanelul) p {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+.ui-accordion:not(#cpanelul) p:last-child {
+  margin-bottom: 0;
+}
+.ui-accordion:not(#cpanelul).first-loading .ui-accordion-header {
+  color: #000;
+  background: #eadbc2;
+  border-radius: 3px 3px 0 0;
+}
+.ui-accordion:not(#cpanelul).first-loading .ui-accordion-content-active {
+  display: none !important;
+}
+.ui-accordion:not(#cpanelul).first-loading .icon-arrow-down2 {
+  margin: 0 !important;
+}
+.ui-accordion:not(#cpanelul).first-loading .icon-arrow-down2::before {
+  content: "\e0ab";
+}
+.no-accordion h4 {
+  font-size: 1.285em;
+  background: #e7931a;
+  color: #FFF;
+  padding: 0.88em .55em;
+  border: 1px solid #eadbc2;
+  line-height: 1.1;
+}
+.no-accordion p {
+  margin-bottom: 1.07rem;
+  font-size: 1rem;
+}
+.no-accordion p:last-child {
+  margin-bottom: 0;
+}
 .tooltip {
   cursor: help;
 }

@@ -1,11 +1,8 @@
 .news-list {
 	.inline-block-wrap(top);
-	margin-bottom : -2.142rem;
+	margin-bottom : -5.625rem;
 	footer & {
 		margin-bottom : -1.875rem;
-	}
-	.news-room [role="main"] &, .index-page & {
-		margin-bottom : -5.625rem;
 	}
 	.news-list-pagination {
 		.inline-block-wrap();
@@ -129,10 +126,6 @@
 	}
 }
 
-.news-item {
-	margin-bottom : 2.142rem;
-}
-
 .news-controls {
 	margin : 2.142rem 0;
 	.news-item-tags {
@@ -189,12 +182,11 @@
 }
 
 .news-item when (@widget-news-list) {
-	margin-bottom : 1.5rem;
+	margin-bottom : 5.625rem;
 	.grid-elements(3; @grid-margin-width; true; 2; 1);
 
-	.news-room [role="main"] &, .index-page & {
+	.news-room [role="main"] &{
 		.grid-elements(2; @grid-margin-width; true; 2; 1);
-		margin-bottom : 5.625rem;
 	}
 
 	footer &, .aside-box & {
