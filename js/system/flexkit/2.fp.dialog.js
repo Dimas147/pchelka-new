@@ -24,7 +24,8 @@ function _dialog(){
 //            }
 //        ]);
     });
-    $(document).on('click', ".dialog-btn", function(){
+    $(document).on('click', ".dialog-btn", function(e){
+        e.preventDefault();
         var data = $(this).data();
         dialogInit({
             'el'        : data.dialogElement,

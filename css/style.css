@@ -656,6 +656,35 @@ textarea.resize {
 .filed-upgrade[type="checkbox"].switcher:disabled ~ .checkbox_radio::after {
   background: #a2a2a2 !important;
 }
+#search-form-container {
+  min-height: 0 !important;
+  padding: 1rem;
+}
+#search-form p {
+  float: left;
+  width: 30%;
+  margin: 0;
+}
+#search-form p:first-child {
+  width: 67%;
+  margin-right: 3%;
+}
+#search-form input {
+  border-color: #e7931a;
+  font-size: 0.857rem;
+  padding: 0 0.8125rem;
+  height: 57px;
+  line-height: 57px;
+}
+#search-form [type="text"] {
+  border-color: #e7931a;
+}
+#search-form [type="submit"] {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+}
 .input-label {
   position: relative;
 }

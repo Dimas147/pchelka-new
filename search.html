@@ -12,9 +12,9 @@
 <section role="main">
     {repeat:Section box:key:1}
     <article class="space container">
-        <h2 class="title-underlined text-center grid_12">{$header:content_key}</h2>
-        <div class="grid_12">
-            {$content:content_key}
+        <h2 class="title-underlined text-center grid_12">{$header:search-page:static}</h2>
+        <div class="grid_12 search-results-container">
+            {$search:results:imgc}
         </div>
     </article>
     {/repeat}
@@ -28,5 +28,3 @@
 {$template:_scripts}
 </body>
 </html>
-
-{$search:results:imgc}
