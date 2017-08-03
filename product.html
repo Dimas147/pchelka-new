@@ -40,14 +40,17 @@
             <a class="_lbox product-image" href="{$product:photourl:original}">
                 <img itemprop="image" src="{$product:photourl:medium}" alt="{$product:name}"/>
             </a>
+
             <div id="product-image-gallery">
                 {$content:product-gallery}
             </div>
         </div>
         <div class="grid_4 suffix_2 alpha omega pl30px t-grid_4">
             <h2 class="h4 mb15px" itemprop="name">{$page:h1}</h2>
+
             <div class="offers" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                 <p class="product-description-short" itemprop="description">{$product:description}</p>
+
                 <div class="product-top-part clearfix">
                     <div class="grid_4 t-grid_3 t-alpha product-rating alpha m-text-left">
                         {$plugin:pagerating:stars}
@@ -64,7 +67,9 @@
                                name="productquantity-{$product:id}" value="1"/>
                     </div>
                     <p>{$store:addtocart:{$product:id}}</p>
-                    <p><a href="" class="btn big block m0px">{$header:order:static}</a></p>
+
+                    <p><a href="" class="btn dialog-btn big block m0px" data-dialog-element="#quote-form-container">{$header:order:static}</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -76,7 +81,9 @@
                     <li><a href="#tab-3">{$header:tab3:static}</a></li>
                 </ul>
                 <div class="product-tab" id="tab-1">
-                    <div class="product-description-full text-center" itemprop="description">{$product:description:full}</div>
+                    <div class="product-description-full text-center" itemprop="description">
+                        {$product:description:full}
+                    </div>
                     {$content:product-description-{$product:id}:static}
                 </div>
 
@@ -108,12 +115,10 @@
                         </tr>
                     </table>
                 </div>
-                <!--<div class="product-tab" id="tab-3">-->
-                <!--{$quote:form}-->
-                <!--</div>-->
 
                 <div class="product-tab" id="tab-3">
                     <h3 class="recent-posts-title title-underlined">{$header:comments:static}</h3>
+
                     <div class="product-comment">
                         {$plugin:pagerating:review:moderated}
                     </div>
@@ -131,8 +136,11 @@
             </div>
         </div>
     </article>
+    {$template:_contacts}
 </section>
-
+<div id="quote-form-container" class='dialog' title="{$header:order:static:readonly}">
+    {$quote:form}
+</div>
 {$template:_footer}
 {$template:_mobile elements}
 {$template:_scripts}
@@ -187,7 +195,7 @@
             $tab.eq(a).show()
         });
 
-        if(!$('#tab-3 .pagerating-review').length) {
+        if (!$('#tab-3 .pagerating-review').length) {
             $('.recent-posts-title, .pagerating-list').remove();
         }
     })

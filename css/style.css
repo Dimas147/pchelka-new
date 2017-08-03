@@ -29,7 +29,7 @@ footer .logo {
 }
 header .logo a,
 footer .logo a {
-  margin-top: -7px;
+  margin-top: -3px;
   margin-bottom: -9px;
   display: inline-block;
   vertical-align: middle;
@@ -90,7 +90,7 @@ footer h4 {
   margin-bottom: 16px;
 }
 #go-top {
-  color: #FFFFFF;
+  color: #FFF;
   border-color: rgba(0, 0, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -157,7 +157,7 @@ footer h4 {
   position: absolute;
   top: 50%;
   width: 100px;
-  border-bottom: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFF;
   content: "";
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
@@ -176,6 +176,12 @@ footer h4 {
 .slide-content .h1 small::after {
   right: -120px;
 }
+.title-part h1 small:empty + span,
+.slide-content h1 small:empty + span,
+.title-part .h1 small:empty + span,
+.slide-content .h1 small:empty + span {
+  margin-top: 0;
+}
 .title-part h1 span,
 .slide-content h1 span,
 .title-part .h1 span,
@@ -184,7 +190,7 @@ footer h4 {
   margin-top: 0.5em;
 }
 .title-part {
-  background: #EEEEEE;
+  background: #EEE;
   padding-top: 11.25rem;
   padding-bottom: 8.125rem;
   text-align: center;
@@ -232,6 +238,75 @@ footer h4 {
 .footer-box-container .testimonial-slider-box,
 .testimonial-slider-container .testimonial-slider-box {
   margin-bottom: 4rem;
+}
+#quote-form-container input,
+#quote-form-container textarea,
+#quote-form-container select {
+  border-color: #e7931a;
+}
+#quote-form-container input[type="submit"] {
+  float: right;
+  margin: 0;
+  clear: none;
+  width: auto;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+  line-height: 2.3em;
+}
+#quote-form-container fieldset {
+  padding: 0;
+  border: none;
+}
+#quote-form-container #fieldset-leftColumn p:nth-child(2),
+#quote-form-container #fieldset-leftColumn p:nth-child(5) {
+  display: none;
+}
+#quote-form-container #fieldset-rightColumn p:nth-child(1),
+#quote-form-container #fieldset-rightColumn p:nth-child(2) {
+  display: none;
+}
+.social-lines {
+  padding: 50px 0;
+}
+.social-lines .item {
+  border: 1px solid #eeeeee;
+  overflow: hidden;
+  background: #FFF;
+  text-align: center;
+  font-size: 0;
+}
+.social-lines .title {
+  color: #222222;
+  font-size: 24px;
+  font-family: Roboto-Light, Helvetica, "Helvetica Neue", Arial, sans-serif;
+  background-color: #FAFAFA;
+  margin: 0 0 0;
+  padding: 10px;
+  border-bottom: 1px solid #eeeeee;
+  text-align: left;
+}
+@media only screen and (max-width: 800px) {
+  .social-lines .title {
+    margin-bottom: 10px;
+  }
+  .social-lines .item {
+    padding-bottom: 10px;
+  }
+  .social-lines .item:nth-child(1) iframe {
+    width: 500px !important;
+    border: 1px solid #E9EBEE !important;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .social-lines .title {
+    margin: 0;
+  }
+  .social-lines .item {
+    padding: 0;
+  }
+  .social-lines .item:nth-child(1) iframe {
+    border: none !important;
+  }
 }
 form::after {
   content: "";

@@ -306,6 +306,7 @@
 .ui-dialog .ui-dialog-title {
   display: block;
   margin-right: 10px;
+  text-transform: uppercase;
 }
 .ui-dialog .ui-dialog-titlebar-close {
   position: absolute;
@@ -435,7 +436,7 @@
 .ui-dialog.warning .ui-dialog-titlebar,
 .ui-dialog.error .ui-dialog-titlebar,
 .ui-dialog.info .ui-dialog-titlebar {
-  color: #fff;
+  color: #FFF;
 }
 .ui-dialog.success {
   border-color: #4fc752;

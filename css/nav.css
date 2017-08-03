@@ -720,11 +720,13 @@ footer .news-item .news-item-date::before,
   color: #b6afa8;
 }
 .news-post-comment .by,
-.product-comment .by {
+.product-comment .by,
+.company-testimonials .by {
   display: none;
 }
 .news-post-comment .review-header,
-.product-comment .review-header {
+.product-comment .review-header,
+.company-testimonials .review-header {
   margin-top: 0;
   position: relative;
   padding-bottom: 1.875rem;
@@ -732,7 +734,8 @@ footer .news-item .news-item-date::before,
   text-align: center;
 }
 .news-post-comment .review-header::before,
-.product-comment .review-header::before {
+.product-comment .review-header::before,
+.company-testimonials .review-header::before {
   position: absolute;
   left: 50%;
   bottom: -2px;
@@ -743,15 +746,18 @@ footer .news-item .news-item-date::before,
   content: "";
 }
 .news-post-comment .pagerating-list,
-.product-comment .pagerating-list {
+.product-comment .pagerating-list,
+.company-testimonials .pagerating-list {
   margin-bottom: 5.625rem;
 }
 .news-post-comment .pagerating-list:empty,
-.product-comment .pagerating-list:empty {
+.product-comment .pagerating-list:empty,
+.company-testimonials .pagerating-list:empty {
   display: none;
 }
 .news-post-comment .pagerating-list .name,
-.product-comment .pagerating-list .name {
+.product-comment .pagerating-list .name,
+.company-testimonials .pagerating-list .name {
   font-size: 1.375em;
   line-height: 1.36364;
   letter-spacing: 0.06em;
@@ -760,13 +766,15 @@ footer .news-item .news-item-date::before,
   font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
 }
 .news-post-comment .pagerating-list .pagerating-info,
-.product-comment .pagerating-list .pagerating-info {
+.product-comment .pagerating-list .pagerating-info,
+.company-testimonials .pagerating-list .pagerating-info {
   overflow: hidden;
   padding-left: 63px;
   padding-top: 10px;
 }
 .news-post-comment .pagerating-list .pagerating-info::before,
-.product-comment .pagerating-list .pagerating-info::before {
+.product-comment .pagerating-list .pagerating-info::before,
+.company-testimonials .pagerating-list .pagerating-info::before {
   float: left;
   margin-top: -5px;
   margin-left: -53px;
@@ -785,28 +793,33 @@ footer .news-item .news-item-date::before,
   content: "\e05f";
 }
 .news-post-comment .pagerating-list .pagerating-info .name,
-.product-comment .pagerating-list .pagerating-info .name {
+.product-comment .pagerating-list .pagerating-info .name,
+.company-testimonials .pagerating-list .pagerating-info .name {
   font-weight: 700;
   color: #666666;
 }
 .news-post-comment .pagerating-list .pagerating-info .author,
-.product-comment .pagerating-list .pagerating-info .author {
+.product-comment .pagerating-list .pagerating-info .author,
+.company-testimonials .pagerating-list .pagerating-info .author {
   font-weight: 700;
   color: #666666;
 }
 .news-post-comment .pagerating-list .pagerating-info .published,
-.product-comment .pagerating-list .pagerating-info .published {
+.product-comment .pagerating-list .pagerating-info .published,
+.company-testimonials .pagerating-list .pagerating-info .published {
   color: #999999;
 }
 .news-post-comment .pagerating-list .pagerating-info + .rating,
-.product-comment .pagerating-list .pagerating-info + .rating {
+.product-comment .pagerating-list .pagerating-info + .rating,
+.company-testimonials .pagerating-list .pagerating-info + .rating {
   display: block;
   margin-left: 63px;
   margin-bottom: 0;
   margin-top: -20px;
 }
 .news-post-comment .pagerating-list .description,
-.product-comment .pagerating-list .description {
+.product-comment .pagerating-list .description,
+.company-testimonials .pagerating-list .description {
   display: block;
   background-color: #FFFFFF;
   border: 1px solid #EEEEEE;
@@ -816,7 +829,8 @@ footer .news-item .news-item-date::before,
   position: relative;
 }
 .news-post-comment .pagerating-list .description::before,
-.product-comment .pagerating-list .description::before {
+.product-comment .pagerating-list .description::before,
+.company-testimonials .pagerating-list .description::before {
   display: block;
   content: "";
   position: absolute;
@@ -833,13 +847,16 @@ footer .news-item .news-item-date::before,
   border-bottom: none;
 }
 .news-post-comment .pagerating-list .pagerating-review + .pagerating-review,
-.product-comment .pagerating-list .pagerating-review + .pagerating-review {
+.product-comment .pagerating-list .pagerating-review + .pagerating-review,
+.company-testimonials .pagerating-list .pagerating-review + .pagerating-review {
   margin-top: 2.142rem;
 }
 .news-post-comment .mess-moderated,
 .product-comment .mess-moderated,
+.company-testimonials .mess-moderated,
 .news-post-comment .review-done,
-.product-comment .review-done {
+.product-comment .review-done,
+.company-testimonials .review-done {
   display: block;
   padding: 15px 10px;
   background-color: #DFF0F8;
@@ -848,7 +865,8 @@ footer .news-item .news-item-date::before,
   margin-bottom: 15px;
 }
 .news-post-comment .review-done,
-.product-comment .review-done {
+.product-comment .review-done,
+.company-testimonials .review-done {
   margin-top: -4.6rem;
   color: #486A00;
   border-color: #C7EA80;
