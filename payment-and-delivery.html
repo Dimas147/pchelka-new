@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Include head template -->
+    {$template:_head}
+</head>
+<body class="faq">
+
+{$template:_header}
+{$template:_breadcrumbs}
+
+<section role="main">
+    <article class="space container">
+        <h2 class="title-underlined text-center grid_12">{$header:payment-title}</h2>
+
+        <div class="grid_12">
+            <div class="{adminonly}no-{/adminonly}accordion"
+                 data-accordion-icons="icon-arrow-right2,icon-arrow-down2">
+                {repeat:accordion:key:0}
+                <div itemscope itemtype="http://schema.org/Question">
+                    <h4 itemprop="name">{$header:accordion-header_key}</h4>
+
+                    <div itemprop="suggestedAnswer" itemscope itemtype="http://schema.org/Answer">
+                        <div itemprop="text">{$content:accordion-content_key}</div>
+                    </div>
+                </div>
+                {/repeat}
+            </div>
+        </div>
+    </article>
+    <div class="light-bg">
+        <article class="space container">
+            <h2 class="title-underlined text-center grid_12">{$header:delivery-title}</h2>
+
+            <div class="grid_12">
+                <div class="{adminonly}no-{/adminonly}accordion"
+                     data-accordion-icons="icon-arrow-right2,icon-arrow-down2">
+                    {repeat:accordion-1:key:0}
+                    <div itemscope itemtype="http://schema.org/Question">
+                        <h4 itemprop="name">{$header:accordion-header-1_key}</h4>
+
+                        <div itemprop="suggestedAnswer" itemscope itemtype="http://schema.org/Answer">
+                            <div itemprop="text">{$content:accordion-content-1_key}</div>
+                        </div>
+                    </div>
+                    {/repeat}
+                </div>
+            </div>
+        </article>
+    </div>
+    {$template:_contacts}
+</section>
+{$template:_footer}
+{$template:_mobile elements}
+{$template:_scripts}
+</body>
+</html>

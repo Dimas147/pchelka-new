@@ -76,7 +76,7 @@
     margin-left: -20px;
     z-index: 0;
     display: none;
-    width: 210px;
+    width: 230px;
   }
   .main_menu ul::before {
     position: absolute;
@@ -323,7 +323,8 @@ aside .relatedpages li p {
   display: inline-block;
   vertical-align: top;
 }
-footer .news-list {
+footer .news-list,
+aside .news-list {
   margin-bottom: -1.875rem;
 }
 .news-list .news-list-pagination {
@@ -762,7 +763,7 @@ footer .news-item .news-item-date::before,
   line-height: 1.36364;
   letter-spacing: 0.06em;
   margin-bottom: 0.66em;
-  color: #222222;
+  color: #222;
   font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
 }
 .news-post-comment .pagerating-list .pagerating-info,
@@ -783,9 +784,9 @@ footer .news-item .news-item-date::before,
   width: 43px;
   line-height: 45px;
   display: block;
-  border: 1px solid #EEEEEE;
+  border: 1px solid #EEE;
   background: #C5C5C5;
-  color: #FFFFFF;
+  color: #FFF;
   font-size: 43px;
   overflow: hidden;
   border-radius: 50%;
@@ -796,18 +797,18 @@ footer .news-item .news-item-date::before,
 .product-comment .pagerating-list .pagerating-info .name,
 .company-testimonials .pagerating-list .pagerating-info .name {
   font-weight: 700;
-  color: #666666;
+  color: #666;
 }
 .news-post-comment .pagerating-list .pagerating-info .author,
 .product-comment .pagerating-list .pagerating-info .author,
 .company-testimonials .pagerating-list .pagerating-info .author {
   font-weight: 700;
-  color: #666666;
+  color: #666;
 }
 .news-post-comment .pagerating-list .pagerating-info .published,
 .product-comment .pagerating-list .pagerating-info .published,
 .company-testimonials .pagerating-list .pagerating-info .published {
-  color: #999999;
+  color: #999;
 }
 .news-post-comment .pagerating-list .pagerating-info + .rating,
 .product-comment .pagerating-list .pagerating-info + .rating,
@@ -821,8 +822,8 @@ footer .news-item .news-item-date::before,
 .product-comment .pagerating-list .description,
 .company-testimonials .pagerating-list .description {
   display: block;
-  background-color: #FFFFFF;
-  border: 1px solid #EEEEEE;
+  background-color: #FFF;
+  border: 1px solid #EEE;
   padding: 15px;
   margin-top: 17px;
   border-radius: 3px;
@@ -838,8 +839,8 @@ footer .news-item .news-item-date::before,
   top: -8px;
   width: 14px;
   height: 14px;
-  background-color: #FFFFFF;
-  border: 1px solid #EEEEEE;
+  background-color: #FFF;
+  border: 1px solid #EEE;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -891,9 +892,9 @@ footer .news-item .news-item-date::before,
   width: 67px;
   line-height: 80px;
   display: block;
-  border: 1px solid #EEEEEE;
+  border: 1px solid #EEE;
   background: #C5C5C5;
-  color: #FFFFFF;
+  color: #FFF;
   font-size: 62px;
   overflow: hidden;
   border-radius: 50%;

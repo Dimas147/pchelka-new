@@ -1,7 +1,7 @@
 .news-list {
 	.inline-block-wrap(top);
 	margin-bottom : -5.625rem;
-	footer & {
+	footer &, aside & {
 		margin-bottom : -1.875rem;
 	}
 	.news-list-pagination {
@@ -53,7 +53,6 @@
 		}
 	}
 }
-
 .news-description, .news-item {
 	.news-item-image {
 		margin-bottom : 1.0625rem;
@@ -125,7 +124,6 @@
 		}
 	}
 }
-
 .news-controls {
 	margin : 2.142rem 0;
 	.news-item-tags {
@@ -152,7 +150,6 @@
 		}
 	}
 }
-
 .aside-box {
 	.tags-container {
 		.inline-block-wrap();
@@ -174,18 +171,16 @@
 		}
 	}
 }
-
 .news-description {
 	.news-item-date, .news-item-image {
 		margin-bottom : 2.142rem;
 	}
 }
-
 .news-item when (@widget-news-list) {
 	margin-bottom : 5.625rem;
 	.grid-elements(3; @grid-margin-width; true; 2; 1);
 
-	.news-room [role="main"] &{
+	.news-room [role="main"] & {
 		.grid-elements(2; @grid-margin-width; true; 2; 1);
 	}
 
@@ -222,7 +217,6 @@
 		}
 	}
 }
-
 .news-post-comment, .product-comment, .company-testimonials {
 	.by {
 		display : none;
@@ -255,7 +249,7 @@
 			line-height    : 1.36364;
 			letter-spacing : 0.06em;
 			margin-bottom  : 0.66em;
-			color          : #222222;
+			color          : #222;
 			font-family    : @font-family-headings;
 		}
 
@@ -275,9 +269,9 @@
 				width       : 43px;
 				line-height : 45px;
 				display     : block;
-				border      : 1px solid #EEEEEE;
+				border      : 1px solid #EEE;
 				background  : #C5C5C5;
-				color       : #FFFFFF;
+				color       : #FFF;
 				font-size   : 43px;
 				overflow    : hidden;
 				.border-radius(50%);
@@ -286,14 +280,14 @@
 			}
 			.name {
 				font-weight : 700;
-				color       : #666666;
+				color       : #666;
 			}
 			.author {
 				font-weight : 700;
-				color       : #666666;
+				color       : #666;
 			}
 			.published {
-				color : #999999;
+				color : #999;
 			}
 			& + .rating {
 				display       : block;
@@ -304,8 +298,8 @@
 		}
 		.description {
 			display          : block;
-			background-color : #FFFFFF;
-			border           : 1px solid #EEEEEE;
+			background-color : #FFF;
+			border           : 1px solid #EEE;
 			padding          : 15px;
 			margin-top       : 17px;
 			border-radius    : 3px;
@@ -319,8 +313,8 @@
 				top               : -8px;
 				width             : 14px;
 				height            : 14px;
-				background-color  : #FFFFFF;
-				border            : 1px solid #EEEEEE;
+				background-color  : #FFF;
+				border            : 1px solid #EEE;
 				-webkit-transform : rotate(45deg);
 				-ms-transform     : rotate(45deg);
 				transform         : rotate(45deg);
@@ -349,7 +343,6 @@
 		background-color : #E9F6CC;
 	}
 }
-
 .author-block {
 	position      : relative;
 	min-height    : 127px;
@@ -368,9 +361,9 @@
 		width       : 67px;
 		line-height : 80px;
 		display     : block;
-		border      : 1px solid #EEEEEE;
+		border      : 1px solid #EEE;
 		background  : #C5C5C5;
-		color       : #FFFFFF;
+		color       : #FFF;
 		font-size   : 62px;
 		overflow    : hidden;
 		.border-radius(50%);
