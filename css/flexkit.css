@@ -180,7 +180,7 @@
   font-weight: bold;
   border: 1px solid #eadbc2;
   line-height: 1.2;
-  transition: all 0.3s;
+  transition: background ease-in-out 0.3s;
   border-radius: 6px;
 }
 .ui-accordion:not(#cpanelul) .ui-accordion-header:hover {
@@ -267,6 +267,168 @@
 }
 .no-accordion p:last-child {
   margin-bottom: 0;
+}
+.ui-tabs {
+  position: relative;
+}
+.ui-tabs::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.ui-tabs .ui-tabs-nav {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+.ui-tabs .ui-tabs-nav::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.ui-tabs .ui-tabs-nav li {
+  position: relative;
+  float: left;
+  margin: 2px -1px 0 0;
+  background: #fafafa;
+  white-space: nowrap;
+  list-style: none;
+  color: #888888;
+  border: 1px solid #888888;
+  border-bottom-width: 0;
+}
+.ui-tabs .ui-tabs-nav li a {
+  color: inherit;
+  text-decoration: none;
+}
+.ui-tabs .ui-tabs-nav li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #888888;
+  box-shadow: 0px 1px 3px #bbbbbb;
+}
+.ui-tabs .ui-tabs-nav li ul li {
+  margin: -1px !important;
+  float: none;
+  border-width: 1px;
+  z-index: 0;
+}
+.ui-tabs .ui-tabs-nav li ul li.ui-tabs-active,
+.ui-tabs .ui-tabs-nav li ul li:hover {
+  z-index: 1;
+  border-width: 1px 3px 1px 1px;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active,
+.ui-tabs .ui-tabs-nav li:hover {
+  margin-top: 0;
+  border-top-width: 3px;
+}
+.ui-tabs .ui-tabs-nav li:hover {
+  cursor: pointer;
+  background: #fafafa;
+  border-color: #888888;
+  color: #888888;
+}
+.ui-tabs .ui-tabs-nav li:hover ul {
+  display: block;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  font-weight: bold;
+  background: #FFF;
+  position: relative;
+  padding-bottom: 1px;
+  margin-bottom: -1px;
+  border-color: #e7931a;
+  color: #e7931a;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a {
+  cursor: default;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.ui-tabs .ui-tabs-panel {
+  position: relative;
+  z-index: 0;
+  border: 1px solid #e7931a;
+  overflow: hidden;
+  background: #fff;
+  padding: 8px 12px;
+}
+.ui-tabs .ui-tabs-panel::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.ui-tabs.vertical > .ui-tabs-nav {
+  float: left;
+  width: 25%;
+}
+.ui-tabs.vertical > .ui-tabs-nav li {
+  float: none;
+  display: block;
+  margin: 0 -1px -1px 2px;
+  border-width: 1px;
+}
+.ui-tabs.vertical > .ui-tabs-nav li.ui-tabs-active,
+.ui-tabs.vertical > .ui-tabs-nav li:hover {
+  margin-left: 0;
+  border-left-width: 3px;
+}
+.ui-tabs.vertical > .ui-tabs-nav li.ui-tabs-active {
+  border-right-color: #fff;
+}
+.ui-tabs.vertical > .ui-tabs-panel {
+  clear: none;
+}
+.ui-tabs.blocks {
+  border: 3px solid #e7931a;
+}
+.ui-tabs.blocks > .ui-tabs-nav {
+  border-bottom: 3px solid #e7931a;
+}
+.ui-tabs.blocks > .ui-tabs-nav li {
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: #e7931a;
+}
+.ui-tabs.blocks > .ui-tabs-nav li + li {
+  border-left: 3px solid #e7931a;
+}
+.ui-tabs.blocks > .ui-tabs-nav li:hover {
+  background: #eaa23a;
+  color: #fff;
+}
+.ui-tabs.blocks > .ui-tabs-nav .ui-tabs-active {
+  background: #e7931a;
+  color: #fff;
+}
+.ui-tabs.blocks > .ui-tabs-panel {
+  border: none;
+}
+.ui-tabs.blocks.vertical > .ui-tabs-nav {
+  margin-right: -3px;
+  border: none;
+  border-right: inherit;
+}
+.ui-tabs.blocks.vertical > .ui-tabs-nav li {
+  border: none;
+}
+.ui-tabs.blocks.vertical > .ui-tabs-nav li + li {
+  border-top: 3px solid #e7931a;
+}
+.ui-tabs.blocks.vertical > .ui-tabs-panel {
+  border-left: 3px solid #e7931a;
 }
 .ui-dialog {
   position: absolute;

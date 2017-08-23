@@ -308,6 +308,9 @@ footer h4 {
     border: none !important;
   }
 }
+script[data-pagespeed-no-defer] {
+  display: none !important;
+}
 form::after {
   content: "";
   display: table;
@@ -534,7 +537,7 @@ select,
 textarea,
 input {
   font-family: Roboto-Light, Helvetica, "Helvetica Neue", Arial, sans-serif;
-  border: 1px solid #FFF;
+  border: 1px solid #eeeeee;
   background-color: #fff;
   color: #000000;
   padding: 0.8125rem;
@@ -617,11 +620,6 @@ textarea {
 textarea.resize {
   resize: vertical;
 }
-.forgot-password,
-.retrieveFormBlock > form + a {
-  float: left;
-  margin-top: -32px;
-}
 .filed-upgrade {
   height: auto;
   position: absolute;
@@ -643,7 +641,7 @@ textarea.resize {
   line-height: 0;
   margin: 0;
   background: #fff;
-  border: 1px solid #FFF;
+  border: 1px solid #eeeeee;
   color: transparent;
 }
 .filed-upgrade ~ .checkbox_radio::before {
@@ -759,6 +757,90 @@ textarea.resize {
   padding-left: 0;
   padding-right: 0;
   margin: 0;
+}
+#login-form input[type="text"],
+#login-form input[type="password"] {
+  border-color: #e7931a;
+}
+#login-form p:nth-child(3) {
+  display: none;
+}
+#password-retrive input[type="text"],
+#password-retrive input[type="password"] {
+  border-color: #e7931a;
+}
+#login-form input[type="submit"],
+#password-retrive input[type="submit"] {
+  margin-right: 0;
+  width: 49%;
+  float: right;
+}
+.forgot-password,
+#remember-password,
+.logout {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  height: auto;
+  line-height: 2.3em;
+  padding: 0 1em;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  color: #FFF;
+  border-color: #e7931a;
+  background-color: #e7931a;
+  border-radius: 6px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-width: 2px;
+  border-style: solid;
+  transition: background ease-in-out 0.3s, border ease-in-out 0.3s;
+  width: 49%;
+  margin-top: -59.97px;
+  font-size: 1.125em;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  padding: 0.805em 1.66em;
+  float: left;
+}
+.forgot-password:hover,
+#remember-password:hover,
+.logout:hover,
+.forgot-password:active,
+#remember-password:active,
+.logout:active,
+.forgot-password.active,
+#remember-password.active,
+.logout.active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
+}
+.logout {
+  margin-top: 0;
+}
+.profile-user-info {
+  margin: 0 0 1em;
+}
+.profile-user-info li {
+  font-size: 1.125em;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  padding: 0.805em 0;
+  margin: 0;
+  border-bottom: 1px solid #EEE;
+}
+.profile-user-info li:first-child {
+  padding-top: 0.4em;
+}
+#user-edit-account button[name="saveUser"] {
+  max-width: 49%;
+  float: right;
 }
 .input-label {
   position: relative;
@@ -1062,6 +1144,9 @@ textarea.resize {
 }
 .cycle-slideshow.top-slider .cycle-pager {
   display: none;
+}
+.cycle-slideshow.top-slider .slide {
+  background-color: #343434;
 }
 @media only screen and (max-width: 800px) {
   .cycle-slideshow.top-slider {
@@ -1416,80 +1501,6 @@ textarea.resize {
     width: 100%;
     margin-right: 0;
     margin-left: 0;
-  }
-}
-html.mobile,
-html.tablet {
-  overflow: hidden;
-}
-html.mobile::before,
-html.tablet::before {
-  content: "";
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 101;
-  background-color: #e7931a;
-}
-html.mobile .mobile-loader,
-html.tablet .mobile-loader {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 102;
-}
-html.mobile .mobile-loader::after,
-html.tablet .mobile-loader::after,
-html.mobile .mobile-loader::before,
-html.tablet .mobile-loader::before {
-  margin: auto;
-  content: "";
-  display: block;
-  border: 5px solid transparent;
-  border-top-color: #FFF;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  border-radius: 50%;
-}
-html.mobile .mobile-loader::after,
-html.tablet .mobile-loader::after {
-  animation: rotate 1.45s linear infinite;
-  width: 4em;
-  height: 4em;
-}
-html.mobile .mobile-loader::before,
-html.tablet .mobile-loader::before {
-  animation: rotate 1.85s linear infinite;
-  width: 4.75em;
-  height: 4.75em;
-}
-html.mobile.loaded,
-html.tablet.loaded {
-  overflow: initial;
-}
-html.mobile.loaded::before,
-html.tablet.loaded::before {
-  content: none;
-}
-html.mobile.loaded .mobile-loader,
-html.tablet.loaded .mobile-loader {
-  display: none;
-}
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 @media only print {

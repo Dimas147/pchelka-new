@@ -2786,7 +2786,7 @@ ul.list-unstyled {
   zoom: 1;
 }
 ul.list-select {
-  border: 1px solid #FFF;
+  border: 1px solid #eeeeee;
   min-height: calc(24px + 1em);
 }
 ul.list-select > li {

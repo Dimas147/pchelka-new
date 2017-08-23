@@ -269,6 +269,7 @@
   background-color: #343434;
 }
 .product-list {
+  text-align: center;
   font-size: 0;
 }
 .product-list >* {
@@ -283,6 +284,7 @@
   display: none;
 }
 .product-item {
+  text-align: left;
   position: relative;
   margin-bottom: 1.25rem;
   padding: 1.25rem 0;
@@ -372,7 +374,7 @@
   line-height: 1.55556;
   color: #e7931a;
   margin-bottom: 0;
-  height: 56px;
+  height: 81px;
   overflow: hidden;
 }
 .product-item .product-title:hover {
@@ -1783,9 +1785,6 @@ body.quote input {
   clear: both;
 }
 @media only screen and (min-width: 481px) {
-  #user-edit-account {
-    max-width: 700px;
-  }
   #user-edit-account label {
     margin: 0.5em 0 0;
     float: left;

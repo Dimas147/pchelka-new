@@ -2,6 +2,7 @@
 <html>
 <head>
     {$template:_head}
+    <meta name="yandex-verification" content="48b74ac3417e146a" />
     <meta name="google-site-verification" content="cOXohkQCauADvWJc-GBGPKWMPArvYdVmivY4wvYOCTE"/>
 </head>
 <body class="index-page">
@@ -16,7 +17,10 @@
         <nav id="main-menu" role="navigation" class="grid_8 alpha omega text-center">{$menu:main:_main menu}</nav>
         <ul class="grid_2 text-right list-additional-controls">
             <li>
-                <a href="" class="icon-search btn icon dialog-btn" data-dialog-element="#search-form-container"></a>
+                <a href="{$website:url}/user-landing.html" class="icon-user btn icon"></a>
+            </li>
+            <li>
+                <a href="#" class="icon-search btn icon dialog-btn" data-dialog-element="#search-form-container"></a>
             </li>
             <li>
                 {$store:cartblock}
@@ -38,11 +42,11 @@
     </div>
     {/repeat}
     <div class="slide-content container">
+        <h2 class="h1 grid_12 d-hide">{$header:top-title:static}</h2>
         <figure class="organization-image grid_12 d-hide">
             {$imageonly:organization-image:original:static:readonly}
         </figure>
         <h2 class="h1 mt0px grid_8 prefix_2 suffix_2">{$header:slide-title:static}</h2>
-
         <div class="grid_8 prefix_2 suffix_2 slogan">{$content:slide-content:static}</div>
         <div class="grid_8 prefix_2 suffix_2 slide-buttons">{$content:slide-buttons:static}</div>
     </div>
@@ -54,9 +58,14 @@
     <article class="light-bg">
         <div class="container space">
             <h2 class="title-underlined grid_12">{$header:content_1}</h2>
-
-            <div class="grid_12">
-                {$featured:area:categories:3:0:template=_fa - categories}
+            <div class="clearfix inline-block-wrap">
+                <div class="grid_6 fl-none">
+                    {$imageonly:content_1:500}
+                </div>
+                <div class="grid_6 fl-none">
+                    <h3>{$header:subtitle_1}</h3>
+                    {$content:content_1}
+                </div>
             </div>
         </div>
     </article>
@@ -195,32 +204,27 @@
         </div>
     </article>
 
-    <article class="space">
-        <div class="social-lines container">
-            <h2 class="grid_12 title-underlined">{$header:social-accounts:static}</h2>
-            <div class="grid_4 prefix_4 item">
-                <h3 class="title">{$header:social-lines_1:static}</h3>
-                <a class="twitter-timeline" href="https://twitter.com/pchelka_kh_ua">Tweets by pchelka_kh_ua</a>
-                <script>!function (d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + "://platform.twitter.com/widgets.js";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, "script", "twitter-wjs");
-                </script>
-            </div>
-            <!--<div class="grid_4 suffix_2 item">-->
-                <!--<h3 class="title">{ $header:social-lines_2:static}</h3>-->
+    <!--<article class="space">-->
+        <!--<div class="social-lines container">-->
+            <!--<h2 class="grid_12 title-underlined">{_$header:social-accounts:static}</h2>-->
+            <!--<div class="grid_4 prefix_4 item">-->
+                <!--<h3 class="title">{_$header:social-lines_1:static}</h3>-->
+                <!--<a class="twitter-timeline" href="https://twitter.com/pchelka_kh_ua">Tweets by pchelka_kh_ua</a>-->
+                <!--<script>!function (d, s, id) {-->
+                    <!--var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';-->
+                    <!--if (!d.getElementById(id)) {-->
+                        <!--js = d.createElement(s);-->
+                        <!--js.id = id;-->
+                        <!--js.src = p + "://platform.twitter.com/widgets.js";-->
+                        <!--fjs.parentNode.insertBefore(js, fjs);-->
+                    <!--}-->
+                <!--}(document, "script", "twitter-wjs");-->
+                <!--</script>-->
             <!--</div>-->
-        </div>
-    </article>
+        <!--</div>-->
+    <!--</article>-->
 
-    <div class="light-bg">
-        {$template:_contacts}
-    </div>
+    {$template:_contacts}
 
 </section>
 {$template:_footer}
@@ -233,35 +237,38 @@
 <script>
     $(function () {
         $('#products-in-carousel .show-more').remove();
-        $('#products-in-carousel .product-list').addClass("owl-carousel");
-        $('.owl-carousel').owlCarousel({
-            loop: 'true',
-            margin: 10,
-            responsiveClass: 'true',
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: 'true'
-                },
-                481: {
-                    items: 2,
-                    nav: 'false',
-                    margin: 30
-                },
-                480: {
-                    items: 2,
-                    nav: 'true',
-                    loop: 'false',
-                    margin: 26
-                },
-                1025: {
-                    items: 4,
-                    nav: 'true',
-                    loop: 'false',
-                    margin: 30
+        var count = $('#products-in-carousel .product-item').size();
+        if(count > 3){
+            $('#products-in-carousel .product-list').addClass("owl-carousel");
+            $('.owl-carousel').owlCarousel({
+                loop: 'true',
+                margin: 10,
+                responsiveClass: 'true',
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: 'true'
+                    },
+                    481: {
+                        items: 2,
+                        nav: 'false',
+                        margin: 30
+                    },
+                    480: {
+                        items: 2,
+                        nav: 'true',
+                        loop: 'false',
+                        margin: 26
+                    },
+                    1025: {
+                        items: 4,
+                        nav: 'true',
+                        loop: 'false',
+                        margin: 30
+                    }
                 }
-            }
-        });
+            });
+        }
     })
 </script>
 

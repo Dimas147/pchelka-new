@@ -12,12 +12,8 @@
 <section role="main">
     <article class="space container">
         <h2 class="title-underlined text-center grid_12">{$header:content_key}</h2>
-        {notadmin}
-        <div class="grid_6 prefix_3 suffix_3">
-            {$store:clientlogin}
-        </div>
-        {/notadmin}
         <div class="grid_12">
+            {$store:clientlogin}
             {customeronly}
             <ul class="list-unstyled large profile-user-info">
                 <li><strong>Your e-mail:</strong> {$user:email}</li>
