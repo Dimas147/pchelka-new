@@ -3765,13 +3765,17 @@ hr.dotted {
 .ui-helper-hidden,
 .ui-helper-hidden-accessible,
 .btn.hide {
-  display: none;
+  display: none !important;
 }
 .pointer {
   cursor: pointer !important;
 }
 .help {
   cursor: help !important;
+}
+.fs0,
+.is0:before {
+  font-size: 0 !important;
 }
 .fs12,
 .is12:before {

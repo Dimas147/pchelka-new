@@ -311,6 +311,13 @@ footer h4 {
 script[data-pagespeed-no-defer] {
   display: none !important;
 }
+.main-phone {
+  color: #FFF;
+  font-size: 3.375rem;
+}
+.main-phone:hover {
+  color: #FFF;
+}
 form::after {
   content: "";
   display: table;

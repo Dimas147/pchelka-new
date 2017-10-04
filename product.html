@@ -18,7 +18,7 @@
         </li>
         <li itemprop="itemListElement" itemscope
             itemtype="http://schema.org/ListItem">
-            <a itemprop="item" href="https://www.pchelka.kh.ua/shop.html">
+            <a itemprop="item" href="https://www.pchelka.kh.ua/kupit-med-2017.html">
                 <span itemprop="name">{$header:product-page:static}</span>
             </a>
             <meta itemprop="position" content="2"/>
@@ -69,7 +69,8 @@
                     </div>
                     <p>{$store:addtocart:{$product:id}}</p>
 
-                    <p><a href="" class="btn dialog-btn big block m0px" data-dialog-element="#quote-form-container">{$header:order:static}</a>
+                    <p><a href="" id="quick-order" class="btn dialog-btn big block m0px"
+                          data-dialog-element="#quote-form-container">{$header:order:static}</a>
                     </p>
                 </div>
             </div>
@@ -211,6 +212,31 @@
         if (!$('#tab-3 .pagerating-review').length) {
             $('.recent-posts-title, .pagerating-list').remove();
         }
+
+
+        var str = window.location.href;
+        if (str.indexOf('#') + 1) {
+            var from = str.lastIndexOf("#");
+            var to = str.length;
+            elementId = str.substring(from, to);
+            console.log(elementId);
+            if (elementId == '#quick-order') {
+                $("#quick-order").trigger("click");
+                console.log("clicked");
+            }
+        }
+
+
+//        $(".product-price").each(function () {
+//            var str = $(this).text();
+//            if (str.indexOf('.') + 1) {
+//                var from = str[-1];
+//                var to = str.lastIndexOf(".");
+//                newStr = str.substring(from, to);
+//                $(this).text(newStr);
+//            }
+//        });
+
     })
 
 </script>

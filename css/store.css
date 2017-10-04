@@ -283,6 +283,12 @@
 .product-list .total-review {
   display: none;
 }
+.product-list a.btn {
+  display: block;
+}
+.product-list a.btn p {
+  margin-bottom: 0;
+}
 .product-item {
   text-align: left;
   position: relative;
@@ -463,9 +469,88 @@
   border-color: #e7931a;
   background-color: #e7931a;
 }
-.product-item:hover::before {
+.product-item::before {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   background-color: #FFF;
+}
+.light-bg .product-item::before {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #f3f0eb;
+}
+#products-list-big {
+  margin-bottom: -1.25rem;
+}
+#products-list-big .product-item {
+  padding: 1.25rem 1.25rem 0 1.25rem;
+  margin-left: 2%;
+  margin-right: 0;
+  width: 100%;
+}
+#products-list-big .product-item:nth-of-type(1n + 1) {
+  margin-left: 0;
+}
+@media only screen and (max-width: 800px) and (min-width: 481px) {
+  #products-list-big .product-item {
+    width: 49%;
+  }
+  #products-list-big .product-item:nth-of-type(n) {
+    margin-left: 2%;
+  }
+  #products-list-big .product-item:nth-of-type(2n + 1) {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #products-list-big .product-item {
+    width: 100%;
+  }
+  #products-list-big .product-item:nth-of-type(1n + 1) {
+    margin-left: 0;
+  }
+}
+#products-list-big .product-item::before {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #FFF;
+}
+#products-list-big .product-item > div {
+  margin-bottom: 1.25rem;
+}
+#products-list-big .product-image {
+  margin: 0;
+}
+#products-list-big .product-title {
+  margin-bottom: 0.9285rem;
+  font-size: 1.5rem;
+  height: auto;
+  line-height: 1.2;
+  padding: 0;
+}
+#products-list-big .product-price {
+  font-size: 1.857rem;
+  margin-bottom: 0.9285rem;
+  height: auto;
+  padding: 0;
+}
+#products-list-big .show-more {
+  display: none !important;
+}
+#products-list-big .product-description {
+  height: auto;
+  margin-bottom: 1.25rem;
+}
+#products-list-big .stars-container,
+#products-list-big .product-description,
+#products-list-big .tcart-add {
+  padding: 0;
+}
+#products-list-big .tcart-add {
+  margin: 0;
+}
+#products-list-big .starrating {
+  margin-bottom: 1.25rem;
+}
+#products-list-big .btn {
+  margin: 0;
 }
 .checkout-page .pr {
   padding-right: 2.142rem;
@@ -1648,6 +1733,9 @@ body.quote .video-container h4.title {
 body.quote .quote-expired-notification {
   margin-top: 15px;
   padding: 15px;
+  color: #7b2a0a;
+  border-left: 3px solid #fba98a;
+  background-color: #fdddd0;
 }
 body.quote #paypal_button {
   margin-bottom: 15px;

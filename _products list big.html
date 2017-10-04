@@ -1,0 +1,31 @@
+<div class="product-item" itemscope="" itemtype="http://schema.org/Product">
+    <div class="grid_5 alpha">
+        <a href="{$product:url}" class="product-image">
+            <img itemprop="image" src="{$product:photourl:medium}" alt="{$product:name}"/>
+        </a>
+    </div>
+    <div class="grid_7 omega">
+        <a itemprop="name" class="product-title tooltip" href="{$product:url}" title="{$product:name}">{$product:name}</a>
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="product-price">
+            {$product:price}
+            {$textonly:litre:static}
+            <meta itemprop="priceCurrency" content="UAH"/>
+            <meta itemprop="price" content="{$product:price:nocurrency}"/>
+        </div>
+        {$plugin:pagerating:stars:{$product:id}}
+        <p class="product-description">{$product:description}</p>
+        <div class="clearfix">
+            <div class="grid_6 alpha">
+                {notadmin}<a href="{$product:url}#quick-order" class="btn">{/notadmin}
+                {$textonly:quick-order:static}
+                {notadmin}</a>{/notadmin}
+            </div>
+            <div class="grid_6 alpha">
+                {notadmin}<a href="{$product:url}" class="btn">{/notadmin}
+                    {$textonly:more-about-product:static}
+                {notadmin}</a>{/notadmin}
+            </div>
+        </div>
+
+    </div>
+</div>
