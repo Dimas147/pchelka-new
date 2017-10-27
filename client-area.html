@@ -11,31 +11,18 @@
 
 <section role="main">
     <article class="space container">
-        {notadmin}
-        <div class="grid_6">
-            <h2 class="title-underlined text-center">{$header:enter-website}</h2>
-            <div class="login-form-container">
-                {$store:clientlogin}
-            </div>
-        </div>
-        <div class="grid_6">
-            <h2 class="title-underlined text-center">{$header:register-website}</h2>
-            <div class="register-form-container">
-                {$membership:registration:free:auto:profile:me:user landing}
-            </div>
-        </div>
-        {/notadmin}
-        {customeronly}
+        <h2 class="title-underlined text-center grid_12">{$header:content_key}</h2>
         <div class="grid_12">
-            <h2 class="title-underlined text-center">{$header:you-have-entered:static}</h2>
+            {$store:clientlogin}
+            {customeronly}
             <ul class="list-unstyled large profile-user-info">
                 <li><strong>Your e-mail:</strong> {$user:email}</li>
                 <li><strong>Registration date:</strong> {$user:registration}</li>
                 <li><strong>Last seen:</strong> {$user:lastlogin}</li>
             </ul>
             {$user:tabs:orders, Edit Account}
+            {/customeronly}
         </div>
-        {/customeronly}
     </article>
     <div class="light-bg">
         {$template:_contacts}

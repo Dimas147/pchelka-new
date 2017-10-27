@@ -277,7 +277,7 @@ iframe {
   display: inline-block;
   vertical-align: middle;
   background: #fff;
-  border: 1px solid #FFF;
+  border: 1px solid #eeeeee;
   cursor: text;
   padding: 2px 6px;
 }

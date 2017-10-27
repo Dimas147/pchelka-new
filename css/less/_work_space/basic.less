@@ -47,7 +47,7 @@ header, footer {
 		text-transform  : none;
 		font-size       : 0;
 		a {
-			margin-top    : -7px;
+			margin-top    : -3px;
 			margin-bottom : -9px;
 			.inline-block();
 			.inline-block-wrap(middle);
@@ -176,6 +176,11 @@ footer {
 			&::after {
 				right : -120px;
 			}
+			&:empty {
+				& + span {
+					margin-top : 0;
+				}
+			}
 		}
 		span {
 
@@ -227,3 +232,111 @@ footer {
 		margin-bottom : 4rem;
 	}
 }
+
+#quote-form-container {
+	input:not([type="submit"]), textarea, select {
+		border-color : @brand-primary;
+
+	}
+	input[type="submit"] {
+		float       : right;
+		margin      : 0;
+		clear       : none;
+		width       : auto;
+		line-height : 1.9;
+	}
+	fieldset {
+		padding : 0;
+		border  : none;
+	}
+	#fieldset-leftColumn {
+		p {
+			&:nth-child(2), &:nth-child(5) {
+				display : none;
+			}
+		}
+	}
+	#fieldset-rightColumn {
+		p {
+			&:nth-child(1), &:nth-child(2) {
+				display : none;
+			}
+		}
+	}
+}
+
+.social-lines {
+	padding : 50px 0;
+
+	.item {
+		border     : 1px solid @gray-lighter;
+		overflow   : hidden;
+		background : @primary-color;
+		text-align : center;
+		font-size  : 0;
+	}
+	.title {
+		color            : @gray-darker;
+		//font-weight      : normal;
+		font-size        : 24px;
+		font-family      : @font-family-text;
+		background-color : #FAFAFA;
+		margin           : 0 0 0;
+		padding          : 10px;
+		border-bottom    : 1px solid @gray-lighter;
+		text-align       : left;
+	}
+
+	@media only screen and (max-width : @responsive-size-tablet) {
+		.title {
+			margin-bottom : 10px;
+		}
+
+		.item {
+			padding-bottom : 10px;
+			&:nth-child(1) {
+				iframe {
+					width  : 500px !important;
+					border : 1px solid #E9EBEE !important;
+				}
+			}
+		}
+	}
+	@media only screen and (max-width : @responsive-size-mobile) {
+		.title {
+			margin : 0;
+		}
+
+		.item {
+			padding : 0;
+			&:nth-child(1) {
+				iframe {
+					border : none !important;
+				}
+			}
+		}
+	}
+}
+
+script[data-pagespeed-no-defer] {
+	display : none !important;
+}
+
+.main-phone {
+	.link-color(@primary-color; @primary-color);
+	font-size : 3.375rem;
+	@media only screen and (max-width : @responsive-size-mobile) {
+		font-size : 2.5rem;
+	}
+}
+
+.container-responsive {
+	@media only screen and (max-width : @responsive-size-tablet) {
+		& > div {
+			& + div {
+				margin-top : 1.25rem;
+			}
+		}
+	}
+}
+

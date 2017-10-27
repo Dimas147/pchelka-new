@@ -37,7 +37,6 @@ form.toaster-quote {
 	}
 
 }
-
 // Quote
 //==================================================
 #quote-search {
@@ -46,26 +45,24 @@ form.toaster-quote {
 	display    : block;
 	margin-top : 15px;
 }
-
 .ui-menu {
 	z-index : 55 !important;
 }
-
 #storeinfo {
 	h1 {
 		font-size      : inherit;
 		font-weight    : bold;
 		color          : @heading-color;
-		border-bottom  : 1px solid #DDDDDD;
+		border-bottom  : 1px solid #DDD;
 		padding-bottom : 10px;
 		margin-bottom  : 10px;
+		text-transform : uppercase;
 	}
 
 	p {
 		margin-bottom : 10px;
 	}
 }
-
 // quote-info
 //==================================================
 .quote-info {
@@ -81,7 +78,7 @@ form.toaster-quote {
 		font-size      : inherit;
 		font-weight    : bold;
 		color          : @heading-color;
-		border-bottom  : 1px solid #DDDDDD;
+		border-bottom  : 1px solid #DDD;
 		padding-bottom : 10px;
 		margin-bottom  : 10px;
 	}
@@ -128,12 +125,11 @@ form.toaster-quote {
 		min-height : 180px;
 		width      : 100%;
 		display    : block;
-		border     : 1px solid #DDDDDD;
+		border     : 1px solid #DDD;
 		padding    : 10px;
 	}
 
 }
-
 //===============quote-details=================
 #quote-details {
 	clear         : both;
@@ -146,7 +142,7 @@ form.toaster-quote {
 	h2 {
 		font-weight    : bold;
 		color          : @heading-color;
-		border-bottom  : 1px solid #DDDDDD;
+		border-bottom  : 1px solid #DDD;
 		padding-bottom : 15px;
 		margin-bottom  : 10px;
 		font-size      : 2em;
@@ -159,14 +155,13 @@ form.toaster-quote {
 	}
 
 	span {
-		color : #000000;
+		color : #000;
 	}
 	.dates {
 		margin-top    : 0;
 		margin-bottom : 0;
 	}
 }
-
 // Quote admin-panel
 //==================================================
 #quoteControlls {
@@ -174,7 +169,7 @@ form.toaster-quote {
 
 	.quote-controlls {
 		.rgba(rgb(170, 170, 170), 0.8);
-		border-top : 5px solid #888888;
+		border-top : 5px solid #888;
 		bottom     : 0;
 		left       : 0;
 		padding    : 10px 0;
@@ -188,11 +183,10 @@ form.toaster-quote {
 		width     : 500px;
 		padding   : 5px;
 		font-size : 18px;
-		color     : #666666;
-		border    : 1px solid #DDDDDD;
+		color     : #666;
+		border    : 1px solid #DDD;
 	}
 }
-
 body.quote {
 	font-size      : 14px;
 	padding-bottom : 55px;
@@ -221,7 +215,7 @@ body.quote {
 		margin-top    : 15px;
 		margin-bottom : 15px;
 		padding       : 15px;
-		border        : 1px solid #DDDDDD;
+		border        : 1px solid #DDD;
 		background    : @primary-color;
 		p {
 			&:empty {
@@ -246,8 +240,7 @@ body.quote {
 			&:last-child {
 				margin-bottom : 0;
 				td {
-					border-bottom  : none;
-					padding-bottom : 0;
+					border-bottom : none;
 				}
 			}
 		}
@@ -266,7 +259,7 @@ body.quote {
 	.post-purchase-row {
 		margin        : 0;
 		padding       : 10px;
-		border-bottom : 1px solid #DDDDDD;
+		border-bottom : 1px solid #DDD;
 	}
 	.dates {
 		span {
@@ -289,19 +282,22 @@ body.quote {
 			font-size      : inherit;
 			font-weight    : bold;
 			color          : @heading-color;
-			border-bottom  : 1px solid #DDDDDD;
+			border-bottom  : 1px solid #DDD;
 			padding-bottom : 10px;
 			margin-bottom  : 10px;
 		}
 	}
 	.quote-expired-notification {
-		margin-top : 15px;
-		padding    : 15px;
+		margin-top       : 15px;
+		padding          : 15px;
+		color            : #7B2A0A;
+		border-left      : 3px solid #FBA98A;
+		background-color : #FDDDD0;
 	}
 	#paypal_button {
 		margin-bottom : 15px;
 		padding       : 15px;
-		border        : 1px solid #DDDDDD;
+		border        : 1px solid #DDD;
 		fieldset {
 			margin  : 0;
 			padding : 0;
@@ -313,7 +309,7 @@ body.quote {
 			font-size     : inherit;
 			font-weight   : bold;
 			color         : @heading-color;
-			border-bottom : 1px solid #DDDDDD;
+			border-bottom : 1px solid #DDD;
 			margin-bottom : 10px;
 		}
 		.seo-tip {
@@ -343,14 +339,22 @@ body.quote {
 		}
 	}
 	.toaster-quote-content {
-		border-top : 1px solid #DDDDDD;
+		border-top : 1px solid #DDD;
 		background : @primary-color;
 	}
 	select, textarea, input {
-		border-color : #DDDDDD;
+		border-color : #DDD;
+	}
+	.title {
+		font-size      : inherit;
+		font-weight    : bold;
+		color          : @heading-color;
+		border-bottom  : 1px solid #DDD;
+		padding-bottom : 10px;
+		margin-bottom  : 10px;
+		text-transform : uppercase;
 	}
 }
-
 #quote-summary {
 
 }

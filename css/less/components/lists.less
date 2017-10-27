@@ -596,17 +596,19 @@ ul {
 		}
 	}
 	&.list-additional-controls {
+		margin-bottom: -3px;
 		.inline-block-wrap(middle);
 		li {
-			position : relative;
-			padding: 0 5px;
+			position      : relative;
+			padding       : 0 5px;
+			margin-bottom : 0;
 		}
-		.btn{
-			background: none;
-			color: @primary-color;
-			border: none;
-			&:hover{
-				color: @brand-primary;
+		.btn {
+			background : none;
+			color      : @primary-color;
+			border     : none;
+			&:hover {
+				color : @brand-primary;
 			}
 		}
 		.toaster-cart {
@@ -655,8 +657,8 @@ ul {
 				bottom    : 0;
 				font-size : 0;
 			}
-			&:hover{
-				color: @primary-color;
+			&:hover {
+				color : @primary-color;
 			}
 		}
 	}

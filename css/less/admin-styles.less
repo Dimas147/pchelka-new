@@ -21,7 +21,7 @@
 	.form-controls,
 	.admin-panel,
 	.newslog-admin-actions,
-	.admin-actions{
+	.admin-actions {
 		display : none !important;
 	}
 }
@@ -87,5 +87,13 @@
 .newslog-admin-actions {
 	a {
 		.grid-elements(2; 1%; true; 2; 1);
+	}
+}
+
+#cpanelul {
+	& + .menu-links{
+		.logout{
+			text-align : left;
+		}
 	}
 }

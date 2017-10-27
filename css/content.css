@@ -2786,7 +2786,7 @@ ul.list-unstyled {
   zoom: 1;
 }
 ul.list-select {
-  border: 1px solid #FFF;
+  border: 1px solid #eeeeee;
   min-height: calc(24px + 1em);
 }
 ul.list-select > li {
@@ -2958,6 +2958,7 @@ ul.list-contact-information address {
   margin-bottom: 0;
 }
 ul.list-additional-controls {
+  margin-bottom: -3px;
   font-size: 0;
 }
 ul.list-additional-controls >* {
@@ -2968,6 +2969,7 @@ ul.list-additional-controls >* {
 ul.list-additional-controls li {
   position: relative;
   padding: 0 5px;
+  margin-bottom: 0;
 }
 ul.list-additional-controls .btn {
   background: none;
@@ -3524,6 +3526,80 @@ hr.dashed {
 hr.dotted {
   border-top-style: dotted;
 }
+.message {
+  margin-top: 1.25rem;
+  position: relative;
+  padding: .5em .75em;
+  background-color: #f9e2c2;
+  color: #7c4f0e;
+  border-left: 3px solid #efb767;
+}
+.message:empty {
+  display: none;
+}
+.message.notification {
+  box-shadow: -3px 3px 15px rgba(0, 0, 0, 0.25);
+}
+.message .btn-close {
+  font-size: 0.85em;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.message .btn-close::before {
+  content: "\e099";
+}
+.message.right {
+  text-align: right;
+  border-left: none;
+  border-right: 3px solid #efb767;
+}
+.message a {
+  opacity: 0.75;
+}
+.message a:hover {
+  opacity: 1;
+}
+.message hr {
+  border-color: inherit;
+}
+.message p {
+  margin-bottom: 0;
+}
+.message.success {
+  color: #2a6a2c;
+  border-color: #8ada8c;
+  background-color: #d0f0d1;
+}
+.message.warning {
+  color: #886730;
+  border-color: #ffd691;
+  background-color: #ffefd3;
+}
+.message.error {
+  color: #813331;
+  border-color: #f69593;
+  background-color: #fcd5d4;
+}
+.message.info {
+  color: #155e7f;
+  border-color: #70caf3;
+  background-color: #c6eafa;
+}
+.message.gray {
+  color: #222222;
+  border-color: #bbbbbb;
+  background-color: #eeeeee;
+}
+.message[class*=icon-] {
+  padding-left: 3em;
+}
+.message[class*=icon-]::before {
+  position: absolute;
+  top: .225em;
+  left: .4em;
+  font-size: 1.75em;
+}
 .panel {
   color: inherit;
   border: 1px solid #bbbbbb;
@@ -3763,13 +3839,17 @@ hr.dotted {
 .ui-helper-hidden,
 .ui-helper-hidden-accessible,
 .btn.hide {
-  display: none;
+  display: none !important;
 }
 .pointer {
   cursor: pointer !important;
 }
 .help {
   cursor: help !important;
+}
+.fs0,
+.is0:before {
+  font-size: 0 !important;
 }
 .fs12,
 .is12:before {

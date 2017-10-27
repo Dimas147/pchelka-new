@@ -5,20 +5,19 @@
     {$template:_head}
 </head>
 <body class="news-room">
-
 {$template:_header}
-
 {$template:_breadcrumbs}
-
 <section role="main">
-    <div class="container space news-list">
-        {$newslist:_news list - room:desc:2:pgr}
+    <div class="container space">
+        <h2 class="grid_12 title-underlined">{$header:news-room-title}</h2>
+        <div class="grid_12 news-list">
+            {$newslist:_news list - room:desc:2:pgr}
+        </div>
     </div>
     <div class="light-bg">
         {$template:_contacts}
     </div>
 </section>
-
 {$template:_footer}
 {$template:_mobile elements}
 {$template:_scripts}

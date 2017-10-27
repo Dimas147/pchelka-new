@@ -14,6 +14,7 @@
 
 		p {
 			.clearfix-mixin();
+			margin-bottom : 1.07rem;
 		}
 
 		// -- Recaptcha & Captcha style
@@ -40,14 +41,18 @@
 				.button-color(@primary-color; @brand-primary; @brand-primary; @primary-color; transparent; @primary-color);
 			}
 		}
+
 		&.review-form {
 			input[type="submit"] {
-				clear       : none;
-				width       : auto;
-				float       : right;
-				font-size   : 1rem;
-				padding     : 0 0.5rem;
-				line-height : 2.3em;
+				clear : none;
+				width : auto;
+				float : left;
+			}
+		}
+		&#contactusform {
+			input[type="submit"] {
+				float : right;
+				clear : none;
 			}
 		}
 	}
@@ -165,7 +170,7 @@
 	}
 
 	select {
-		height: 59px;
+		height : 59px;
 		option {
 			//        color : @text-color;
 		}
@@ -181,10 +186,39 @@
 			.resize(vertical);
 		}
 	}
+	.checkout-page {
+		#login-form {
+			input[type="submit"] {
+				width : 49%;
+			}
+			& + .forgot-password {
+				width       : ~"calc(49% - 0.71rem)";
+				margin-left : 0.71rem;
+				margin-top  : -74px;
+				padding     : 0;
+				height      : 55.88px;
+			}
+		}
+		#password-retrive {
+			display    : block;
+			padding    : 1.07rem 0.71rem;
+			font-size  : 0.928rem;
+			border     : 1px solid #DDDDDD;
+			border-top : none;
+			input[name="retrieve"] {
+				width         : 49%;
+				padding-left  : 0;
+				padding-right : 0;
+			}
+			& + #remember-password {
+				width       : ~"calc(49% - 0.71rem)";
+				margin-left : 0.71rem;
+				margin-top  : -74px;
+				padding     : 0;
+				height      : 55.88px;
+			}
 
-	.forgot-password, .retrieveFormBlock > form + a {
-		float      : left;
-		margin-top : -(@button-height-base - @padding-base-vertical);
+		}
 	}
 
 	// Checkbox & Radio Styles
@@ -194,6 +228,10 @@
 	// Search Form Styles
 	//==================================================
 	@import "../widgets/search_form";
+
+	// Login Form Styles
+	//==================================================
+	@import "../widgets/login_form";
 
 	// Form builder elements Styles
 	//==================================================

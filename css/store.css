@@ -130,11 +130,9 @@
 .product .product-top-part {
   margin-bottom: 16px;
 }
-@media only screen and (max-width: 800px) {
-  .product .product-image {
-    display: inline-block;
-    vertical-align: middle;
-    max-width: 50%;
+@media only screen and (max-width: 480px) {
+  .product .pl30px {
+    padding-left: 0 !important;
   }
 }
 .product-tabs {
@@ -213,6 +211,14 @@
 .product-tabs .tab_nav + .product-tab {
   display: block;
 }
+@media only screen and (max-width: 800px) {
+  .product-tabs .tab_nav li {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
 .product-tabs .product-tab {
   display: none;
 }
@@ -263,6 +269,7 @@
   background-color: #343434;
 }
 .product-list {
+  text-align: center;
   font-size: 0;
 }
 .product-list >* {
@@ -276,7 +283,14 @@
 .product-list .total-review {
   display: none;
 }
+.product-list a.btn {
+  display: block;
+}
+.product-list a.btn p {
+  margin-bottom: 0;
+}
 .product-item {
+  text-align: left;
   position: relative;
   margin-bottom: 1.25rem;
   padding: 1.25rem 0;
@@ -352,20 +366,12 @@
 .product-item .product-image {
   display: block;
   margin: 0 1.25rem 1.25rem;
-  height: 220px;
-  overflow: hidden;
-  padding: 0.325rem;
+  border: 0.325rem solid #F5DEB3;
   border-radius: 6px;
 }
 .product-item .product-image img {
   width: 100%;
   max-width: 100%;
-}
-.product-item .product-image.parallax {
-  background-size: contain;
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
 .product-item .product-title {
   padding: 0 1.25rem;
@@ -374,7 +380,7 @@
   line-height: 1.55556;
   color: #e7931a;
   margin-bottom: 0;
-  height: 56px;
+  height: 81px;
   overflow: hidden;
 }
 .product-item .product-title:hover {
@@ -463,9 +469,88 @@
   border-color: #e7931a;
   background-color: #e7931a;
 }
-.product-item:hover::before {
+.product-item::before {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   background-color: #FFF;
+}
+.light-bg .product-item::before {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #f3f0eb;
+}
+#products-list-big {
+  margin-bottom: -1.25rem;
+}
+#products-list-big .product-item {
+  padding: 1.25rem 1.25rem 0 1.25rem;
+  margin-left: 2%;
+  margin-right: 0;
+  width: 100%;
+}
+#products-list-big .product-item:nth-of-type(1n + 1) {
+  margin-left: 0;
+}
+@media only screen and (max-width: 800px) and (min-width: 481px) {
+  #products-list-big .product-item {
+    width: 49%;
+  }
+  #products-list-big .product-item:nth-of-type(n) {
+    margin-left: 2%;
+  }
+  #products-list-big .product-item:nth-of-type(2n + 1) {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 480px) {
+  #products-list-big .product-item {
+    width: 100%;
+  }
+  #products-list-big .product-item:nth-of-type(1n + 1) {
+    margin-left: 0;
+  }
+}
+#products-list-big .product-item::before {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #FFF;
+}
+#products-list-big .product-item > div {
+  margin-bottom: 1.25rem;
+}
+#products-list-big .product-image {
+  margin: 0;
+}
+#products-list-big .product-title {
+  margin-bottom: 0.9285rem;
+  font-size: 1.5rem;
+  height: auto;
+  line-height: 1.2;
+  padding: 0;
+}
+#products-list-big .product-price {
+  font-size: 1.857rem;
+  margin-bottom: 0.9285rem;
+  height: auto;
+  padding: 0;
+}
+#products-list-big .show-more {
+  display: none !important;
+}
+#products-list-big .product-description {
+  height: auto;
+  margin-bottom: 1.25rem;
+}
+#products-list-big .stars-container,
+#products-list-big .product-description,
+#products-list-big .tcart-add {
+  padding: 0;
+}
+#products-list-big .tcart-add {
+  margin: 0;
+}
+#products-list-big .starrating {
+  margin-bottom: 1.25rem;
+}
+#products-list-big .btn {
+  margin: 0;
 }
 .checkout-page .pr {
   padding-right: 2.142rem;
@@ -663,7 +748,7 @@
 }
 #checkout-widget form > p,
 #checkout-widget fieldset > p {
-  margin-bottom: 0.71rem;
+  margin-bottom: 1.07rem;
 }
 #checkout-widget form > p::after,
 #checkout-widget fieldset > p::after {
@@ -1446,9 +1531,10 @@
   font-size: inherit;
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDD;
   padding-bottom: 10px;
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 #storeinfo p {
   margin-bottom: 10px;
@@ -1463,7 +1549,7 @@
   font-size: inherit;
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDD;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
@@ -1508,7 +1594,7 @@
   min-height: 180px;
   width: 100%;
   display: block;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #DDD;
   padding: 10px;
 }
 #quote-details {
@@ -1523,7 +1609,7 @@
 #quote-details h2 {
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDD;
   padding-bottom: 15px;
   margin-bottom: 10px;
   font-size: 2em;
@@ -1534,7 +1620,7 @@
   padding: 5px;
 }
 #quote-details span {
-  color: #000000;
+  color: #000;
 }
 #quote-details .dates {
   margin-top: 0;
@@ -1542,7 +1628,7 @@
 }
 #quoteControlls .quote-controlls {
   background: rgba(170, 170, 170, 0.008);
-  border-top: 5px solid #888888;
+  border-top: 5px solid #888;
   bottom: 0;
   left: 0;
   padding: 10px 0;
@@ -1555,8 +1641,8 @@
   width: 500px;
   padding: 5px;
   font-size: 18px;
-  color: #666666;
-  border: 1px solid #DDDDDD;
+  color: #666;
+  border: 1px solid #DDD;
 }
 body.quote {
   font-size: 14px;
@@ -1584,7 +1670,7 @@ body.quote .box {
   margin-top: 15px;
   margin-bottom: 15px;
   padding: 15px;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #DDD;
   background: #FFF;
 }
 body.quote .box p:empty {
@@ -1607,7 +1693,6 @@ body.quote .cart-content tr:last-child {
 }
 body.quote .cart-content tr:last-child td {
   border-bottom: none;
-  padding-bottom: 0;
 }
 body.quote table tr:first-child > * {
   border-top: none;
@@ -1623,7 +1708,7 @@ body.quote .quote-summary-row,
 body.quote .post-purchase-row {
   margin: 0;
   padding: 10px;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDD;
 }
 body.quote .dates span {
   font-weight: bold;
@@ -1641,18 +1726,21 @@ body.quote .video-container h4.title {
   font-size: inherit;
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDD;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
 body.quote .quote-expired-notification {
   margin-top: 15px;
   padding: 15px;
+  color: #7B2A0A;
+  border-left: 3px solid #FBA98A;
+  background-color: #FDDDD0;
 }
 body.quote #paypal_button {
   margin-bottom: 15px;
   padding: 15px;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #DDD;
 }
 body.quote #paypal_button fieldset {
   margin: 0;
@@ -1665,7 +1753,7 @@ body.quote #paypal_button legend {
   font-size: inherit;
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDD;
   margin-bottom: 10px;
 }
 body.quote #paypal_button .seo-tip {
@@ -1699,13 +1787,22 @@ body.quote #paypalSubmit {
   }
 }
 body.quote .toaster-quote-content {
-  border-top: 1px solid #DDDDDD;
+  border-top: 1px solid #DDD;
   background: #FFF;
 }
 body.quote select,
 body.quote textarea,
 body.quote input {
-  border-color: #DDDDDD;
+  border-color: #DDD;
+}
+body.quote .title {
+  font-size: inherit;
+  font-weight: bold;
+  color: #222222;
+  border-bottom: 1px solid #DDD;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 #user-grid-part ul.user-stats {
   list-style: none outside none;
@@ -1785,9 +1882,6 @@ body.quote input {
   clear: both;
 }
 @media only screen and (min-width: 481px) {
-  #user-edit-account {
-    max-width: 700px;
-  }
   #user-edit-account label {
     margin: 0.5em 0 0;
     float: left;

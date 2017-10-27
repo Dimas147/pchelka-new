@@ -1,6 +1,6 @@
-@menu-bg: #ffffff;
+@menu-bg: #FFF;
 
-@dropdown-bg                : #ffffff;
+@dropdown-bg                : #FFF;
 @dropdown-color             : @text-color;
 @dropdown-width             : 250px;
 @dropdown-margin-vertical   : 10px;
@@ -14,7 +14,7 @@
 	background : @menu-bg;
 	display    : none;
 	//	color      : @menu-color;
-	.box-shadow(0 0 7px fade(#000000, 50%));
+	.box-shadow(0 0 7px fade(#000, 50%));
 
 	// Types
 	&:not(.dropdown) {
@@ -60,6 +60,12 @@
 	.menu-top-header {
 		height        : @m-top-nav-height;
 		border-bottom : 1px solid darken(@menu-bg, 5%);
+		background    : @brand-dark;
+		a {
+			.inline-block();
+			height      : @m-top-nav-height;
+			line-height : @m-top-nav-height;
+		}
 	}
 
 	ul {
@@ -67,7 +73,7 @@
 
 		ul {
 			display : none;
-			.rgba(#000000; 3%);
+			.rgba(#000; 3%);
 
 			a {
 				padding-left : 48px;

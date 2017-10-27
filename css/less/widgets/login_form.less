@@ -1,0 +1,58 @@
+#login-form when (@widget-login) {
+	input[type="text"], input[type="password"] {
+		border-color : @brand-primary;
+	}
+	p {
+		&:nth-child(3) {
+			display : none;
+		}
+	}
+}
+#password-retrive when (@widget-login) {
+	input[type="text"], input[type="password"] {
+		border-color : @brand-primary;
+	}
+}
+#login-form, #password-retrive {
+	input[type="submit"] {
+		margin-right : 0;
+		width        : 49%;
+		float        : right;
+	}
+}
+.forgot-password, #remember-password, .logout {
+	.button();
+	width          : 49%;
+	margin-top     : -59.97px;
+	font-size      : 1.125em;
+	letter-spacing : 0.12em;
+	line-height    : 1.5;
+	padding        : 0.805em 1.66em;
+	float          : left;
+}
+.logout {
+	margin-top : 0;
+}
+#user-login-form {
+
+}
+.profile-user-info {
+	margin : 0 0 1em;
+	li {
+		font-size      : 1.125em;
+		letter-spacing : 0.12em;
+		line-height    : 1.5;
+		padding        : 0.805em 0;
+		margin         : 0;
+		border-bottom  : 1px solid #EEE;
+		&:first-child {
+			padding-top : 0.4em;
+		}
+	}
+}
+#user-edit-account {
+	button[name="saveUser"] {
+		max-width    : 49%;
+		float        : right;
+	}
+}
