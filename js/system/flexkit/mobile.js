@@ -19,16 +19,16 @@ flexkit.isMobile(function () {
 
     // Load special font for mobile devices.
     // This font is used in the mobile menu. For more information, look Material Design
-    //WebFontConfig = {
-    //    google: {
-    //        families: ['Roboto:400,500']
-    //    }
-    //};
-    //(function (d) {
-    //    var wf = d.createElement('script'), s = d.scripts[0];
-    //    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
-    //    s.parentNode.insertBefore(wf, s);
-    //})(document);
+    WebFontConfig = {
+        google: {
+            families: ['Roboto:400,500']
+        }
+    };
+    (function (d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+        s.parentNode.insertBefore(wf, s);
+    })(document);
 
     /**
      * Open menu (main or dropdown)
@@ -40,7 +40,7 @@ flexkit.isMobile(function () {
             var referName = element.dataset.refer;
             document.querySelector('[data-el="' + referName + '"]').classList.add('open');
             body.setAttribute('data-overlay', '');
-            body.addEventListener('touchstart', _closeMenu);
+            body.addEventListener('touchend', _closeMenu);
         }
     }
 
@@ -51,6 +51,8 @@ flexkit.isMobile(function () {
      */
     function _closeMenu(event) {
         if (event.target.hasAttribute('data-overlay')) {
+            event.preventDefault();
+
             document.querySelector('.m-menu.open').classList.remove('open');
             body.removeAttribute('data-overlay');
         }

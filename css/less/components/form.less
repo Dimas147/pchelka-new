@@ -12,8 +12,11 @@
 	form {
 		.clearfix-mixin();
 
-		p {
+		& > p {
 			.clearfix-mixin();
+			margin-bottom : 1.07rem;
+		}
+		& > div {
 			margin-bottom : 1.07rem;
 		}
 
@@ -219,6 +222,9 @@
 			}
 
 		}
+	}
+	#password-retrive {
+		margin-bottom : 1.07rem;
 	}
 
 	// Checkbox & Radio Styles

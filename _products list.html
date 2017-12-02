@@ -4,11 +4,12 @@
     </a>
     <a itemprop="name" class="product-title tooltip" href="{$product:url}" title="{$product:name}">{$product:name}</a>
 
-    <p itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="product-price">
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="product-price">
         {$product:price}
+        {$textonly:litre:static}
         <meta itemprop="priceCurrency" content="UAH"/>
         <meta itemprop="price" content="{$product:price:nocurrency}"/>
-    </p>
+    </div>
     {$plugin:pagerating:stars:{$product:id}}
     <p class="product-description">{$product:description}</p>
     {$store:addtocart:{$product:id}}

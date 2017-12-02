@@ -32,11 +32,21 @@
     </article>
 
     <article class="container space">
-        <h2 class="grid_12 title-underlined">{$header:map-title}</h2>
+        <h2 class="grid_12 title-underlined">{$header:map-title_1}</h2>
         <div class="grid_8 prefix_2 suffix_2 map-container">
-            {$plugin:gmaps:bizlocation:1200:300:18}
+            {$plugin:gmaps:bizlocation:1200:300:14}
         </div>
     </article>
+
+    <article class="space light-bg">
+        <div class="container">
+            <h2 class="grid_12 title-underlined">{$header:map-title_2}</h2>
+            <div class="grid_8 prefix_2 suffix_2 map-container">
+                {$plugin:gmaps:places:location:1200:300:14}
+            </div>
+        </div>
+    </article>
+
 </section>
 
 {$template:_footer}

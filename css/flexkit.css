@@ -598,7 +598,7 @@
 .ui-dialog.warning .ui-dialog-titlebar,
 .ui-dialog.error .ui-dialog-titlebar,
 .ui-dialog.info .ui-dialog-titlebar {
-  color: #FFF;
+  color: #FFFFFF;
 }
 .ui-dialog.success {
   border-color: #4fc752;
@@ -626,6 +626,26 @@
 }
 .ui-dialog.info .ui-dialog-titlebar {
   background: #28b0ed;
+}
+@media only screen and (max-width: 800px) {
+  .ui-dialog {
+    position: fixed;
+    left: 0 !important;
+    top: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    max-width: 100%;
+  }
+  .ui-dialog .ui-dialog-titlebar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .ui-dialog .ui-dialog-content {
+    padding-top: 50px;
+    min-height: 100% !important;
+  }
 }
 .tooltip {
   cursor: help;

@@ -50,6 +50,12 @@
 			left  : @dropdown-margin-horizontal;
 			right : auto;
 		}
+		&.custom {
+			left  : @dropdown-margin-horizontal;
+			right : @dropdown-margin-horizontal;
+			width : auto;
+			padding: @dropdown-margin-horizontal;
+		}
 	}
 
 	// States
@@ -58,25 +64,23 @@
 	}
 
 	.menu-top-header {
-		height        : @m-top-nav-height;
-		border-bottom : 1px solid darken(@menu-bg, 5%);
-		background    : @brand-dark;
-		a {
-			.inline-block();
-			height      : @m-top-nav-height;
-			line-height : @m-top-nav-height;
-		}
+		height      : @m-top-nav-height;
+		line-height : 56px;
+		text-align  : left;
+		background  : lighten(@brand-dark, 20%);
+		padding     : 0 16px 0 28px;
 	}
 
 	ul {
 		position : relative;
 
 		ul {
-			display : none;
-			.rgba(#000; 3%);
+			display    : none;
+			background : lighten(@brand-dark, 20%);
 
 			a {
 				padding-left : 48px;
+				color        : @primary-color;
 			}
 		}
 		&.open {
@@ -86,10 +90,11 @@
 
 	li {
 		float         : none;
-		border-bottom : 1px solid darken(@menu-bg, 3%);
+		border-bottom : 1px solid darken(@menu-bg, 10%);
 		line-height   : @m-side-item-height;
 		font-weight   : bold;
 		position      : relative;
+		overflow      : hidden;
 
 		a {
 			padding         : 0 16px 0 28px;
@@ -99,8 +104,11 @@
 			.text-overflow();
 
 			&:hover, &.current {
-				background : darken(@menu-bg, 5%);
-				color      : @brand-primary;
+				background : lighten(@brand-primary, 20%);
+				color      : @primary-color;
+			}
+			&.current {
+				background : @brand-primary;
 			}
 		}
 

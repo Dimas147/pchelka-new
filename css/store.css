@@ -42,6 +42,9 @@
 .product .product-image img {
   width: 100%;
 }
+.product .price-table {
+  margin-top: 1rem;
+}
 .product .product-price {
   display: block;
   font-weight: 700;
@@ -55,32 +58,6 @@
 }
 .product .product-description-full:empty {
   display: none;
-}
-.product .product-option {
-  margin-bottom: 1em;
-  overflow: hidden;
-}
-.product .product-options-listing {
-  overflow: hidden;
-}
-.product .product-options-listing .product-option {
-  overflow: hidden;
-}
-.product .product-options-listing .product-option > label {
-  font-weight: bold;
-  width: auto;
-  display: inline;
-}
-.product .product-options-listing .product-option > div label {
-  cursor: pointer;
-  float: left;
-  font-size: 12px;
-  margin-right: 1%;
-  width: 27%;
-}
-.product .product-options-listing .product-option select {
-  padding: 2px;
-  width: auto;
 }
 .product .tcart-add {
   text-align: center;
@@ -229,6 +206,51 @@
 .product-price-buy div {
   margin-bottom: 1rem;
   text-align: center;
+}
+.product-options-listing {
+  overflow: hidden;
+}
+.product-options-listing .product-option {
+  position: relative;
+  padding-left: 100px;
+  overflow: hidden;
+}
+.product .product-options-listing .product-option {
+  padding-left: 70px;
+}
+.product-options-listing .product-option::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  content: "";
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url("https://www.pchelka.kh.ua/themes/pchelka-new/images/honey.png");
+}
+.product .product-options-listing .product-option::before {
+  width: 60px;
+}
+.product-options-listing .product-option > label {
+  display: none;
+}
+.product-options-listing .product-option > div label span {
+  display: none;
+}
+@media only screen and (max-width: 800px) {
+  .price-table {
+    display: block;
+  }
+  .price-table tr,
+  .price-table td,
+  .price-table tbody {
+    display: block;
+  }
+  .price-table .width50percent {
+    width: 100%;
+  }
 }
 .show-more {
   text-align: center;
@@ -397,9 +419,11 @@
 .product-item .product-price {
   padding: 0 1.25rem;
   margin-bottom: 0.625rem;
-  height: 30px;
   font-size: 1.375em;
   line-height: 1.36364;
+}
+.product-item .message {
+  font-size: 1rem;
 }
 .product-item .tcart-add {
   text-align: center;
@@ -475,7 +499,7 @@
 }
 .light-bg .product-item::before {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  background-color: #f3f0eb;
+  background-color: #F3F0EB;
 }
 #products-list-big {
   margin-bottom: -1.25rem;
@@ -935,6 +959,9 @@
 }
 #plugin-quote-quoteform #fieldset-leftColumn p:nth-child(3),
 #plugin-quote-quoteform #fieldset-leftColumn p:nth-child(6) {
+  display: none;
+}
+.product-page #plugin-quote-quoteform #fieldset-leftColumn p:nth-child(4) {
   display: none;
 }
 #plugin-quote-quoteform #fieldset-rightColumn p:nth-child(3),
@@ -1518,6 +1545,12 @@
   border: none;
   padding: 0;
 }
+@media only screen and (max-width: 480px) {
+  .ui-dialog form.toaster-quote#plugin-quote-quoteform input[type="submit"] {
+    width: 100%;
+    margin-top: 1em;
+  }
+}
 #quote-search {
   padding: 7px;
   width: 100%;
@@ -1531,7 +1564,7 @@
   font-size: inherit;
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDDDDD;
   padding-bottom: 10px;
   margin-bottom: 10px;
   text-transform: uppercase;
@@ -1549,7 +1582,7 @@
   font-size: inherit;
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDDDDD;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
@@ -1594,7 +1627,7 @@
   min-height: 180px;
   width: 100%;
   display: block;
-  border: 1px solid #DDD;
+  border: 1px solid #DDDDDD;
   padding: 10px;
 }
 #quote-details {
@@ -1609,7 +1642,7 @@
 #quote-details h2 {
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDDDDD;
   padding-bottom: 15px;
   margin-bottom: 10px;
   font-size: 2em;
@@ -1620,7 +1653,7 @@
   padding: 5px;
 }
 #quote-details span {
-  color: #000;
+  color: #000000;
 }
 #quote-details .dates {
   margin-top: 0;
@@ -1628,7 +1661,7 @@
 }
 #quoteControlls .quote-controlls {
   background: rgba(170, 170, 170, 0.008);
-  border-top: 5px solid #888;
+  border-top: 5px solid #888888;
   bottom: 0;
   left: 0;
   padding: 10px 0;
@@ -1641,8 +1674,8 @@
   width: 500px;
   padding: 5px;
   font-size: 18px;
-  color: #666;
-  border: 1px solid #DDD;
+  color: #666666;
+  border: 1px solid #DDDDDD;
 }
 body.quote {
   font-size: 14px;
@@ -1670,7 +1703,7 @@ body.quote .box {
   margin-top: 15px;
   margin-bottom: 15px;
   padding: 15px;
-  border: 1px solid #DDD;
+  border: 1px solid #DDDDDD;
   background: #FFF;
 }
 body.quote .box p:empty {
@@ -1708,7 +1741,7 @@ body.quote .quote-summary-row,
 body.quote .post-purchase-row {
   margin: 0;
   padding: 10px;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDDDDD;
 }
 body.quote .dates span {
   font-weight: bold;
@@ -1726,7 +1759,7 @@ body.quote .video-container h4.title {
   font-size: inherit;
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDDDDD;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
@@ -1740,7 +1773,7 @@ body.quote .quote-expired-notification {
 body.quote #paypal_button {
   margin-bottom: 15px;
   padding: 15px;
-  border: 1px solid #DDD;
+  border: 1px solid #DDDDDD;
 }
 body.quote #paypal_button fieldset {
   margin: 0;
@@ -1753,7 +1786,7 @@ body.quote #paypal_button legend {
   font-size: inherit;
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDDDDD;
   margin-bottom: 10px;
 }
 body.quote #paypal_button .seo-tip {
@@ -1787,19 +1820,19 @@ body.quote #paypalSubmit {
   }
 }
 body.quote .toaster-quote-content {
-  border-top: 1px solid #DDD;
+  border-top: 1px solid #DDDDDD;
   background: #FFF;
 }
 body.quote select,
 body.quote textarea,
 body.quote input {
-  border-color: #DDD;
+  border-color: #DDDDDD;
 }
 body.quote .title {
   font-size: inherit;
   font-weight: bold;
   color: #222222;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #DDDDDD;
   padding-bottom: 10px;
   margin-bottom: 10px;
   text-transform: uppercase;

@@ -8,11 +8,13 @@
 		}
 	}
 }
+
 #password-retrive when (@widget-login) {
 	input[type="text"], input[type="password"] {
 		border-color : @brand-primary;
 	}
 }
+
 #login-form, #password-retrive {
 	input[type="submit"] {
 		margin-right : 0;
@@ -20,22 +22,33 @@
 		float        : right;
 	}
 }
+
 .forgot-password, #remember-password, .logout {
 	.button();
 	width          : 49%;
-	margin-top     : -59.97px;
+	margin-top     : -4.75rem;
 	font-size      : 1.125em;
 	letter-spacing : 0.12em;
 	line-height    : 1.5;
 	padding        : 0.805em 1.66em;
 	float          : left;
 }
+
+#remember-password {
+	margin-top     : -4.9rem;
+	height         : 3.75rem;
+	padding-top    : 0.25rem;
+	padding-bottom : 0.25rem;
+}
+
 .logout {
 	margin-top : 0;
 }
+
 #user-login-form {
 
 }
+
 .profile-user-info {
 	margin : 0 0 1em;
 	li {
@@ -44,15 +57,16 @@
 		line-height    : 1.5;
 		padding        : 0.805em 0;
 		margin         : 0;
-		border-bottom  : 1px solid #EEE;
+		border-bottom  : 1px solid #EEEEEE;
 		&:first-child {
 			padding-top : 0.4em;
 		}
 	}
 }
+
 #user-edit-account {
 	button[name="saveUser"] {
-		max-width    : 49%;
-		float        : right;
+		max-width : 49%;
+		float     : right;
 	}
 }

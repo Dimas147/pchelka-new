@@ -170,7 +170,7 @@
 	&.success, &.warning, &.error, &.info {
 		& when (@dialog-colors) {
 			.ui-dialog-titlebar {
-				color : #FFF;
+				color : #FFFFFF;
 			}
 		}
 	}
@@ -206,6 +206,25 @@
 
 		.ui-dialog-titlebar {
 			background : @brand-info;
+		}
+	}
+	@media only screen and (max-width : @responsive-size-tablet) {
+		position  : fixed;
+		left      : 0 !important;
+		top       : 0 !important;
+		height    : 100% !important;
+		width     : 100% !important;
+		max-width : 100%;
+		.ui-dialog-titlebar {
+			position : absolute;
+			left     : 0;
+			right    : 0;
+			z-index  : 1;
+		}
+
+		.ui-dialog-content {
+			padding-top : 50px;
+			min-height  : 100% !important;
 		}
 	}
 }

@@ -12,20 +12,15 @@
 <section role="main">
     <article class="space container">
         {notadmin}
-        <div class="grid_6">
+        <div class="grid_6 prefix_3 suffix_3">
             <h2 class="title-underlined text-center">{$header:enter-website}</h2>
             <div class="login-form-container">
-                {$store:clientlogin}
-            </div>
-        </div>
-        <div class="grid_6">
-            <h2 class="title-underlined text-center">{$header:register-website}</h2>
-            <div class="register-form-container">
-                {$membership:registration:free:auto:profile:me:user landing}
+                {$membership:login}
+                <a href="/registration.html" class="btn big block register-btn">Register</a>
             </div>
         </div>
         {/notadmin}
-        {customeronly}
+        {memberonly}
         <div class="grid_12">
             <h2 class="title-underlined text-center">{$header:you-have-entered:static}</h2>
             <ul class="list-unstyled large profile-user-info">
@@ -35,7 +30,7 @@
             </ul>
             {$user:tabs:orders, Edit Account}
         </div>
-        {/customeronly}
+        {/memberonly}
     </article>
     <div class="light-bg">
         {$template:_contacts}

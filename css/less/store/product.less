@@ -22,6 +22,9 @@
 	.product-name {
 
 	}
+	.price-table {
+		margin-top : 1rem;
+	}
 
 	.product-price {
 		display     : block;
@@ -45,38 +48,6 @@
 	.product-description-full {
 		&:empty {
 			display : none;
-		}
-	}
-
-	.product-option {
-		margin-bottom : 1em;
-		overflow      : hidden;
-	}
-
-	.product-options-listing {
-		overflow : hidden;
-
-		.product-option {
-			overflow : hidden;
-
-			& > label {
-				font-weight : bold;
-				width       : auto;
-				display     : inline;
-			}
-
-			& > div label {
-				cursor       : pointer;
-				float        : left;
-				font-size    : 12px;
-				margin-right : 1%;
-				width        : 27%;
-			}
-
-			select {
-				padding : 2px;
-				width   : auto;
-			}
 		}
 	}
 
@@ -112,6 +83,7 @@
 		}
 	}
 }
+
 .product-tabs {
 	margin-bottom : 0;
 	.tab_nav {
@@ -155,10 +127,65 @@
 		display : none;
 	}
 }
+
 .product-price-buy {
 	margin-bottom : 2.142rem;
 	input, div {
 		margin-bottom : 1rem;
 		text-align    : center;
+	}
+}
+
+.product-options-listing {
+	overflow : hidden;
+
+	.product-option {
+		position     : relative;
+		padding-left : 100px;
+		overflow     : hidden;
+		.product & {
+			padding-left : 70px;
+		}
+
+		&::before {
+			position            : absolute;
+			left                : 0;
+			top                 : 0;
+			width               : 100px;
+			height              : 100%;
+			content             : "";
+			background-size     : contain;
+			background-position : 50% 50%;
+			background-repeat   : no-repeat;
+			background-image    : url("https://www.pchelka.kh.ua/themes/pchelka-new/images/honey.png");
+			.product & {
+				width : 60px;
+			}
+		}
+
+		& > label {
+			display : none;
+		}
+
+		& > div label {
+			span {
+				display : none;
+			}
+		}
+
+		select {
+		}
+	}
+}
+
+.price-table {
+	@media only screen and (max-width : @responsive-size-tablet) {
+		display : block;
+		tr, td, tbody {
+			display : block;
+		}
+		.width50percent {
+			width : 100%;
+		}
 	}
 }

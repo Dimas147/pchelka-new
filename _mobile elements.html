@@ -1,27 +1,24 @@
 <!-- Top bar for mobile, with button show/hide menu -->
 <div class="mobile-bar top clearfix">
-    <span class="btn icon-menu" data-refer="main"></span>
-    <span class="title">{$page:h1}</span>
-    <a href="#" class="btn icon-search icon dialog-btn" data-dialog-element="#search-form-container"></a>
-    <a href="tel:{$plugin:widcard:BizTelephone:notag}" class="btn icon icon-phone">{$plugin:widcard:BizTelephone:notag}</a>
+    <span class="btn icon-menu m-button" data-refer="main"></span>
+    <span class="title">
+        <a class="head-title white" href="{$website:url}"><img src="{$plugin:widcard:bizLogo:url}" alt="{$page:h1}"
+                                                               width="112" height="26" itemprop="logo"></a>
+    </span>
+    <span class="btn icon-search m-button" data-refer="search"></span>
+    <a href="{$website:url}checkout.html" class="btn icon-cart m-button"></a>
 </div>
 
 <aside class="m-menu left" data-el="main">
-    <div class="menu-top-header text-center">
-        <a href="{$website:url}" title="{$plugin:widcard:BizOrgName:notag}" itemprop="url">
-            <img src="{$plugin:widcard:bizLogo:url}" alt="{$page:h1}" width="176" height="43" itemprop="logo">
-        </a>
+    <div class="menu-top-header">
+        <a class="head-title white" href="{$website:url}"><img src="{$plugin:widcard:bizLogo:url}" alt="{$page:h1}" width="112" height="26" itemprop="logo"></a>
     </div>
     {$menu:main:_main menu}
 </aside>
 
-<!-- Bottom bar for mobile, with button show/hide menu -->
-<div class="mobile-bar bottom clearfix">
-    <div class="_column_5 margin-none one-line large">
-        <!-- Include social share link -->
-        {$template:_social share}
-    </div>
-</div>
+<aside class="m-menu dropdown top custom" data-el="search">
+    <div id="mobile-search"></div>
+</aside>
 
 <!-- mobile loader -->
 <span class="mobile-loader"></span>

@@ -9,6 +9,7 @@
 	line-height    : 1.5;
 	.user-select();
 }
+
 // Products List
 //==================================================
 .product-list {
@@ -27,6 +28,7 @@
 		}
 	}
 }
+
 .product-item {
 	text-align    : left;
 	position      : relative;
@@ -96,10 +98,14 @@
 	.product-price {
 		padding       : 0 1.25rem;
 		margin-bottom : 0.625rem;
-		height        : 30px;
 		font-size     : 1.375em;
 		line-height   : 1.36364;
 	}
+	.message {
+		font-size : 1rem;
+	}
+
+
 
 	.tcart-add {
 		.button();
@@ -131,13 +137,14 @@
 		.box-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
 		background-color : @primary-color;
 	}
-	.light-bg &{
+	.light-bg & {
 		&::before {
 			.box-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
-			background-color : #f3f0eb;
+			background-color : #F3F0EB;
 		}
 	}
 }
+
 // Products List in SideBar
 //==================================================
 .sidebar {
@@ -162,6 +169,7 @@
 		}
 	}
 }
+
 // Related Products
 //==================================================
 .related-products {
@@ -185,6 +193,7 @@
 
 	}
 }
+
 #products-list-big {
 	margin-bottom : -1.25rem;
 	.product-item {

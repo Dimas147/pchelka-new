@@ -1,61 +1,69 @@
 // Base styles
 // --------------------------------------------------
 .btn, button, [type="submit"], [type="button"], [type="reset"] {
-    .button();
+	.button();
 
-    &[disabled], &.disabled {
-        border-color     : @gray-light !important;
-        color            : @gray-light !important;
-        background-color : @gray-lighter !important;
-        & when (@ie) and (@ie8) {
-            cursor : default !important;
-        }
-        cursor           : not-allowed !important;
-        .box-shadow(~'none !important', @button-box-shadow);
-    }
+	&[disabled], &.disabled {
+		border-color     : @gray-light !important;
+		color            : @gray-light !important;
+		background-color : @gray-lighter !important;
+		& when (@ie) and (@ie8) {
+			cursor : default !important;
+		}
+		cursor           : not-allowed !important;
+		.box-shadow(~'none !important', @button-box-shadow);
+	}
 }
+
 .btn {
 
-    &.hide {
-        &:extend(.hide);
-    }
+	&.register-btn {
+		&.big{
+			margin-left  : 0;
+			margin-right : 0;
+		}
+	}
 
-    &[class*="grid_"], [class*="column_"] > & {
-        padding-left  : 0 !important;
-        padding-right : 0 !important;
-    }
+	&.hide {
+		&:extend(.hide);
+	}
 
-    .orange-bg &.inverse {
-        .button-color(@primary-color; transparent; @primary-color; @primary-color; #D8840A; #D8840A);
-    }
+	&[class*="grid_"], [class*="column_"] > & {
+		padding-left  : 0 !important;
+		padding-right : 0 !important;
+	}
 
-    // Buttons style
-    // --------------------------------------------------
-    @import "button/buttons-style";
+	.orange-bg &.inverse {
+		.button-color(@primary-color; transparent; @primary-color; @primary-color; #D8840A; #D8840A);
+	}
 
-    // Alternate color buttons
-    // --------------------------------------------------
-    @import "button/buttons-color";
+	// Buttons style
+	// --------------------------------------------------
+	@import "button/buttons-style";
 
-    // Block button
-    // --------------------------------------------------
-    @import "button/buttons-block";
+	// Alternate color buttons
+	// --------------------------------------------------
+	@import "button/buttons-color";
 
-    // Button with icon
-    // --------------------------------------------------
-    @import "button/buttons-icon";
+	// Block button
+	// --------------------------------------------------
+	@import "button/buttons-block";
 
-    // Button link
-    // --------------------------------------------------
-    @import "button/buttons-link";
+	// Button with icon
+	// --------------------------------------------------
+	@import "button/buttons-icon";
 
-    // Button outline
-    // --------------------------------------------------
-    @import "button/buttons-outline";
+	// Button link
+	// --------------------------------------------------
+	@import "button/buttons-link";
 
-    // Button caption
-    // --------------------------------------------------
-    @import "button/buttons-caption";
+	// Button outline
+	// --------------------------------------------------
+	@import "button/buttons-outline";
+
+	// Button caption
+	// --------------------------------------------------
+	@import "button/buttons-caption";
 }
 
 // Button group

@@ -331,13 +331,16 @@ form::after {
   display: table;
   clear: both;
 }
-form p {
+form > p {
   margin-bottom: 1.07rem;
 }
-form p::after {
+form > p::after {
   content: "";
   display: table;
   clear: both;
+}
+form > div {
+  margin-bottom: 1.07rem;
 }
 form .captcha label,
 form .captcha input {
@@ -671,6 +674,9 @@ textarea.resize {
   padding: 0;
   height: 55.88px;
 }
+#password-retrive {
+  margin-bottom: 1.07rem;
+}
 .filed-upgrade {
   height: auto;
   position: absolute;
@@ -690,7 +696,7 @@ textarea.resize {
   height: calc(1em + 1px * 2);
   width: calc(1em + 1px * 2);
   line-height: 0;
-  margin: 0;
+  margin: 0 10px 0;
   background: #fff;
   border: 1px solid #eeeeee;
   color: transparent;
@@ -809,6 +815,31 @@ textarea.resize {
   padding-right: 0;
   margin: 0;
 }
+#mobile-search p {
+  float: left;
+  width: 30%;
+  margin: 0;
+}
+#mobile-search p:first-child {
+  width: 67%;
+  margin-right: 3%;
+}
+#mobile-search input {
+  border-color: #e7931a;
+  font-size: 0.857rem;
+  padding: 0 0.8125rem;
+  height: 57px;
+  line-height: 57px;
+}
+#mobile-search [type="text"] {
+  border-color: #e7931a;
+}
+#mobile-search [type="submit"] {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+}
 #login-form input[type="text"],
 #login-form input[type="password"] {
   border-color: #e7931a;
@@ -852,7 +883,7 @@ textarea.resize {
   border-style: solid;
   transition: background ease-in-out 0.3s, border ease-in-out 0.3s;
   width: 49%;
-  margin-top: -59.97px;
+  margin-top: -4.75rem;
   font-size: 1.125em;
   letter-spacing: 0.12em;
   line-height: 1.5;
@@ -872,6 +903,12 @@ textarea.resize {
   border-color: #343434;
   background-color: #343434;
 }
+#remember-password {
+  margin-top: -4.9rem;
+  height: 3.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 .logout {
   margin-top: 0;
 }
@@ -884,7 +921,7 @@ textarea.resize {
   line-height: 1.5;
   padding: 0.805em 0;
   margin: 0;
-  border-bottom: 1px solid #EEE;
+  border-bottom: 1px solid #EEEEEE;
 }
 .profile-user-info li:first-child {
   padding-top: 0.4em;

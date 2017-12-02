@@ -5,15 +5,33 @@
         </a>
     </div>
     <div class="grid_7 omega">
-        <a itemprop="name" class="product-title tooltip" href="{$product:url}" title="{$product:name}">{$product:name}</a>
+        <a itemprop="name" class="product-title tooltip" href="{$product:url}"
+           title="{$product:name}">{$product:name}</a>
+
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="product-price">
-            {$product:price}
-            {$textonly:litre:static}
+            <div class="hide" style="display: none;">
+                {$product:price}
+                {$textonly:litre:static}
+            </div>
             <meta itemprop="priceCurrency" content="UAH"/>
             <meta itemprop="price" content="{$product:price:nocurrency}"/>
+            <table class="price-table">
+                <tr>
+                    <td class="width50percent">
+                        {$product:options}
+                        <div class="message warning text-center mt5px">
+                            {$textonly:value-litre:static}
+                        </div>
+                    </td>
+                    <td class="width50percent success text-center">
+                        {$product:price:realtimeupdate}
+                    </td>
+                </tr>
+            </table>
         </div>
         {$plugin:pagerating:stars:{$product:id}}
         <p class="product-description">{$product:description}</p>
+
         <div class="clearfix container-responsive">
             <div class="grid_6 alpha">
                 {notadmin}<a href="{$product:url}#quick-order" class="btn">{/notadmin}
@@ -22,7 +40,7 @@
             </div>
             <div class="grid_6 alpha">
                 {notadmin}<a href="{$product:url}" class="btn">{/notadmin}
-                    {$textonly:more-about-product:static}
+                {$textonly:more-about-product:static}
                 {notadmin}</a>{/notadmin}
             </div>
         </div>

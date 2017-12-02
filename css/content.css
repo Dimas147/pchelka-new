@@ -3304,6 +3304,10 @@ button.disabled,
   cursor: not-allowed !important;
   box-shadow: none !important;
 }
+.btn.register-btn.big {
+  margin-left: 0;
+  margin-right: 0;
+}
 .btn[class*="grid_"],
 [class*="column_"] > .btn {
   padding-left: 0 !important;
@@ -4219,6 +4223,9 @@ a.inherit-color:hover {
 }
 .orange-bg h2 {
   color: #FFF;
+}
+.width50percent {
+  width: 50%;
 }
 .primary {
   color: #e7931a;

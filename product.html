@@ -52,16 +52,25 @@
                 <p class="product-description-short" itemprop="description">{$product:description}</p>
 
                 <div class="product-top-part clearfix">
-                    <div class="grid_4 t-grid_3 t-alpha product-rating alpha m-text-left">
+                    <div class="grid_12 t-grid_6 t-alpha product-rating alpha m-text-left">
                         {$plugin:pagerating:stars}
                     </div>
-                    <div class="grid_8 omega t-grid_3 t-omega text-right m-text-left">
-                        <span itemprop="price" content="{$product:price:nocurrency}"
-                              class="product-price">{$product:price}
-                        </span>
-                    </div>
-                    <div class="message info text-left grid_12 alpha omega">
-                        {$textonly:litre-note:static}
+                    <div class="grid_12 alpha omega">
+                        <table class="price-table">
+                            <tr>
+                                <td class="">
+                                    {$product:options}
+                                    <div class="message warning text-center mt5px">
+                                        {$textonly:value-litre:static}
+                                    </div>
+                                </td>
+                                <td class="success text-center">
+                                    <span itemprop="price" content="{$product:price:nocurrency}"
+                                          class="product-price">{$product:price:realtimeupdate}
+                                    </span>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="hide" itemprop="priceCurrency">UAH</div>
                 </div>
@@ -94,14 +103,6 @@
                             </td>
                             <td>
                                 {$header:container}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                {$header:weight:static}:
-                            </td>
-                            <td>
-                                {$product:weight}
                             </td>
                         </tr>
                         <tr itemscope itemtype="http://schema.org/Organization">
@@ -243,6 +244,12 @@
 
     })
 
+</script>
+
+<script>
+    $(function () {
+        $(".product-page #plugin-quote-quoteform input[name='email']").prop("value","dmitryvladimirovich147@gmail.com");
+    })
 </script>
 
 </body>
