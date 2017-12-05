@@ -13,7 +13,12 @@
 <section role="main">
     {$template:_contacts}
     <article class="parallax take-from-widget height-auto space contact-us-container light-bg">
-        {$imageonly:contact-us-parallax-bg:1920:static}
+        {device:desktop}
+            {$imageonly:contact-us-parallax-bg:1920:static}
+        {/device}
+        {device:tablet,mobile}
+            {$imageonly:contact-us-parallax-bg:large:static}
+        {/device}
         <div class="container">
             <h2 class="grid_12 title-underlined">{$header:contact-us-main-title:static}</h2>
 

@@ -27,7 +27,7 @@
 	width    : 100%;
 
 	& > .tpopup {
-		display : none;
+		display : none !important;
 	}
 
 	.slide {
@@ -136,11 +136,11 @@
 		.cycle-pager {
 			display : none;
 		}
-		.slide{
-			background-color: @brand-dark;
+		.slide {
+			background-color : @brand-dark;
 		}
 		@media only screen and (max-width : @responsive-size-tablet) {
-			min-height: 0;
+			min-height : 0;
 		}
 	}
 	.testimonials-container & {
@@ -153,18 +153,22 @@
 .slide-content {
 	position       : relative;
 	z-index        : 11;
-	padding-top    : 19rem;
-	padding-bottom : 15rem;
-	text-align     : center;
-	.organization-image{
-		margin-bottom: 7.14rem;
+	padding-top    : 12rem;
+	padding-bottom : 8rem;
+	.organization-image {
+		margin-bottom : 7.14rem;
+	}
+	.h1 {
+		text-shadow : 1px 2px 1px #000000;
 	}
 	.slogan {
 		margin-bottom : 3.125rem;
+		text-shadow   : 1px 2px 1px #000000;
 	}
 	p {
-		color     : @primary-color;
-		font-size : 1.25em;
+		color       : @primary-color;
+		font-size   : 1.25em;
+		text-shadow : 1px 2px 1px #000000;
 	}
 	.btn {
 		font-size      : 1.125em;
@@ -175,12 +179,12 @@
 		margin-left    : 0.9375rem;
 		margin-right   : 0.9375rem;
 		@media only screen and (max-width : @responsive-size-mobile) {
-			display: block;
+			display : block;
 		}
 	}
 	@media only screen and (max-width : @responsive-size-tablet) {
-		padding-top    : 10rem;
-		padding-bottom : 9rem;
+		padding-top    : 6rem;
+		padding-bottom : 5rem;
 	}
 }
 

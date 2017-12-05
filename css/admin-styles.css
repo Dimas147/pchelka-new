@@ -1,46 +1,18 @@
-.editor-block {
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1006;
-}
-.editor-block button {
-  float: left;
-  padding: 10px;
-  margin-right: 1px;
-  line-height: 1;
-  border-radius: 0 0 0 0;
-}
-.editor-blocked .tpopup,
-.editor-blocked #seotoaster-cpanel,
-.editor-blocked .form-controls,
-.editor-blocked .admin-panel,
-.editor-blocked .newslog-admin-actions,
-.editor-blocked .admin-actions {
-  display: none !important;
-}
-.editor-blocker {
-  color: #4fc752;
-}
-.editor-blocker.active {
-  color: #f25f5c;
-}
-.hard-refresh-css {
-  color: #ffc159;
-}
 .form-controls,
-.newslog-admin-actions {
+.newslog-admin-actions,
+.admin-actions {
   font-size: 0;
 }
 .form-controls >*,
-.newslog-admin-actions >* {
+.newslog-admin-actions >*,
+.admin-actions >* {
   font-size: 16px;
   display: inline-block;
   vertical-align: middle;
 }
 .form-controls a,
-.newslog-admin-actions a {
+.newslog-admin-actions a,
+.admin-actions a {
   text-align: center;
   cursor: pointer;
   text-decoration: none;
@@ -53,7 +25,6 @@
   text-transform: uppercase;
   display: inline-block;
   vertical-align: middle;
-  color: #FFF;
   border-color: #e7931a;
   background-color: #e7931a;
   border-radius: 6px;
@@ -64,29 +35,38 @@
   border-width: 2px;
   border-style: solid;
   transition: background ease-in-out 0.3s, border ease-in-out 0.3s;
+  color: #FFF;
+  border-color: #009688;
+  background-color: #009688;
   font-size: 0.714rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  border-radius: 0 0 0 0;
 }
 .form-controls a:hover,
 .newslog-admin-actions a:hover,
+.admin-actions a:hover,
 .form-controls a:active,
 .newslog-admin-actions a:active,
+.admin-actions a:active,
 .form-controls a.active,
-.newslog-admin-actions a.active {
+.newslog-admin-actions a.active,
+.admin-actions a.active {
   color: #FFF;
   border-color: #343434;
   background-color: #343434;
 }
 .form-controls a:hover,
 .newslog-admin-actions a:hover,
+.admin-actions a:hover,
 .form-controls a:active,
 .newslog-admin-actions a:active,
-.form-controls a:focus,
-.newslog-admin-actions a:focus {
-  background: #000000;
-  border-color: #000000;
+.admin-actions a:active,
+.form-controls a.active,
+.newslog-admin-actions a.active,
+.admin-actions a.active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
 }
 .form-controls {
   margin-top: 15px;
@@ -95,37 +75,40 @@
   margin-left: 1%;
   margin-right: 0;
   width: 32.66666667%;
-  font-size: 0;
+  font-size: 0 !important;
   height: 2.3rem;
-  line-height: 2rem;
+  line-height: 2.2rem;
 }
 .form-controls a:nth-of-type(3n + 1) {
   margin-left: 0;
 }
 @media only screen and (max-width: 800px) and (min-width: 481px) {
   .form-controls a {
-    width: 49.5%;
+    width: 32.66666667%;
   }
   .form-controls a:nth-of-type(n) {
     margin-left: 1%;
   }
-  .form-controls a:nth-of-type(2n + 1) {
+  .form-controls a:nth-of-type(3n + 1) {
     margin-left: 0;
   }
 }
 @media only screen and (max-width: 480px) {
   .form-controls a {
-    width: 100%;
+    width: 32.66666667%;
   }
-  .form-controls a:nth-of-type(1n + 1) {
+  .form-controls a:nth-of-type(n) {
+    margin-left: 1%;
+  }
+  .form-controls a:nth-of-type(3n + 1) {
     margin-left: 0;
   }
 }
 .form-controls a::before {
   font-family: flexkit-icons;
-  font-size: 0.857rem;
+  font-size: 1rem;
 }
-.form-controls a.tpopup::before {
+.form-controls a[title="Edit form"]::before {
   content: "\e074";
 }
 .form-controls a[href*="free-form-maker"]::before {
@@ -158,11 +141,161 @@
 }
 @media only screen and (max-width: 480px) {
   .newslog-admin-actions a {
-    width: 100%;
+    width: 49.5%;
   }
-  .newslog-admin-actions a:nth-of-type(1n + 1) {
+  .newslog-admin-actions a:nth-of-type(n) {
+    margin-left: 1%;
+  }
+  .newslog-admin-actions a:nth-of-type(2n + 1) {
     margin-left: 0;
   }
+}
+.news-description .newslog-admin-actions {
+  margin-bottom: 15px;
+}
+.edit-product-btn {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  height: auto;
+  line-height: 2.3em;
+  padding: 0 1em;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  border-color: #e7931a;
+  background-color: #e7931a;
+  border-radius: 6px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-width: 2px;
+  border-style: solid;
+  transition: background ease-in-out 0.3s, border ease-in-out 0.3s;
+  color: #FFF;
+  border-color: #009688;
+  background-color: #009688;
+}
+.edit-product-btn:hover,
+.edit-product-btn:active,
+.edit-product-btn.active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
+}
+.edit-product-btn:hover,
+.edit-product-btn:active,
+.edit-product-btn.active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
+}
+.edit-product-btn::before {
+  font-family: flexkit-icons;
+  content: "\e073";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-top: -3px;
+}
+.admin-actions a {
+  font-size: 1rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.newslog-admin-actions-item {
+  font-size: 1rem !important;
+}
+.admin-panel {
+  margin-bottom: 1rem;
+}
+.dialog .admin-panel {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.quote-controlls {
+  font-size: 0;
+}
+.quote-controlls >* {
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.quote-controlls a {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  height: auto;
+  line-height: 2.3em;
+  padding: 0 1em;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  border-color: #e7931a;
+  background-color: #e7931a;
+  border-radius: 6px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-width: 2px;
+  border-style: solid;
+  transition: background ease-in-out 0.3s, border ease-in-out 0.3s;
+  color: #FFF;
+  border-color: #009688;
+  background-color: #009688;
+  margin: 2.5px 5px;
+}
+.quote-controlls a:hover,
+.quote-controlls a:active,
+.quote-controlls a.active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
+}
+.quote-controlls a:hover,
+.quote-controlls a:active,
+.quote-controlls a.active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
+}
+.quote-controlls input[type="hidden"] {
+  display: none;
+}
+footer .fa-admin-container {
+  text-align: right;
+}
+footer .fa-admin-container .tpopup {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.news-list .newslog-admin-actions {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+figure {
+  overflow: hidden;
+}
+figure .tpopup {
+  display: block;
+  margin: 15px 0;
+}
+.admin-panel label {
+  padding-left: 0;
+}
+.image-control {
+  margin-bottom: 1.857rem;
+}
+.image-control > img {
+  display: none;
 }
 #seotoaster-cpanel {
   text-align: left;
@@ -255,6 +388,7 @@
   list-style: none;
 }
 #seotoaster-cpanel ul li a {
+  margin-top: 0;
   display: block;
   padding: 15px 30px 15px 15px;
   line-height: 1.1;
@@ -278,7 +412,7 @@
   right: 10px;
   top: 16px;
   font-family: flexkit-icons;
-  content: "\e0a6";
+  content: "\e0a7";
 }
 #seotoaster-cpanel ul li .ui-accordion-header.ui-accordion-header-active {
   background: #4f52ba;
@@ -291,12 +425,13 @@
   margin: 0;
   padding: 0;
   border: none;
-  border-left: 10px solid #EEEEEE;
+  border-left: 4px solid #FFF;
 }
 #seotoaster-cpanel ul li .ui-accordion-content li + li {
   border-top: 1px solid #30363E;
 }
 #seotoaster-cpanel ul li .ui-accordion-content a {
+  border-top: none;
   background: none;
   color: #FFF;
   font-weight: normal;
@@ -307,6 +442,13 @@
   color: #FFF;
 }
 #seotoaster-cpanel ul li .ui-accordion-content .cpanelsubtitle {
+  padding: 8px 15px;
+  background: #109DF7;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+#seotoaster-cpanel ul li .cpanelsubtitle {
   padding: 8px 15px;
   background: #109DF7;
   color: #FFF;
@@ -333,37 +475,41 @@
 }
 .container-wrapper {
   position: relative;
-  padding: 15px 10px;
-  transition: background, 0.2s, ease-in-out;
+  padding: 10px !important;
+  transition: background, 0.3s, ease-in-out;
 }
 .container-wrapper:hover {
   background: rgba(16, 157, 247, 0.5);
-  outline: 1px solid #FFF;
+  outline: none;
 }
 .tpopup {
   display: block;
+  font-size: 1rem !important;
 }
 .tpopup[data-url*="containerType/2"],
 .tpopup[data-url*="containerType/3"],
 .tpopup[data-url*="containerType/4"],
+.tpopup[data-url*="plugin/fastbutton"],
 .tpopup[data-url*="webbuilder/run/imageonly/"],
 .tpopup[data-url*="containerType/1"],
 .tpopup[data-url*="webbuilder/run/textonly"] {
-  margin: 5px 0 2px;
+  margin: 10px 0 5px;
   position: relative;
   background: #109DF7;
   height: 30px;
   width: 50px;
-  font-size: 11px;
+  font-size: 0 !important;
   font-family: 'Open Sans', sans-serif;
   text-align: center !important;
   letter-spacing: 0 !important;
+  text-shadow: none;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
   border-radius: 4px;
 }
 .tpopup[data-url*="containerType/2"]::before,
 .tpopup[data-url*="containerType/3"]::before,
 .tpopup[data-url*="containerType/4"]::before,
+.tpopup[data-url*="plugin/fastbutton"]::before,
 .tpopup[data-url*="webbuilder/run/imageonly/"]::before,
 .tpopup[data-url*="containerType/1"]::before,
 .tpopup[data-url*="webbuilder/run/textonly"]::before {
@@ -377,6 +523,7 @@
 .tpopup[data-url*="containerType/2"]::after,
 .tpopup[data-url*="containerType/3"]::after,
 .tpopup[data-url*="containerType/4"]::after,
+.tpopup[data-url*="plugin/fastbutton"]::after,
 .tpopup[data-url*="webbuilder/run/imageonly/"]::after,
 .tpopup[data-url*="containerType/1"]::after,
 .tpopup[data-url*="webbuilder/run/textonly"]::after {
@@ -392,10 +539,21 @@
 .tpopup[data-url*="containerType/2"] img,
 .tpopup[data-url*="containerType/3"] img,
 .tpopup[data-url*="containerType/4"] img,
+.tpopup[data-url*="plugin/fastbutton"] img,
 .tpopup[data-url*="webbuilder/run/imageonly/"] img,
 .tpopup[data-url*="containerType/1"] img,
 .tpopup[data-url*="webbuilder/run/textonly"] img {
   display: none;
+}
+.text-center .tpopup[data-url*="containerType/2"],
+.text-center .tpopup[data-url*="containerType/3"],
+.text-center .tpopup[data-url*="containerType/4"],
+.text-center .tpopup[data-url*="plugin/fastbutton"],
+.text-center .tpopup[data-url*="webbuilder/run/imageonly/"],
+.text-center .tpopup[data-url*="containerType/1"],
+.text-center .tpopup[data-url*="webbuilder/run/textonly"] {
+  margin-left: auto;
+  margin-right: auto;
 }
 .tpopup[data-url*="containerType/1"]::before {
   content: "C";
@@ -426,4 +584,84 @@
 }
 .tpopup[data-url*="webbuilder/run/textonly"]::after {
   background: #FFF900;
+}
+.tpopup[data-url*="plugin/fastbutton"]::before {
+  content: "FB";
+}
+.tpopup[data-url*="plugin/fastbutton"]::after {
+  background: #FFC107;
+}
+.tpopup[title="Edit order"],
+.tpopup[data-url*="editrepeat"] {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  height: auto;
+  line-height: 2.3em;
+  padding: 0 1em;
+  font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  border-color: #e7931a;
+  background-color: #e7931a;
+  border-radius: 6px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-width: 2px;
+  border-style: solid;
+  transition: background ease-in-out 0.3s, border ease-in-out 0.3s;
+  margin: 15px 0;
+  color: #FFF;
+  border-color: #009688;
+  background-color: #009688;
+}
+.tpopup[title="Edit order"]:hover,
+.tpopup[data-url*="editrepeat"]:hover,
+.tpopup[title="Edit order"]:active,
+.tpopup[data-url*="editrepeat"]:active,
+.tpopup[title="Edit order"].active,
+.tpopup[data-url*="editrepeat"].active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
+}
+.tpopup[title="Edit order"]:hover,
+.tpopup[data-url*="editrepeat"]:hover,
+.tpopup[title="Edit order"]:active,
+.tpopup[data-url*="editrepeat"]:active,
+.tpopup[title="Edit order"].active,
+.tpopup[data-url*="editrepeat"].active {
+  color: #FFF;
+  border-color: #343434;
+  background-color: #343434;
+}
+.tpopup[title="Edit order"]::before,
+.tpopup[data-url*="editrepeat"]::before {
+  font-family: flexkit-icons;
+  content: "\e073";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-top: -7px;
+}
+.tpopup[title="Edit order"] {
+  margin-bottom: 15px;
+}
+.tpopup[title="Edit order"]::before {
+  content: "\e073";
+}
+.tpopup[data-url*="editrepeat"] {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.tpopup[data-url*="editrepeat"]::before {
+  content: "\e073";
+}
+.tpopup em {
+  font-style: normal;
 }

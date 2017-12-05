@@ -788,6 +788,7 @@ a.tooltip {
   background-attachment: fixed;
   overflow: hidden;
   height: 200px;
+  background-color: #8c590f;
 }
 .parallax.take-from-widget,
 .parallax .take-from-widget {
@@ -811,6 +812,12 @@ a.tooltip {
 }
 .parallax.bg-scroll {
   background-attachment: scroll;
+}
+.parallax input,
+.parallax textarea,
+.parallax .recaptcha_links a,
+.parallax .captcha_image {
+  box-shadow: 1px 2px 1px #000;
 }
 .responsive-ratio {
   position: relative;

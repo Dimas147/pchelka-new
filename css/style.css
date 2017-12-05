@@ -516,6 +516,10 @@ form.review-form input[type="submit"] {
   width: auto;
   float: left;
 }
+form#contactusform .captcha_image {
+  background: #FFF;
+  border-radius: 6px;
+}
 form#contactusform input[type="submit"] {
   float: right;
   clear: none;
@@ -1129,7 +1133,7 @@ textarea.resize {
   width: 100%;
 }
 .cycle-slideshow > .tpopup {
-  display: none;
+  display: none !important;
 }
 .cycle-slideshow .slide {
   width: 100%;
@@ -1247,19 +1251,23 @@ textarea.resize {
 .slide-content {
   position: relative;
   z-index: 11;
-  padding-top: 19rem;
-  padding-bottom: 15rem;
-  text-align: center;
+  padding-top: 12rem;
+  padding-bottom: 8rem;
 }
 .slide-content .organization-image {
   margin-bottom: 7.14rem;
 }
+.slide-content .h1 {
+  text-shadow: 1px 2px 1px #000000;
+}
 .slide-content .slogan {
   margin-bottom: 3.125rem;
+  text-shadow: 1px 2px 1px #000000;
 }
 .slide-content p {
   color: #FFF;
   font-size: 1.25em;
+  text-shadow: 1px 2px 1px #000000;
 }
 .slide-content .btn {
   font-size: 1.125em;
@@ -1277,8 +1285,8 @@ textarea.resize {
 }
 @media only screen and (max-width: 800px) {
   .slide-content {
-    padding-top: 10rem;
-    padding-bottom: 9rem;
+    padding-top: 6rem;
+    padding-bottom: 5rem;
   }
 }
 .testimonials-quote-container {
@@ -1577,6 +1585,23 @@ textarea.resize {
   .d-visible,
   .t-visible {
     display: none !important;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  header .grid_8.alpha.omega {
+    text-align: right;
+    width: 83%;
+    padding-right: 155px;
+  }
+  header .grid_8.alpha.omega .main_menu > li {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  header .grid_2.list-additional-controls {
+    width: 155px;
+    position: absolute;
+    right: 0;
+    top: -5px;
   }
 }
 @media only screen and (max-width: 480px) {

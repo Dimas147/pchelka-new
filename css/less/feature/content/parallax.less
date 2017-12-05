@@ -9,6 +9,7 @@
     background-attachment : fixed;
     overflow              : hidden;
     height                : @parallax-height;
+    background-color: darken(@brand-primary, 20%);
 
     &.take-from-widget, .take-from-widget{
         position : relative;
@@ -30,5 +31,8 @@
 
     &.bg-scroll{
         background-attachment: scroll;
+    }
+    input, textarea, .recaptcha_links a, .captcha_image{
+        .box-shadow(1px 2px 1px #000);
     }
 }

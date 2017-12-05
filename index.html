@@ -15,7 +15,7 @@
             </a>
         </h1>
         <nav id="main-menu" role="navigation" class="grid_8 alpha omega text-center">{$menu:main:_main menu}</nav>
-        <ul class="grid_2 text-right list-additional-controls">
+        <ul class="grid_2 alpha omega text-right list-additional-controls">
             <li>
                 <a href="{$website:url}user-landing.html" class="icon-user btn icon"></a>
             </li>
@@ -38,10 +38,15 @@
      data-cycle-auto-height="calc">
     {repeat:top-slider:key:0}
     <div class="slide parallax take-from-widget height-auto bg-scroll">
-        {$imageonly:top-slider-image_key:original}
+        {device:desktop}
+            {$imageonly:top-slider-image_key:original}
+        {/device}
+        {device:tablet,mobile}
+            {$imageonly:top-slider-image_key:large}
+        {/device}
     </div>
     {/repeat}
-    <div class="slide-content container">
+    <div class="slide-content container text-center">
         <h2 class="h1 grid_12 d-hide">{$header:top-title:static}</h2>
         <figure class="organization-image grid_12 d-hide">
             {$imageonly:organization-image:original:static:readonly}
@@ -55,9 +60,19 @@
 {repeat:top-slider:key:0}{/repeat}
 <section role="main">
 
+    <article class="container space">
+        <h2 class="grid_12 title-underlined text-center">{$header:products-for-sale:static}</h2>
+
+        <div class="grid_12">
+            <div id="products-list-big">
+                {$productlist:_products list big::2}
+            </div>
+        </div>
+    </article>
+
     <article class="light-bg">
         <div class="container space">
-            <h2 class="title-underlined grid_12">{$header:content_1}</h2>
+            <h2 class="title-underlined grid_12 text-center">{$header:content_1}</h2>
             <div class="clearfix inline-block-wrap t-text-center">
                 <div class="grid_6 fl-none">
                     {$imageonly:content_1:500}
@@ -70,23 +85,15 @@
         </div>
     </article>
 
-    <article class="container space">
-        <h2 class="grid_12 title-underlined">{$header:products-for-sale:static}</h2>
-
-        <div class="grid_12">
-            <div id="products-list-big">
-                {$productlist:_products list big::2}
-            </div>
-        </div>
-        <!--<div class="grid_12 space-top text-center">-->
-            <!--{ $content:bottom-button_1}-->
-        <!--</div>-->
-    </article>
-
     <article class="parallax take-from-widget height-auto space contact-us-container light-bg">
-        {$imageonly:contact-us-parallax-bg:1920:static}
+        {device:desktop}
+            {$imageonly:contact-us-parallax-bg:1920:static}
+        {/device}
+        {device:tablet,mobile}
+            {$imageonly:contact-us-parallax-bg:large:static}
+        {/device}
         <div class="container">
-            <h2 class="grid_12 title-underlined">{$header:contact-us-main-title:static}</h2>
+            <h2 class="grid_12 title-underlined text-center">{$header:contact-us-main-title:static}</h2>
 
             <div class="grid_6 prefix_3 suffix_3">
                 {$form:contact-us-form:recaptcha:custom:{$prepop:submit:text:static:readonly}}
@@ -104,7 +111,7 @@
 
     <article class="light-bg">
         <div class="container space">
-            <h2 class="grid_12 title-underlined">{$header:facts-in-numbers-main-title:static}</h2>
+            <h2 class="grid_12 title-underlined text-center">{$header:facts-in-numbers-main-title:static}</h2>
             {adminonly}
             <div class="grid_12">{repeat:facts-in-numbers-list:key:0:static} {/repeat}</div>
             {/adminonly}
@@ -141,7 +148,7 @@
 
     <article class="orange-bg testimonials-container">
         <div class="container space">
-            <h2 class="grid_12 title-underlined">{$header:testimonials-main-title:static}</h2>
+            <h2 class="grid_12 title-underlined text-center">{$header:testimonials-main-title:static}</h2>
 
             <div class="cycle-slideshow"
                  data-cycle-slides=".slide"
@@ -191,7 +198,7 @@
 
     <article class="light-bg">
         <div class="container space">
-            <h2 class="grid_12 title-underlined">{$header:blog-title:static}</h2>
+            <h2 class="grid_12 title-underlined text-center">{$header:blog-title:static}</h2>
 
             <div class="grid_12">
                 <div class="news-list">

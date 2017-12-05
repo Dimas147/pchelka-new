@@ -1,20 +1,23 @@
 @responsive-size-tablet-over : (@responsive-size-tablet + 1);
 @media only screen and (min-width : @responsive-size-tablet-over) {
-    .d-hide, .t-visible, .m-visible {
-        display : none !important;
-    }
+	.d-hide, .t-visible, .m-visible {
+		display : none !important;
+	}
 }
+
 @responsive-size-mobile-over : (@responsive-size-mobile + 1);
 @media only screen and (min-width : @responsive-size-mobile-over) and (max-width : @responsive-size-tablet) {
-    .t-hide, .d-visible, .m-visible {
-        display : none !important;
-    }
+	.t-hide, .d-visible, .m-visible {
+		display : none !important;
+	}
 }
+
 @media only screen and (max-width : @responsive-size-mobile) {
-    .m-hide, .d-visible, .t-visible {
-        display : none !important;
-    }
+	.m-hide, .d-visible, .t-visible {
+		display : none !important;
+	}
 }
+
 //================================================\\
 //************** Divece orientation **************\\
 //================================================\\
@@ -35,6 +38,25 @@
 
 //***** Tablet Portrait *****\\
 @media only screen and (max-width : @responsive-size-desktop) {
+	header {
+		.grid_8.alpha.omega {
+			text-align    : right;
+			width         : 83%;
+			padding-right : 155px;
+			.main_menu {
+				& > li {
+					margin-left  : 0;
+					margin-right : 0;
+				}
+			}
+		}
+		.grid_2.list-additional-controls {
+			width    : 155px;
+			position : absolute;
+			right    : 0;
+			top      : -5px;
+		}
+	}
 }
 
 //***** All Mobile Sizes *****\\
@@ -48,16 +70,17 @@
 //***** Just Mobile Portrait *****\\
 @media only screen and (max-width : @responsive-size-mobile) {
 
-    .captcha {
-        &, img {
-            width : 100%;
-        }
-    }
-    form [type="submit"], form [type="button"] {
-        width        : 100%;
-        margin-right : 0;
-        margin-left  : 0;
-    }
+	.captcha {
+		&, img {
+			width : 100%;
+		}
+	}
+
+	form [type="submit"], form [type="button"] {
+		width        : 100%;
+		margin-right : 0;
+		margin-left  : 0;
+	}
 }
 
 //***** Just Small Phone *****\\

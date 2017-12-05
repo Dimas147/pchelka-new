@@ -2540,6 +2540,10 @@ h2,
     font-size: 2.2em;
   }
 }
+.parallax h2,
+.parallax .h2 {
+  text-shadow: 1px 2px 1px #000;
+}
 h3,
 .h3 {
   font-size: 1.857em;

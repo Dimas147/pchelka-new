@@ -1,69 +1,28 @@
 @import "_getting_started/2-variables";
 
-.editor-block {
-	overflow : hidden;
-	position : fixed;
-	top      : 0;
-	left     : 0;
-	z-index  : 1006;
-	button {
-		float        : left;
-		padding      : 10px;
-		margin-right : 1px;
-		line-height  : 1;
-		.border-radius(0 0 0 0);
-	}
-}
-
-.editor-blocked {
-	.tpopup,
-	#seotoaster-cpanel,
-	.form-controls,
-	.admin-panel,
-	.newslog-admin-actions,
-	.admin-actions {
-		display : none !important;
-	}
-}
-
-.editor-blocker {
-	color : @brand-success;
-	&.active {
-		color : @brand-error;
-	}
-}
-
-.hard-refresh-css {
-	color : @brand-warning;
-}
-
-.form-controls, .newslog-admin-actions {
+.form-controls, .newslog-admin-actions, .admin-actions {
 	.inline-block-wrap();
 	a {
 		.button();
+		.button-color(@primary-color; #009688; #009688);
 		font-size     : 0.714rem;
 		padding-left  : 0.5rem;
 		padding-right : 0.5rem;
-		.border-radius(0 0 0 0);
-		&:hover, &:active, &:focus {
-			background   : #000000;
-			border-color : #000000;
-		}
 	}
 }
 
 .form-controls {
 	margin-top : 15px;
 	a {
-		.grid-elements(3; 1%; true; 2; 1);
-		font-size   : 0;
+		.grid-elements(3; 1%; true; 3; 3);
+		font-size   : 0 !important;
 		height      : 2.3rem;
-		line-height : 2rem;
+		line-height : 2.2rem;
 		&::before {
 			font-family : @font-family-icons;
-			font-size   : 0.857rem;
+			font-size   : 1rem;
 		}
-		&.tpopup {
+		&[title="Edit form"] {
 			&::before {
 				content : "\e074";
 			}
@@ -86,7 +45,94 @@
 
 .newslog-admin-actions {
 	a {
-		.grid-elements(2; 1%; true; 2; 1);
+		.grid-elements(2; 1%; true; 2; 2);
+	}
+	.news-description & {
+		margin-bottom : 15px;
+	}
+}
+
+.edit-product-btn {
+	.button();
+	.button-color(@primary-color; #009688; #009688);
+	&::before {
+		font-family  : @font-family-icons;
+		content      : "\e073";
+		.inline-block();
+		margin-right : 5px;
+		margin-top   : -3px;
+	}
+}
+
+.admin-actions {
+	a {
+		font-size     : 1rem;
+		margin-right  : 0.25rem;
+		margin-bottom : 0.25rem;
+	}
+}
+
+.newslog-admin-actions-item {
+	font-size : 1rem !important;
+}
+
+.admin-panel {
+	margin-bottom : 1rem;
+	.dialog & {
+		margin-top    : 1rem;
+		margin-bottom : 0;
+	}
+}
+
+.quote-controlls {
+	.inline-block-wrap();
+	a {
+		.inline-block();
+		.button();
+		.button-color(@primary-color; #009688; #009688);
+		margin : 2.5px 5px;
+	}
+	input[type="hidden"] {
+		display : none;
+	}
+
+}
+
+footer {
+	.fa-admin-container {
+		text-align : right;
+		.tpopup {
+			margin-top    : 0;
+			margin-bottom : 15px;
+		}
+	}
+}
+
+.news-list {
+	.newslog-admin-actions {
+		margin-top    : 0.5rem;
+		margin-bottom : 0.5rem;
+	}
+}
+
+figure {
+	overflow : hidden;
+	.tpopup {
+		display : block;
+		margin  : 15px 0;
+	}
+}
+
+.admin-panel {
+	label {
+		padding-left : 0;
+	}
+}
+
+.image-control {
+	margin-bottom : 1.857rem;
+	& > img {
+		display : none;
 	}
 }
 
@@ -185,6 +231,7 @@
 			list-style : none;
 
 			a {
+				margin-top      : 0;
 				display         : block;
 				padding         : 15px 30px 15px 15px;
 				line-height     : 1.1;
@@ -209,7 +256,7 @@
 					right       : 10px;
 					top         : 16px;
 					font-family : @font-family-icons;
-					content     : "\e0a6";
+					content     : "\e0a7";
 				}
 
 				&.ui-accordion-header-active {
@@ -224,13 +271,14 @@
 				margin      : 0;
 				padding     : 0;
 				border      : none;
-				border-left : 10px solid #EEEEEE;
+				border-left : 4px solid @primary-color;
 
 				li + li {
 					border-top : 1px solid #30363E;
 				}
 
 				a {
+					border-top  : none;
 					background  : none;
 					color       : @primary-color;
 					font-weight : normal;
@@ -249,6 +297,13 @@
 					text-transform : uppercase;
 					font-size      : @cpanel-font-size;
 				}
+			}
+			.cpanelsubtitle {
+				padding        : @padding-base-vertical 15px;
+				background     : @cpanel-subtitle-bg;
+				color          : @primary-color;
+				text-transform : uppercase;
+				font-size      : @cpanel-font-size;
 			}
 		}
 	}
@@ -276,8 +331,8 @@
 
 .container-wrapper {
 	position : relative;
-	padding  : 15px 10px;
-	.transition(background; 0.2s; ease-in-out);
+	padding  : 10px !important;
+	.transition(background; 0.3s; ease-in-out);
 	.tpopup {
 		//display  : none;
 		//position : absolute !important;
@@ -286,7 +341,7 @@
 	}
 	&:hover {
 		.rgba(#109DF7; 50%);
-		outline : 1px solid @primary-color;
+		outline : none;
 		//.tpopup {
 		//	display : block;
 		//}
@@ -294,19 +349,21 @@
 }
 
 .tpopup {
-	display : block;
+	display   : block;
+	font-size : 1rem !important;
 
-	&[data-url*="containerType/2"], &[data-url*="containerType/3"], &[data-url*="containerType/4"],
+	&[data-url*="containerType/2"], &[data-url*="containerType/3"], &[data-url*="containerType/4"], &[data-url*="plugin/fastbutton"],
 	&[data-url*="webbuilder/run/imageonly/"], &[data-url*="containerType/1"], &[data-url*="webbuilder/run/textonly"] {
-		margin         : 5px 0 2px;
+		margin         : 10px 0 5px;
 		position       : relative;
 		background     : #109DF7;
 		height         : 30px;
 		width          : 50px;
-		font-size      : 11px;
+		font-size      : 0 !important;
 		font-family    : 'Open Sans', sans-serif;
 		text-align     : center !important;
 		letter-spacing : 0 !important;
+		text-shadow    : none;
 		.box-shadow(0 1px 5px 0 rgba(0, 0, 0, 0.25));
 		.border-radius(4px);
 		&::before {
@@ -329,6 +386,10 @@
 		}
 		img {
 			display : none;
+		}
+		.text-center & {
+			margin-left  : auto;
+			margin-right : auto;
 		}
 	}
 	&[data-url*="containerType/1"] {
@@ -373,5 +434,40 @@
 			background : #FFF900;
 		}
 	}
-
+	&[data-url*="plugin/fastbutton"] {
+		&::before {
+			content : "FB";
+		}
+		&::after {
+			background : #FFC107;
+		}
+	}
+	&[title="Edit order"], &[data-url*="editrepeat"] {
+		.button();
+		margin : 15px 0;
+		.button-color(@primary-color; #009688; #009688);
+		&::before {
+			font-family  : @font-family-icons;
+			content      : "\e073";
+			.inline-block();
+			margin-right : 5px;
+			margin-top   : -7px;
+		}
+	}
+	&[title="Edit order"] {
+		margin-bottom : 15px;
+		&::before {
+			content : "\e073";
+		}
+	}
+	&[data-url*="editrepeat"] {
+		margin-top    : 15px;
+		margin-bottom : 15px;
+		&::before {
+			content : "\e073";
+		}
+	}
+	em {
+		font-style : normal;
+	}
 }
