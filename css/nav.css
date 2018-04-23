@@ -781,7 +781,7 @@ footer .news-item .news-item-date::before,
   line-height: 1.36364;
   letter-spacing: 0.06em;
   margin-bottom: 0.66em;
-  color: #222;
+  color: #222222;
   font-family: Merriweather-Bold, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, serif;
 }
 .news-post-comment .pagerating-list .pagerating-info,
@@ -802,9 +802,9 @@ footer .news-item .news-item-date::before,
   width: 43px;
   line-height: 45px;
   display: block;
-  border: 1px solid #EEE;
+  border: 1px solid #EEEEEE;
   background: #C5C5C5;
-  color: #FFF;
+  color: #FFFFFF;
   font-size: 43px;
   overflow: hidden;
   border-radius: 50%;
@@ -815,18 +815,18 @@ footer .news-item .news-item-date::before,
 .product-comment .pagerating-list .pagerating-info .name,
 .company-testimonials .pagerating-list .pagerating-info .name {
   font-weight: 700;
-  color: #666;
+  color: #666666;
 }
 .news-post-comment .pagerating-list .pagerating-info .author,
 .product-comment .pagerating-list .pagerating-info .author,
 .company-testimonials .pagerating-list .pagerating-info .author {
   font-weight: 700;
-  color: #666;
+  color: #666666;
 }
 .news-post-comment .pagerating-list .pagerating-info .published,
 .product-comment .pagerating-list .pagerating-info .published,
 .company-testimonials .pagerating-list .pagerating-info .published {
-  color: #999;
+  color: #999999;
 }
 .news-post-comment .pagerating-list .pagerating-info + .rating,
 .product-comment .pagerating-list .pagerating-info + .rating,
@@ -840,8 +840,8 @@ footer .news-item .news-item-date::before,
 .product-comment .pagerating-list .description,
 .company-testimonials .pagerating-list .description {
   display: block;
-  background-color: #FFF;
-  border: 1px solid #EEE;
+  background-color: #FFFFFF;
+  border: 1px solid #EEEEEE;
   padding: 15px;
   margin-top: 17px;
   border-radius: 3px;
@@ -857,8 +857,8 @@ footer .news-item .news-item-date::before,
   top: -8px;
   width: 14px;
   height: 14px;
-  background-color: #FFF;
-  border: 1px solid #EEE;
+  background-color: #FFFFFF;
+  border: 1px solid #EEEEEE;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -910,9 +910,9 @@ footer .news-item .news-item-date::before,
   width: 67px;
   line-height: 80px;
   display: block;
-  border: 1px solid #EEE;
+  border: 1px solid #EEEEEE;
   background: #C5C5C5;
-  color: #FFF;
+  color: #FFFFFF;
   font-size: 62px;
   overflow: hidden;
   border-radius: 50%;

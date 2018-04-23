@@ -2789,6 +2789,21 @@ dl.horizontal dd {
 ul.list-unstyled {
   zoom: 1;
 }
+ul.list-checkmark {
+  zoom: 1;
+}
+ul.list-checkmark > li {
+  padding-left: 1.5em;
+}
+ul.list-checkmark > li::before {
+  float: left;
+  color: #e7931a;
+  margin-left: -1.5em;
+  margin-top: 0;
+  font-family: flexkit-icons;
+  font-size: 16px;
+  content: '\e900';
+}
 ul.list-select {
   border: 1px solid #eeeeee;
   min-height: calc(24px + 1em);

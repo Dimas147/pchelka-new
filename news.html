@@ -19,7 +19,7 @@
         </li>
         <li itemprop="itemListElement" itemscope
             itemtype="http://schema.org/ListItem">
-            <a itemprop="item" href="https://www.pchelka.kh.ua/news/">
+            <a itemprop="item" href="https://www.pchelka.kh.ua/novosti-pchelovodstva/">
                 <span itemprop="name">{$header:news-page:static}</span>
             </a>
             <meta itemprop="position" content="2"/>
@@ -51,17 +51,16 @@
             <meta itemprop="mainEntityOfPage" content="https://www.pchelka.kh.ua/news/">
             <div class="news-description">
                 <time class="news-item-date text-center" datetime="{$news:date:Y-m-d}" itemprop="datePublished">
-                    {$news:date: M d, Y}
+                    {$news:date: F d, Y}
                     <meta itemprop="dateModified" content="{$news:date: M d, Y}">
                 </time>
                 <a class="news-item-image" href="{$news:url}" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                     <img src="{$news:preview}" alt="{$news:title:inline}"/>
-                    <meta itemprop="url" content="{$news:preview}">
-                    <meta itemprop="width" content="450">
-                    <meta itemprop="height" content="300">
+                    <meta itemprop="url" content="{$news:preview:crop:800x400}">
+                    <meta itemprop="width" content="800">
+                    <meta itemprop="height" content="400">
                 </a>
-                <p class="news-item-description" itemprop="description">{$news:teaser}</p>
-                {$plugin:pagerating:stars}
+                <p class="news-item-description hide" itemprop="description">{$news:teaser}</p>
                 {$news:actions}
             </div>
             {newscontent}
